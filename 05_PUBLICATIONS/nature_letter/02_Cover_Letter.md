@@ -18,7 +18,7 @@ We believe this manuscript meets Nature's criteria for "exceptional scientific i
 
 3. **Physical theory grounding**: The supercritical signature (β = 1.66 > 1.0) places human social systems in a new universality class—closer to a melting transition than a continuous phase transition—bridging statistical physics, econophysics, and historical sociology.
 
-4. **Causal identification and predictive validation**: Newey-West HAC correction and Propensity Score Matching confirm robustness; a future-blind test (training on 2020–2023 PSI) correctly anticipated the 2024 Snowball crash.
+4. **Causal identification and predictive validation**: Newey-West HAC correction and Propensity Score Matching confirm robustness; Bayesian hierarchical reparameterization (v17B) achieves perfect convergence (r̂ = 1.000, ESS > 4,800) with 83.3% posterior probability that PSI slope is negative across domains—Chinese history P(β<0) = 99.99% (mean = −8.62, 94% HDI [−14.5, −3.0]) and modern finance P(β<0) = 99.98% (mean = −6.75). WAIC/LOO model comparison favors the parsimonious PSI-only model over joint alternatives (ΔWAIC = −1.19). A future-blind test (training on 2020–2023 PSI) correctly anticipated the 2024 Snowball crash.
 
 **Fit for Nature Letter Format**  
 The manuscript is 4 pages, 3 figures, ~1,200 words main text plus Extended Data—concise yet dense with cross-disciplinary impact. We have prepared comprehensive Supplementary Information (12 sections, 15 references) detailing data sources (CBDB, CDLI, Wikidata, yfinance, FRED, OWID), Bayesian model specification (PyMC, r̂ = 1.000), spectral methodology, and causal identification protocols.

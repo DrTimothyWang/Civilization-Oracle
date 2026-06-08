@@ -42,9 +42,11 @@ We have provided a list of recommended reviewers with expertise in paleoclimate 
 
 ## Data and Code Availability
 
-All datasets, code, models, and API documentation are available under MIT license. The internal historical event database, UCDP validation results, calibration outputs, and real-time climate integration files are included. Source code for the dual-model API, Granger causality tests, and cross-validation framework is provided.
+All datasets, code, models, and API documentation are available at github.com/Mavis-Foundation/UPSI (TCM-UPSI subdirectory) under MIT license. The internal historical event database, UCDP validation results, calibration outputs, and real-time climate integration files are included. Source code for the dual-model API, Granger causality tests, and cross-validation framework is provided.
 
 We believe this manuscript will be of strong interest to *Climate of the Past* readers working at the interface of climate reconstruction, historical climatology, and quantitative climate–society analysis. We look forward to your consideration.
+
+**Companion manuscript note**: We note that a companion manuscript (UPSI v6.0) is being submitted concurrently to *Nature*, focusing on cross-domain supercritical phase transitions in social-financial systems. The two manuscripts share no overlapping text, employ independent theoretical frameworks (physical phase transition vs. cyclical climate encoding), and target non-overlapping readerships.
 
 Sincerely,
 

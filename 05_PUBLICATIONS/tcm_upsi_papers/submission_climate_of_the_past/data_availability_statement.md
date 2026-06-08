@@ -85,10 +85,10 @@ All supplementary materials (SI S1–S15) are available in the `supplementary_ma
 
 Primary datasets and code are archived at:
 - **Zenodo**: [DOI to be assigned upon acceptance]
-- **GitHub**: [Repository URL to be filled]
+- **GitHub**: github.com/Mavis-Foundation/UPSI (TCM-UPSI subdirectory)
 - **Figshare**: [DOI to be assigned upon acceptance]
 
-## Reproducibility Statement
+All data and code will be released upon publication. Preview metadata and documentation are available in the repository at the time of submission.
 
 All figures, tables, and statistical results in the main text can be reproduced by running the analysis pipeline:
 
