@@ -1,0 +1,30 @@
+{
+  "total_records": 80181,
+  "ur3_records": 79970,
+  "year_range": {
+    "min": -3500,
+    "max": 2095
+  },
+  "provenience_distribution": {
+    "Umma": 29876,
+    "Girsu": 18930,
+    "Puzriš-Dagan": 15600,
+    "Ur": 4351,
+    "Nippur": 3335,
+    "Irisagrig": 2900,
+    "Garšana": 1781,
+    "unknown": 1430,
+    "uncertain": 634,
+    "Aradmu Arch.": 239,
+    "Umma region": 235,
+    "Ešnunna": 156,
+    "Adab": 143,
+    "Šat-Eštar Arch.": 108,
+    "Susa": 86,
+    "SI.A-a Arch.": 85,
+    "Turam-ili Arch.": 58,
+    "Nippur Region": 47,
+    "Išan Mizyad": 37,
+    "Mari": 23
+  }
+}

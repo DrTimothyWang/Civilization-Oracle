@@ -1,0 +1,54 @@
+{
+  "name": "QCAgent",
+  "description": "数据偏见检测与质量审计。执行 A/B/C/D 分级和 CR 矛盾检测，守护全流程质量。",
+  "version": "3.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateDiff": true
+  },
+  "skills": [
+    {
+      "id": "quality_audit",
+      "name": "质量审计",
+      "description": "对数据质量分级、IPW 权重合理性、PSI 阈值合规性进行检测",
+      "tags": [
+        "quality",
+        "audit",
+        "cbdb",
+        "ipw",
+        "psi"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "contradiction_detection",
+      "name": "矛盾检测",
+      "description": "执行 CR-001 至 CR-004 矛盾规则，检测跨模态异常",
+      "tags": [
+        "contradiction",
+        "cross-validation",
+        "four-diagnosis"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "endpoint": "http://localhost:8007/a2a",
+  "metadata": {
+    "generated_at": "2026-05-30T15:55:07.171344Z",
+    "role": "quality_control"
+  }
+}

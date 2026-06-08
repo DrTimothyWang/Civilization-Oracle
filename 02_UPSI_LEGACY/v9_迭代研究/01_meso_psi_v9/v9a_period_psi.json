@@ -1,0 +1,1008 @@
+{
+  "Early Dynastic": {
+    "total": 4398,
+    "with_year": 4398,
+    "n_windows": 6,
+    "sfd": {
+      "-2900": {
+        "count": 0,
+        "mean": 733.0,
+        "std": 1058.38,
+        "sfd_z": -0.693,
+        "window_size": 100
+      },
+      "-2800": {
+        "count": 0,
+        "mean": 733.0,
+        "std": 1058.38,
+        "sfd_z": -0.693,
+        "window_size": 100
+      },
+      "-2700": {
+        "count": 2722,
+        "mean": 733.0,
+        "std": 1058.38,
+        "sfd_z": 1.879,
+        "window_size": 100
+      },
+      "-2600": {
+        "count": 0,
+        "mean": 733.0,
+        "std": 1058.38,
+        "sfd_z": -0.693,
+        "window_size": 100
+      },
+      "-2500": {
+        "count": 86,
+        "mean": 733.0,
+        "std": 1058.38,
+        "sfd_z": -0.611,
+        "window_size": 100
+      },
+      "-2400": {
+        "count": 1590,
+        "mean": 733.0,
+        "std": 1058.38,
+        "sfd_z": 0.81,
+        "window_size": 100
+      }
+    },
+    "gsi": {
+      "-2700": {
+        "proveniences": {
+          "Girsu": 450,
+          "Ur": 108,
+          "Lagash": 69,
+          "Diqdiqqah": 1,
+          "Nippur": 472,
+          "Bad-tibira": 2,
+          "Sippar": 4,
+          "E'edin": 1,
+          "Adab": 416,
+          "Agrab": 3,
+          "Tell Agrab": 5,
+          "Diyala": 1,
+          "Ešnunna": 4,
+          "Šuruppak": 4,
+          "Tutub": 26,
+          "Uruk": 16,
+          "Kish": 8,
+          "Umma": 388,
+          "Mari": 12,
+          "Tell al-Ubaid": 10,
+          "Umm al-Aqarib": 2,
+          "Umm al-Jir": 1,
+          "Tell Zurghul": 1,
+          "Isin": 17,
+          "Zabalam": 366,
+          "Mugdan": 2,
+          "KI.AN": 4,
+          "Shuruppak": 5,
+          "Larsa": 3,
+          "Gišša": 3,
+          "Sippar-Yahrurum": 4,
+          "unclear": 18,
+          "Tell Ubaid": 10,
+          "Eridu": 1,
+          "Bad-Tibira": 1
+        },
+        "cv": 2.076,
+        "total": 2438,
+        "n_sites": 35,
+        "window_size": 100,
+        "cv_z": 1.0,
+        "cv_mean": 1.739,
+        "cv_std": 0.337
+      },
+      "-2400": {
+        "proveniences": {
+          "Girsu": 1542,
+          "Lagash": 8,
+          "Umma": 1
+        },
+        "cv": 1.402,
+        "total": 1551,
+        "n_sites": 3,
+        "window_size": 100,
+        "cv_z": -1.0,
+        "cv_mean": 1.739,
+        "cv_std": 0.337
+      }
+    },
+    "psi": {
+      "-2900": -0.416,
+      "-2800": -0.416,
+      "-2700": 0.727,
+      "-2600": -0.416,
+      "-2500": -0.367,
+      "-2400": 0.886
+    }
+  },
+  "Akkadian": {
+    "total": 5661,
+    "with_year": 5659,
+    "n_windows": 4,
+    "sfd": {
+      "-2350": {
+        "count": 0,
+        "mean": 1408.75,
+        "std": 2440.03,
+        "sfd_z": -0.577,
+        "window_size": 50
+      },
+      "-2300": {
+        "count": 0,
+        "mean": 1408.75,
+        "std": 2440.03,
+        "sfd_z": -0.577,
+        "window_size": 50
+      },
+      "-2250": {
+        "count": 5635,
+        "mean": 1408.75,
+        "std": 2440.03,
+        "sfd_z": 1.732,
+        "window_size": 50
+      },
+      "-2200": {
+        "count": 0,
+        "mean": 1408.75,
+        "std": 2440.03,
+        "sfd_z": -0.577,
+        "window_size": 50
+      }
+    },
+    "gsi": {
+      "-2250": {
+        "proveniences": {
+          "Nagar": 39,
+          "Gasur": 1,
+          "Kiš": 4,
+          "Girsu": 972,
+          "Susa": 70,
+          "unclear": 51,
+          "Nippur": 306,
+          "Adab": 1986,
+          "Ur": 86,
+          "Umma": 692,
+          "Qalat Sherqat (Assur)": 2,
+          "Babylonia": 1,
+          "Lagash": 3,
+          "Šuruppak": 1,
+          "Uruk": 3,
+          "Zabala": 2,
+          "Sippar-Yahrurum": 4,
+          "Ešnunna": 113,
+          "Kutha": 1,
+          "Kish": 30,
+          "Ašnakkum": 1,
+          "Mugdan": 11,
+          "Urkesh": 15,
+          "Isin": 38,
+          "Zabalam": 6,
+          "Assur": 1,
+          "Nuzi": 83,
+          "Tell Sweyhat": 1,
+          "Mari": 1,
+          "Sagub": 8,
+          "Tutub": 17,
+          "Shuruppak": 3,
+          "Abu Jawan": 1,
+          "Umm el-Hafriyat": 1,
+          "Irisagrig": 1,
+          "Kesh": 3
+        },
+        "cv": 2.921,
+        "total": 4558,
+        "n_sites": 36,
+        "window_size": 50,
+        "cv_z": 1.0,
+        "cv_mean": 1.791,
+        "cv_std": 1.129
+      },
+      "-750": {
+        "proveniences": {
+          "Kalhu": 1,
+          "Ur": 4,
+          "Adab": 8
+        },
+        "cv": 0.662,
+        "total": 13,
+        "n_sites": 3,
+        "window_size": 50,
+        "cv_z": -1.0,
+        "cv_mean": 1.791,
+        "cv_std": 1.129
+      }
+    },
+    "psi": {
+      "-2350": -0.346,
+      "-2300": -0.346,
+      "-2250": 0.639,
+      "-2200": -0.346,
+      "-750": 0.4
+    }
+  },
+  "Ur III": {
+    "total": 82006,
+    "with_year": 77838,
+    "n_windows": 5,
+    "sfd": {
+      "-2125": {
+        "count": 0,
+        "mean": 15567.6,
+        "std": 19390.02,
+        "sfd_z": -0.803,
+        "window_size": 25
+      },
+      "-2100": {
+        "count": 103,
+        "mean": 15567.6,
+        "std": 19390.02,
+        "sfd_z": -0.798,
+        "window_size": 25
+      },
+      "-2075": {
+        "count": 27607,
+        "mean": 15567.6,
+        "std": 19390.02,
+        "sfd_z": 0.621,
+        "window_size": 25
+      },
+      "-2050": {
+        "count": 48227,
+        "mean": 15567.6,
+        "std": 19390.02,
+        "sfd_z": 1.684,
+        "window_size": 25
+      },
+      "-2025": {
+        "count": 1901,
+        "mean": 15567.6,
+        "std": 19390.02,
+        "sfd_z": -0.705,
+        "window_size": 25
+      }
+    },
+    "gsi": {
+      "-2100": {
+        "proveniences": {
+          "Girsu": 100,
+          "Nippur": 2,
+          "Ur": 1
+        },
+        "cv": 1.352,
+        "total": 103,
+        "n_sites": 3,
+        "window_size": 25,
+        "cv_z": -1.529,
+        "cv_mean": 2.486,
+        "cv_std": 0.742
+      },
+      "-2075": {
+        "proveniences": {
+          "unclear": 54,
+          "Kiš": 1,
+          "Nippur": 2037,
+          "Girsu": 7605,
+          "Ur": 2459,
+          "Uruk": 33,
+          "Lagash": 13,
+          "Diqdiqqah": 16,
+          "Eridu": 5,
+          "Larsa": 6,
+          "Adab": 88,
+          "Ešnunna": 52,
+          "Susa": 91,
+          "Umma": 8481,
+          "Tell Hammam": 2,
+          "Kuar": 1,
+          "Bad-tibira": 1,
+          "Isin": 5,
+          "Šaduppum": 2,
+          "Larak": 2,
+          "Puzriš-Dagan": 3596,
+          "Sippar": 1,
+          "Garšana": 274,
+          "Irisagrig": 582,
+          "Sirara": 1,
+          "Bābili": 2,
+          "Kesh": 5,
+          "SI.A-a Arch.": 16,
+          "Sippar-Yahrurum": 1,
+          "Umma (mod. Tell Jokha)": 7,
+          "Išan Mizyad": 30,
+          "Turam-ili Arch.": 5,
+          "Adab Region": 5,
+          "Umma region": 71,
+          "Mari": 23,
+          "Girsu (mod. Tello)": 4,
+          "Elbonia": 2,
+          "Tell al-Wilayah": 7,
+          "Kish": 13,
+          "Shuruppak": 1,
+          "Nippur Region": 18,
+          "Aradmu Arch.": 40,
+          "Šat-Eštar Arch.": 15,
+          "Kisurra": 1,
+          "Irisagrig (mod. uncertain)": 3,
+          "Ešnunna (mod. Tell Asmar)": 1,
+          "Sippar-Amnanum": 1,
+          "Dusabar": 1,
+          "Beydar": 2,
+          "uncertain (mod. uncertain)": 1,
+          "Puzriš-Dagan (mod. Drehem)": 3,
+          "Anšan": 1,
+          "Garšana (mod. uncertain)": 1,
+          "Kian": 1,
+          "Eṣidum Arch.": 3
+        },
+        "cv": 3.432,
+        "total": 25692,
+        "n_sites": 55,
+        "window_size": 25,
+        "cv_z": 1.274,
+        "cv_mean": 2.486,
+        "cv_std": 0.742
+      },
+      "-2050": {
+        "proveniences": {
+          "Qalat Sherqat (Assur)": 1,
+          "Girsu": 9107,
+          "Umma": 20384,
+          "Puzriš-Dagan": 12162,
+          "Nippur": 1304,
+          "Išan Mizyad": 4,
+          "Uruk": 2,
+          "Turam-ili Arch.": 53,
+          "Sippar": 3,
+          "Kisurra": 2,
+          "Ešnunna": 75,
+          "SI.A-a Arch.": 70,
+          "Umma region": 150,
+          "Susa": 19,
+          "Adab": 59,
+          "Ur": 487,
+          "Tell al-Wilayah": 1,
+          "Sippar-Amnanum": 1,
+          "Garšana": 1492,
+          "Shuruppak": 1,
+          "Nippur Region": 23,
+          "Aradmu Arch.": 186,
+          "Irisagrig": 2135,
+          "Adab Region": 7,
+          "Šat-Eštar Arch.": 81,
+          "Eṣidum Arch.": 10
+        },
+        "cv": 2.54,
+        "total": 47819,
+        "n_sites": 26,
+        "window_size": 25,
+        "cv_z": 0.072,
+        "cv_mean": 2.486,
+        "cv_std": 0.742
+      },
+      "-2025": {
+        "proveniences": {
+          "Girsu": 112,
+          "Ur": 1594,
+          "Nippur": 101,
+          "Umma": 48,
+          "Kisurra": 1,
+          "Garšana": 14,
+          "Nippur Region": 1,
+          "Irisagrig": 7,
+          "Aradmu Arch.": 6,
+          "Umma region": 1,
+          "Šat-Eštar Arch.": 8
+        },
+        "cv": 2.622,
+        "total": 1893,
+        "n_sites": 11,
+        "window_size": 25,
+        "cv_z": 0.183,
+        "cv_mean": 2.486,
+        "cv_std": 0.742
+      }
+    },
+    "psi": {
+      "-2125": -0.482,
+      "-2100": 0.133,
+      "-2075": -0.137,
+      "-2050": 0.982,
+      "-2025": -0.496
+    }
+  },
+  "Old Babylonian": {
+    "total": 7362,
+    "with_year": 7362,
+    "n_windows": 7,
+    "sfd": {
+      "-1900": {
+        "count": 0,
+        "mean": 1051.57,
+        "std": 2575.0,
+        "sfd_z": -0.408,
+        "window_size": 50
+      },
+      "-1850": {
+        "count": 2,
+        "mean": 1051.57,
+        "std": 2575.0,
+        "sfd_z": -0.408,
+        "window_size": 50
+      },
+      "-1800": {
+        "count": 0,
+        "mean": 1051.57,
+        "std": 2575.0,
+        "sfd_z": -0.408,
+        "window_size": 50
+      },
+      "-1750": {
+        "count": 7359,
+        "mean": 1051.57,
+        "std": 2575.0,
+        "sfd_z": 2.449,
+        "window_size": 50
+      },
+      "-1700": {
+        "count": 0,
+        "mean": 1051.57,
+        "std": 2575.0,
+        "sfd_z": -0.408,
+        "window_size": 50
+      },
+      "-1650": {
+        "count": 0,
+        "mean": 1051.57,
+        "std": 2575.0,
+        "sfd_z": -0.408,
+        "window_size": 50
+      },
+      "-1600": {
+        "count": 0,
+        "mean": 1051.57,
+        "std": 2575.0,
+        "sfd_z": -0.408,
+        "window_size": 50
+      }
+    },
+    "gsi": {
+      "-1750": {
+        "proveniences": {
+          "unclear": 1054,
+          "Kiš": 19,
+          "Nippur": 3926,
+          "Sippar": 30,
+          "Kisurra": 4,
+          "Ur": 700,
+          "Der": 3,
+          "Šaduppum": 129,
+          "Uruk": 71,
+          "Diyala": 5,
+          "Shuruppak": 1,
+          "Umma": 7,
+          "Nerebtum": 10,
+          "Susa": 166,
+          "Larsa": 33,
+          "Isin": 73,
+          "Nineveh": 16,
+          "Tutub": 2,
+          "Sealand": 3,
+          "Sippar-Amnanum": 1,
+          "Babylon": 4,
+          "Adab": 4,
+          "Tell Hammam et-Turkman": 1,
+          "Kish": 14,
+          "Byblos": 1,
+          "Ṭabatum": 1,
+          "Ešnunna": 42,
+          "Girsu": 9,
+          "Šaduppûm": 1,
+          "Eridu": 2,
+          "Bad-tibira": 1,
+          "Zabala": 3,
+          "Diqdiqqah": 3,
+          "Terqa": 2,
+          "Diniktum": 1,
+          "Maškan-šapir": 1,
+          "Sippar-Yahrurum": 24,
+          "Mari": 1,
+          "Hattusa": 2,
+          "Assur": 2,
+          "Bābili": 3,
+          "Zabalam": 1,
+          "Tell Muhammad": 1,
+          "northern Babylonia": 2,
+          "Malgium": 1,
+          "Babylonia": 1,
+          "Irisagrig": 117,
+          "Dilbat": 1,
+          "Tilmen Höyük": 1,
+          "Šubat-Enlil": 1,
+          "Umma region": 1
+        },
+        "cv": 4.429,
+        "total": 6502,
+        "n_sites": 51,
+        "window_size": 50,
+        "cv_z": 0.0,
+        "cv_mean": 4.429,
+        "cv_std": 1.0
+      }
+    },
+    "psi": {
+      "-1900": -0.245,
+      "-1850": -0.245,
+      "-1800": -0.245,
+      "-1750": 1.469,
+      "-1700": -0.245,
+      "-1650": -0.245,
+      "-1600": -0.245
+    }
+  },
+  "Middle Babylonian": {
+    "total": 657,
+    "with_year": 657,
+    "n_windows": 5,
+    "sfd": {
+      "-1600": {
+        "count": 0,
+        "mean": 131.4,
+        "std": 262.8,
+        "sfd_z": -0.5,
+        "window_size": 100
+      },
+      "-1500": {
+        "count": 0,
+        "mean": 131.4,
+        "std": 262.8,
+        "sfd_z": -0.5,
+        "window_size": 100
+      },
+      "-1400": {
+        "count": 657,
+        "mean": 131.4,
+        "std": 262.8,
+        "sfd_z": 2.0,
+        "window_size": 100
+      },
+      "-1300": {
+        "count": 0,
+        "mean": 131.4,
+        "std": 262.8,
+        "sfd_z": -0.5,
+        "window_size": 100
+      },
+      "-1200": {
+        "count": 0,
+        "mean": 131.4,
+        "std": 262.8,
+        "sfd_z": -0.5,
+        "window_size": 100
+      }
+    },
+    "gsi": {
+      "-1400": {
+        "proveniences": {
+          "Nippur": 129,
+          "Babylon": 10,
+          "Alalakh": 6,
+          "unclear": 5,
+          "Emar": 205,
+          "Akhetaten": 1,
+          "Ugarit": 80,
+          "Ur": 1,
+          "Sippar": 1,
+          "Šibaniba": 2,
+          "Ibn Hani": 3,
+          "Ekalte": 1,
+          "Kiš": 1,
+          "Hazor": 1,
+          "Isqalluna": 1,
+          "Kabnak": 10,
+          "Šapinuwa": 1,
+          "Nineveh": 2,
+          "Assur": 1,
+          "Nuzi": 7,
+          "Hattusa": 92,
+          "Susa": 34,
+          "Bābili": 1
+        },
+        "cv": 1.968,
+        "total": 595,
+        "n_sites": 23,
+        "window_size": 100,
+        "cv_z": 0.0,
+        "cv_mean": 1.968,
+        "cv_std": 1.0
+      }
+    },
+    "psi": {
+      "-1600": -0.3,
+      "-1500": -0.3,
+      "-1400": 1.2,
+      "-1300": -0.3,
+      "-1200": -0.3
+    }
+  },
+  "Neo-Assyrian": {
+    "total": 8859,
+    "with_year": 8855,
+    "n_windows": 7,
+    "sfd": {
+      "-950": {
+        "count": 18,
+        "mean": 1265.0,
+        "std": 1404.41,
+        "sfd_z": -0.888,
+        "window_size": 50
+      },
+      "-900": {
+        "count": 173,
+        "mean": 1265.0,
+        "std": 1404.41,
+        "sfd_z": -0.778,
+        "window_size": 50
+      },
+      "-850": {
+        "count": 145,
+        "mean": 1265.0,
+        "std": 1404.41,
+        "sfd_z": -0.797,
+        "window_size": 50
+      },
+      "-800": {
+        "count": 4145,
+        "mean": 1265.0,
+        "std": 1404.41,
+        "sfd_z": 2.051,
+        "window_size": 50
+      },
+      "-750": {
+        "count": 1597,
+        "mean": 1265.0,
+        "std": 1404.41,
+        "sfd_z": 0.236,
+        "window_size": 50
+      },
+      "-700": {
+        "count": 2216,
+        "mean": 1265.0,
+        "std": 1404.41,
+        "sfd_z": 0.677,
+        "window_size": 50
+      },
+      "-650": {
+        "count": 561,
+        "mean": 1265.0,
+        "std": 1404.41,
+        "sfd_z": -0.501,
+        "window_size": 50
+      }
+    },
+    "gsi": {
+      "-950": {
+        "proveniences": {
+          "Qalat Sherqat (Assur)": 13,
+          "Qasr Shamamuk (Kilizu)": 1,
+          "Kuyunjik (Nineveh)": 3,
+          "Tell Billa (Šibaniba)": 1
+        },
+        "cv": 1.106,
+        "total": 18,
+        "n_sites": 4,
+        "window_size": 50,
+        "cv_z": -1.031,
+        "cv_mean": 2.633,
+        "cv_std": 1.481
+      },
+      "-900": {
+        "proveniences": {
+          "Nimrud (Kalhu)": 65,
+          "Qalat Sherqat (Assur)": 27,
+          "Kuyunjik (Nineveh)": 46,
+          "Kurkh": 1,
+          "Babil": 1,
+          "Balawat (Imgur-Enlil)": 20,
+          "Tell Abu Marya (Apqu-ša-Adad)": 2,
+          "Assyria": 3,
+          "Tell Fakhariyah (Sikāni)": 1,
+          "Tell Sherif Khan (Tarbisu)": 1,
+          "Babylon (Bābili)": 1,
+          "Tell Ajaja (Šaddikanni)": 1,
+          "Tell Barri (Kahat)": 1,
+          "Khorsabad (Dur-Šarrukin)": 1,
+          "Ashara (Terqa)": 1,
+          "Tell Satu Qala (Idu)": 1
+        },
+        "cv": 1.734,
+        "total": 173,
+        "n_sites": 16,
+        "window_size": 50,
+        "cv_z": -0.607,
+        "cv_mean": 2.633,
+        "cv_std": 1.481
+      },
+      "-850": {
+        "proveniences": {
+          "Nimrud (Kalhu)": 38,
+          "Kurkh": 1,
+          "Tell Ahmar (Til Barsip)": 1,
+          "Balawat (Imgur-Enlil)": 26,
+          "Qalat Sherqat (Assur)": 48,
+          "Sultantepe (Huzirina)": 2,
+          "Kenk Boǧazı": 1,
+          "Tigris Tunnel": 4,
+          "Tell al-Hawa": 3,
+          "Tell Billa (Šibaniba)": 2,
+          "Kuyunjik (Nineveh)": 7,
+          "Tell Sherif Khan (Tarbisu)": 2,
+          "Assyria": 9,
+          "Byblos (Gubla)": 1
+        },
+        "cv": 1.435,
+        "total": 145,
+        "n_sites": 14,
+        "window_size": 50,
+        "cv_z": -0.809,
+        "cv_mean": 2.633,
+        "cv_std": 1.481
+      },
+      "-800": {
+        "proveniences": {
+          "Kalhu": 42,
+          "Nineveh": 1040,
+          "Borsippa": 1,
+          "Assur": 134,
+          "Huzirina": 10,
+          "unclear": 11,
+          "Sultantepe": 1,
+          "Sippar": 1,
+          "Dur-Šarrukin": 2,
+          "Nimrud": 20,
+          "Kuyunjik (Nineveh)": 2289,
+          "Nimrud (Kalhu)": 34,
+          "Babylon (Bābili)": 26,
+          "Qalat Sherqat (Assur)": 164,
+          "Tell Muqayyar (Ur)": 32,
+          "Babylonia": 10,
+          "Deilam (Dilbat)": 2,
+          "Nuffar (Nippur)": 10,
+          "Antakya": 1,
+          "Kizkapanlı": 2,
+          "Assyria": 12,
+          "Tall Shekh Hamad (Dur-Katlimmu)": 1,
+          "Sabaʾa": 1,
+          "Tell al Rimah (Qatara)": 1,
+          "Pāra": 1,
+          "Tell Ahmar (Til Barsip)": 3,
+          "Dohok": 1,
+          "Khorsabad": 67,
+          "Ashur": 14,
+          "Larnaka": 2,
+          "Ashdod": 1,
+          "Acharneh": 1,
+          "Til-Barsip": 2,
+          "Tell Tayinat": 1,
+          "Carchemish": 3,
+          "Arslantepe": 4,
+          "Najafabad": 1,
+          "Tang-i Var": 2,
+          "Persepolis": 5,
+          "Babylon": 2,
+          "Uruk": 4,
+          "Me-Turran": 1,
+          "Qal’eh-i Imam": 1,
+          "Samaria": 1,
+          "Mê-Turran": 1,
+          "Tell Baradan": 2,
+          "Tell Abta (Dūr-Bēl-Ḫarrān-bēlī-uṣur)": 1,
+          "Tell Abu Habbah (Sippar-Yahrurum)": 3,
+          "Turlu Höyük": 2,
+          "Birs Nimrud (Borsippa)": 4,
+          "Aqar Quf (Dur-Kurigalzu)": 2,
+          "Tell Haddad (Me-Turan)": 4,
+          "Warka (Uruk)": 8,
+          "Tell Aqar (Der)": 2,
+          "Persepolis (Pārśa)": 13,
+          "Tell Shekh Hamad (Dur-Katlimmu)": 1,
+          "Shikaft-i Gulgul": 2,
+          "Khorsabad (Dur-Šarrukin)": 67,
+          "Ashdod (Asdūdu)": 1,
+          "Acharneh (Tunip)": 1,
+          "Tell Tayinat (Unqi)": 1,
+          "Europos (Carchemish)": 3,
+          "Arslantepe (Melidu)": 4,
+          "Najafabad (Kišesim)": 1,
+          "Qalʾeh-i Imam": 1,
+          "Samaria (Sāmerīna)": 1,
+          "Sultantepe (Huzirina)": 6,
+          "Bābili": 2,
+          "Nippur": 2,
+          "Ur": 12
+        },
+        "cv": 5.043,
+        "total": 4111,
+        "n_sites": 70,
+        "window_size": 50,
+        "cv_z": 1.627,
+        "cv_mean": 2.633,
+        "cv_std": 1.481
+      },
+      "-750": {
+        "proveniences": {
+          "Nimrud (Kalhu)": 386,
+          "Luristan": 2,
+          "Mila Mergi": 2,
+          "Qalat Sherqat (Assur)": 26,
+          "Arslan Tash (Ḫadatu)": 4,
+          "Tell Tayinat (Unqi)": 2,
+          "Tell Abu Marya (Apqu-ša-Adad)": 2,
+          "Assyria": 7,
+          "Kuyunjik (Nineveh)": 1159,
+          "Khorsabad (Dur-Šarrukin)": 7
+        },
+        "cv": 2.203,
+        "total": 1597,
+        "n_sites": 10,
+        "window_size": 50,
+        "cv_z": -0.291,
+        "cv_mean": 2.633,
+        "cv_std": 1.481
+      },
+      "-700": {
+        "proveniences": {
+          "Kuyunjik (Nineveh)": 1872,
+          "Qalat Sherqat (Assur)": 145,
+          "Nimrud (Kalhu)": 37,
+          "Negub Tunnel": 2,
+          "Tell Sherif Khan (Tarbisu)": 16,
+          "Tell Ahmar (Til Barsip)": 2,
+          "Zinčirli (Samal)": 2,
+          "Kibbutz Hama-apil": 2,
+          "Nahr el-Kelb": 2,
+          "Babylon (Bābili)": 38,
+          "Tell Abu Habbah (Sippar-Yahrurum)": 11,
+          "Birs Nimrud (Borsippa)": 2,
+          "Nuffar (Nippur)": 10,
+          "Warka (Uruk)": 16,
+          "Cave Kalm-karra": 2,
+          "Assyria": 12,
+          "Persepolis (Pārśa)": 2,
+          "Ben Shemen": 2,
+          "el-Ghab": 2,
+          "Syria": 2,
+          "Babylonia": 2,
+          "Qasr Shamamuk (Kilizu)": 4,
+          "Tell Billa (Šibaniba)": 2,
+          "Tulul al-Lak": 2,
+          "Judi Dagh": 2,
+          "Bavian": 2,
+          "Jerwan Aqueduct": 10,
+          "Wadi Bastura Tunnel": 2,
+          "Samarra (Sur-marrati)": 2,
+          "Tikrit": 2,
+          "Harran (Harran)": 2,
+          "Sultantepe (Huzirina)": 4,
+          "Tell Tayinat (Kunalia)": 1
+        },
+        "cv": 4.766,
+        "total": 2216,
+        "n_sites": 33,
+        "window_size": 50,
+        "cv_z": 1.44,
+        "cv_mean": 2.633,
+        "cv_std": 1.481
+      },
+      "-650": {
+        "proveniences": {
+          "Kuyunjik (Nineveh)": 542,
+          "Qalat Sherqat (Assur)": 12,
+          "Khorsabad (Dur-Šarrukin)": 1,
+          "Nimrud (Kalhu)": 2,
+          "Sultantepe (Huzirina)": 2,
+          "Nineveh": 2
+        },
+        "cv": 2.146,
+        "total": 561,
+        "n_sites": 6,
+        "window_size": 50,
+        "cv_z": -0.329,
+        "cv_mean": 2.633,
+        "cv_std": 1.481
+      }
+    },
+    "psi": {
+      "-950": -0.12,
+      "-900": -0.224,
+      "-850": -0.155,
+      "-800": 0.58,
+      "-750": 0.258,
+      "-700": -0.17,
+      "-650": -0.169
+    }
+  },
+  "Neo-Babylonian": {
+    "total": 512,
+    "with_year": 512,
+    "n_windows": 5,
+    "sfd": {
+      "-650": {
+        "count": 0,
+        "mean": 102.2,
+        "std": 204.4,
+        "sfd_z": -0.5,
+        "window_size": 25
+      },
+      "-625": {
+        "count": 0,
+        "mean": 102.2,
+        "std": 204.4,
+        "sfd_z": -0.5,
+        "window_size": 25
+      },
+      "-600": {
+        "count": 511,
+        "mean": 102.2,
+        "std": 204.4,
+        "sfd_z": 2.0,
+        "window_size": 25
+      },
+      "-575": {
+        "count": 0,
+        "mean": 102.2,
+        "std": 204.4,
+        "sfd_z": -0.5,
+        "window_size": 25
+      },
+      "-550": {
+        "count": 0,
+        "mean": 102.2,
+        "std": 204.4,
+        "sfd_z": -0.5,
+        "window_size": 25
+      }
+    },
+    "gsi": {
+      "-600": {
+        "proveniences": {
+          "Nippur": 98,
+          "unclear": 252,
+          "Sippar": 22,
+          "Ur": 15,
+          "Uruk": 9,
+          "Kiš": 19,
+          "Kalhu": 1,
+          "Babylon": 42,
+          "Kish": 4,
+          "Dilbat": 1,
+          "Nineveh": 4,
+          "Borsippa": 6,
+          "Assur": 1,
+          "Babylon/Borsippa": 1,
+          "Babylona": 1,
+          "Sippar-Yahrurum": 2,
+          "Isin": 1,
+          "Larsa": 1,
+          "Bābili": 1
+        },
+        "cv": 2.291,
+        "total": 481,
+        "n_sites": 19,
+        "window_size": 25,
+        "cv_z": 0.0,
+        "cv_mean": 2.291,
+        "cv_std": 1.0
+      }
+    },
+    "psi": {
+      "-650": -0.3,
+      "-625": -0.3,
+      "-600": 1.2,
+      "-575": -0.3,
+      "-550": -0.3
+    }
+  }
+}

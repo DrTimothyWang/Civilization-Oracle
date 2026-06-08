@@ -1,0 +1,215 @@
+name: UPSI Dashboard v13c
+
+on:
+  # 每 4 小时运行一次 (UTC 时间)
+  # 对应北京时间: 08:00, 12:00, 16:00, 20:00, 00:00, 04:00
+  schedule:
+    - cron: '0 */4 * * *'
+
+  # 允许手动触发 (用于测试或紧急刷新)
+  workflow_dispatch:
+    inputs:
+      log_level:
+        description: 'Log level'
+        required: false
+        default: 'INFO'
+        type: choice
+        options:
+          - DEBUG
+          - INFO
+          - WARNING
+          - ERROR
+
+  # 当 main 分支的 dashboard 代码更新时自动运行
+  push:
+    branches: [main]
+    paths:
+      - 'v13_迭代研究/03_dashboard_v2/v13c_dashboard_v2.py'
+      - 'v13_迭代研究/03_dashboard_v2/config.yaml'
+
+# 权限: 需要写入 gh-pages 分支
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# 防止并发运行导致冲突
+concurrency:
+  group: "upsi-dashboard"
+  cancel-in-progress: false
+
+jobs:
+  build-dashboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ---------------------------------------------------------------
+      # 1. 检出代码
+      # ---------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 需要完整历史以提交到 gh-pages
+
+      # ---------------------------------------------------------------
+      # 2. 设置 Python
+      # ---------------------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ---------------------------------------------------------------
+      # 3. 安装依赖
+      # ---------------------------------------------------------------
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install yfinance pandas pyyaml
+
+      # ---------------------------------------------------------------
+      # 4. 运行 Dashboard
+      # ---------------------------------------------------------------
+      - name: Run UPSI Dashboard
+        id: dashboard
+        run: |
+          python v13_迭代研究/03_dashboard_v2/v13c_dashboard_v2.py \
+            --mode=once \
+            --output-dir=./dashboard_output \
+            --log-level=${{ github.event.inputs.log_level || 'INFO' }}
+        env:
+          PYTHONUNBUFFERED: "1"
+        continue-on-error: false
+
+      # ---------------------------------------------------------------
+      # 5. 读取 UPSI 值用于后续告警判断
+      # ---------------------------------------------------------------
+      - name: Extract UPSI value
+        id: extract
+        run: |
+          UPSI=$(python -c "import json; d=json.load(open('./dashboard_output/dashboard_data_v2.json')); print(d.get('current_upsi', 0))")
+          echo "upsi=$UPSI" >> $GITHUB_OUTPUT
+          echo "UPSI value: $UPSI"
+
+          # 判断是否触发告警
+          ALERT=false
+          if (( $(echo "$UPSI < -0.5" | bc -l) )); then
+            ALERT=true
+          fi
+          echo "alert=$ALERT" >> $GITHUB_OUTPUT
+
+      # ---------------------------------------------------------------
+      # 6. 上传 JSON 到 Artifacts (保留 30 天)
+      # ---------------------------------------------------------------
+      - name: Upload JSON artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-data-${{ github.run_id }}
+          path: ./dashboard_output/dashboard_data_v2.json
+          retention-days: 30
+
+      # ---------------------------------------------------------------
+      # 7. 部署到 gh-pages (HTML + JSON)
+      # ---------------------------------------------------------------
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard_output
+          publish_branch: gh-pages
+          keep_files: false  # 每次覆盖，保持分支干净
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: UPSI Dashboard v13c ${{ github.event.head_commit.message }}'
+
+      # ---------------------------------------------------------------
+      # 8. 可选: Webhook 告警
+      # ---------------------------------------------------------------
+      - name: Send alert webhook
+        if: steps.extract.outputs.alert == 'true' && secrets.ALERT_WEBHOOK_URL != ''
+        run: |
+          curl -X POST ${{ secrets.ALERT_WEBHOOK_URL }} \
+            -H "Content-Type: application/json" \
+            -d '{
+              "source": "upsi-dashboard",
+              "level": "CRITICAL",
+              "upsi": "${{ steps.extract.outputs.upsi }}",
+              "time": "${{ github.event.repository.updated_at }}",
+              "url": "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/dashboard_latest.html"
+            }' || true
+
+      # ---------------------------------------------------------------
+      # 9. 可选: 创建 GitHub Issue 告警记录
+      # ---------------------------------------------------------------
+      - name: Create alert issue
+        if: steps.extract.outputs.alert == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const upsi = '${{ steps.extract.outputs.upsi }}';
+            const url = `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/dashboard_latest.html`;
+            const title = `🚨 UPSI Alert: ${upsi} (below -0.5)`;
+            const body = `**Triggered**: ${new Date().toISOString()}\n\n**UPSI Value**: ${upsi}\n\n**Dashboard**: [View Live](${url})\n\n---\n*Auto-generated by UPSI Dashboard v13c*`;
+            
+            // 检查最近 24 小时内是否已有同类 issue，避免重复
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'upsi-alert',
+              state: 'open',
+              per_page: 5
+            });
+            const recent = issues.data.find(i => new Date(i.created_at) > new Date(Date.now() - 24*60*60*1000));
+            if (!recent) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['upsi-alert', 'automated']
+              });
+              console.log('Created alert issue');
+            } else {
+              console.log('Recent alert issue already exists, skipping');
+            }
+
+      # ---------------------------------------------------------------
+      # 10. 通知: 工作流失败时自动邮件 (GitHub 原生)
+      # ---------------------------------------------------------------
+      # GitHub 默认会在工作流失败时邮件通知仓库所有者，无需额外配置
+
+  # ---------------------------------------------------------------
+  # 可选: 每日汇总 (降低频率，减少分钟消耗)
+  # ---------------------------------------------------------------
+  daily-summary:
+    runs-on: ubuntu-latest
+    needs: build-dashboard
+    if: github.event.schedule == '0 0 * * *'  # 仅在每日 00:00 UTC 运行
+    steps:
+      - name: Download latest artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dashboard-data-${{ github.run_id }}
+          path: ./summary
+
+      - name: Generate daily summary
+        run: |
+          echo "## UPSI Daily Summary" > summary.md
+          echo "Generated at: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> summary.md
+          echo "" >> summary.md
+          echo "\`\`\`json" >> summary.md
+          cat ./summary/dashboard_data_v2.json >> summary.md
+          echo "\`\`\`" >> summary.md
+
+      - name: Upload summary to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: daily-${{ github.run_id }}
+          name: "UPSI Daily Snapshot ${{ github.run_id }}"
+          body_path: summary.md
+          files: ./summary/dashboard_data_v2.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

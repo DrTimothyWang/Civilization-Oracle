@@ -1,0 +1,131 @@
+version: 1
+plan:
+  name: "v3.0 全模块闭环验证"
+  max_concurrency: 4
+  max_consecutive_failures: 2
+  max_cycles: 10
+
+tasks:
+  - id: decade-psi-api
+    title: "十年级PSI全量真实API调用"
+    prompt: |
+      目标：对96个十年窗口完成MiniMax真实API调用，生成output/decade_psi_all_api.json
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模
+
+      执行步骤：
+      1. cd /Users/tianjangwang/Documents/历史事件预测建模 && python3 -u decade_psi_analysis.py --output output/decade_psi_all_api.json 2>&1 | tee /tmp/decade_api_run.log &
+      2. 每隔15秒检查：ls -la output/decade_psi_all_api.json 2>/dev/null && break
+      3. 一旦文件存在：python3 scripts/verify_decade_output.py
+      4. 写deliverable.md
+
+      注意：如果30分钟内未完成96窗，记录已完成数量并标记为部分完成。
+    assigned_to: general
+    verified_by: general
+    verify_prompt: |
+      验证decade-psi-api输出：
+      1. 检查output/decade_psi_all_api.json是否存在
+      2. 验证记录数（应>=90或部分完成）
+      3. 验证PSI值范围合理（0.1-0.8）
+    timeout_ms: 2400000
+
+  - id: tkg-icews-training
+    title: "TKG v3.0融合算法验证"
+    prompt: |
+      目标：验证TKG v3.0融合算法的MRR达到0.36+
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模
+
+      执行：cd /Users/tianjangwang/Documents/历史事件预测建模 && python3 scripts/verify_tkg_fusion.py
+
+      验证项：
+      - DiMNet/TransFIR/TGL-LLM三个模块都能实例化
+      - 融合权重：DiMNet 45%, TransFIR 40%, TGL-LLM 15%
+      - Fusion_MRR在0.36-0.40范围
+
+      写deliverable.md记录验证结果。
+    assigned_to: general
+    verified_by: general
+    verify_prompt: |
+      验证TKG融合结果：
+      1. 检查scripts/verify_tkg_fusion.py执行输出
+      2. 确认三个模块实例化成功
+      3. 确认Fusion_MRR在0.36-0.40
+    timeout_ms: 1800000
+
+  - id: four-diagnosis-real
+    title: "四诊合参2.0真实数据闭环验证"
+    prompt: |
+      目标：用CNHGIS地理编码验证四诊合参2.0框架
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模
+
+      执行：cd /Users/tianjangwang/Documents/历史事件预测建模 && python3 scripts/verify_four_diagnosis.py
+
+      验证项：
+      - CNHGIS至少6/8个地名成功解析
+      - 四诊输出包含望/闻/问/切/融合PSI/一致性
+      - 一致性>=0.7判为accept
+
+      写deliverable.md记录验证结果。
+    assigned_to: general
+    verified_by: general
+    verify_prompt: |
+      验证四诊合参结果：
+      1. 检查scripts/verify_four_diagnosis.py执行输出
+      2. 确认CNHGIS至少6/8个地名成功
+      3. 确认一致性>=0.7
+    timeout_ms: 1800000
+
+  - id: a2a-closure
+    title: "A2A Server多Agent协作闭环验证"
+    prompt: |
+      目标：验证mcp_a2a协议栈能完成多Agent协作
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模
+
+      执行：cd /Users/tianjangwang/Documents/历史事件预测建模 && python3 scripts/verify_a2a.py
+
+      验证项：
+      - AGENT_REGISTRY包含至少7个Agent
+      - A2A任务创建返回有效task_id
+      - Orchestrator返回结果
+
+      写deliverable.md记录验证结果。
+    assigned_to: general
+    verified_by: general
+    verify_prompt: |
+      验证A2A协议栈结果：
+      1. 检查scripts/verify_a2a.py执行输出
+      2. 确认AGENT_REGISTRY>=7
+      3. 确认Orchestrator返回结果
+    timeout_ms: 1800000
+
+  - id: paper-final
+    title: "中文论文终稿v1.0整合"
+    prompt: |
+      目标：基于四个模块的验证结果，写出完整的Civilization-Oracle v3.0中文论文终稿
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模
+
+      输入材料：
+      1. 论文草稿_Civilization-Oracle_v0.5.md
+      2. output/decade_psi_all_api.json 或 output/decade_psi_all_mock.json
+      3. P7_里程碑报告_v3.0.md
+      4. scripts/verify_*.py各模块验证结果
+
+      论文结构（8章，约15000字）：
+      1. 引言 2. 相关工作 3. 方法论 4. 数据来源
+      5. 实验结果（PSI五朝分析+十年级时间线+时序关系+四诊合参+TKG MRR+敏感性分析）
+      6. 讨论 7. 伦理考量 8. 结论
+
+      要求：
+      - 摘要300字，表格数字与实际数据一致
+      - 参考文献>30篇
+      - 附录：CNHGIS坐标验证表
+
+      输出：论文草稿_Civilization-Oracle_v1.0.md
+    assigned_to: general
+    depends_on: [decade-psi-api, tkg-icews-training, four-diagnosis-real, a2a-closure]
+    verified_by: general
+    verify_prompt: |
+      验证论文v1.0.md：
+      1. 行数>800（wc -l）
+      2. 8章完整（grep -c）
+      3. 参考文献>30篇
+    timeout_ms: 1800000

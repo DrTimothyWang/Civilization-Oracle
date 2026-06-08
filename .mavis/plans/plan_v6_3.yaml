@@ -1,0 +1,109 @@
+version: 1
+plan:
+  name: UPSI v6.3 长期研究 3 轨道并行
+  max_concurrency: 3
+  max_consecutive_failures: 2
+  max_cycles: 3
+  verifier_config:
+    default_verifiers:
+    - verifier
+    audit_sample_rate: 0.0
+tasks:
+- id: track-a-nature-paper
+  title: Nature 主文精炼 4 页投稿稿
+  prompt: '你是论文写作专家。基于现有材料精炼 Nature 主文 4 页。
+
+
+    参考资料:
+
+    - /Users/wangzr/Desktop/历史事件预测建模/v6.1/PNAS_MANUSCRIPT.md
+
+    - /Users/wangzr/Desktop/历史事件预测建模/v6.1/NATURE_SI_V61.md
+
+    - /Users/wangzr/Desktop/历史事件预测建模/v6.1/V61_FINAL_REPORT.md
+
+    - /Users/wangzr/Desktop/历史事件预测建模/v6.1/data/hbeta_recheck_v61.json
+
+    - /Users/wangzr/Desktop/历史事件预测建模/v6.1/data/cdli_psi_real_v61.json
+
+
+    要求:
+
+    1. 精炼为 4 页 (2500-3000 字), Methods 限 800 词
+
+    2. 主文聚焦 7 域 100% 召回 + 7 大反直觉发现
+
+    3. 物理指标 (H=1.57 fBm + H=0.45 EMH) 在主文简化到 1-2 句
+
+    4. 必须包含 7 反直觉发现 + 真正未来盲测
+
+    5. 引用 v6.1.1 修正 (避免 v6.0 的 R/S 偏差错误)
+
+    6. 3-4 个 Figure (建议: 6 域汇总, 7 反直觉, 物理谱, 实时 Dashboard)
+
+
+    输出:
+
+    - 保存到 /Users/wangzr/Desktop/历史事件预测建模/v6.3/NATURE_MAIN.md
+
+    - 报告字数
+
+    - 列出 3-4 个 Figure 的内容描述'
+  assigned_to: general
+  verified_by: verifier
+  verify_prompt: '重新阅读 Nature 主文 vs PNAS 6 页稿, 验证:
+
+    1. 字数不超过 3000 词
+
+    2. 物理指标未做强声明
+
+    3. 7 大反直觉发现完整
+
+    4. CDLI 5500 年验证包含
+
+    5. 真正未来盲测 (2020-2023 到 2024-2025) 提到
+
+    报告 PASS/FAIL 加问题列表'
+  timeout_ms: 1800000
+- id: track-b-textbook
+  title: 跨学科教科书大纲
+  prompt: "你是跨学科教科书设计专家。基于 UPSI 项目设计一本完整的教科书大纲。\n\n书名候选: 复杂系统与社会金融 - 从历史到大数据\n\n目标读者: 研究生 + 政策研究者 + 跨学科学者\n\n参考资料:\n- /Users/wangzr/Desktop/历史事件预测建模/v6.2_README.md\n- /Users/wangzr/Desktop/历史事件预测建模/v6.1/PHYSICS_DOWNGRADE.md\n\
+    - /Users/wangzr/Desktop/历史事件预测建模/v6.1/NATURE_SI_V61.md\n- /Users/wangzr/Desktop/历史事件预测建模/v6.1/PNAS_MANUSCRIPT.md\n\n要求:\n1. 设计 12-15 章, 每章 8000-10000 字\n2. 覆盖六个核心部分:\n   - 第一部分 理论基础 (复杂系统, 临界现象, 分形市场)\n\
+    \   - 第二部分 跨域历史 (中华/美索/罗马/中国金融/全球金融/全球政治)\n   - 第三部分 方法论 (PSI 公式, H 修正, 4 层因果推断)\n   - 第四部分 反直觉发现 (7 大发现)\n   - 第五部分 政策应用 (央行 MPA, FSB EWE, BIS SupTech)\n   - 第六部分 未来方向 (LLM, 数字人文, 跨学科)\n3. 每章列 3-5\
+    \ 个子节\n4. 每章附 教学目标 + 关键文献 + 习题\n5. 列出全书需要的图表 (按章节)\n6. 估算全书写作用时 (12 个月)\n7. 列出 5-8 个目标出版社\n\n输出:\n- 保存到 /Users/wangzr/Desktop/历史事件预测建模/v6.3/TEXTBOOK_OUTLINE.md\n- 完整大纲 + 时序规划 + 资源需求"
+  assigned_to: general
+  verified_by: verifier
+  verify_prompt: '验证教科书大纲:
+
+    1. 12-15 章结构合理
+
+    2. 覆盖 6 个核心部分
+
+    3. 每章有教学目标 + 关键文献 + 习题
+
+    4. 时序规划可行
+
+    5. 出版社选择合适
+
+    报告 PASS/FAIL 加改进建议'
+  timeout_ms: 1800000
+- id: track-c-oracc
+  title: ORACC ETCSL ePSD 公开数据补全美索不达米亚
+  prompt: "你是历史数据集成专家。UPSI v6.2 已用 CDLI GitHub dumps (33 万条) 验证美索\n不达米亚 PSI。但需要补全其他公开学术数据源, 因为 CDLI GitHub 2022 年后\n不再更新, 且只有 catalogue 没有 text。\n\n需要探索的免费公开数据源:\n1. ORACC (Open Richly Annotated Cuneiform\
+    \ Corpus, 宾大博物馆)\n   - 主站: http://oracc.org/\n   - 已知子项目: epsd2, riao, etcsl, dcclt, etc.\n2. ETCSL (Electronic Text Corpus of Sumerian Literature, 牛津)\n   - http://etcsl.orinst.ox.ac.uk/\n3. ePSD (electronic\
+    \ Pennsylvania Sumerian Dictionary)\n   - https://psd.museum.upenn.edu/\n4. BDTNS (Database of Neo-Sumerian Texts, CSIC Madrid)\n   - http://bdts.filol.csic.es/\n5. Pleiades (古代地理)\n   - https://pleiades.stoa.org/\n\
+    6. CDLI Tablet/Image Server (ATF 转录)\n   - https://cdli.ucla.edu/\n\n要求:\n1. 实际测试每个 API 的可访问性\n2. 评估数据完整度 (年代, genre, 内容)\n3. 估算可拉取的记录数\n4. 与 CDLI GitHub dumps 互补性\n5. 写一个 ORACC 数据拉取脚本 (若 API 可用)\n\
+    6. 整合到 UPSI 框架: 拉取, PSI 计算, 与 CDLI 合并\n\n输出:\n- 探索报告: /Users/wangzr/Desktop/历史事件预测建模/v6.3/ORACC_EXPLORATION.md\n- 若可能, 数据拉取脚本: /Users/wangzr/Desktop/历史事件预测建模/v6.3/fetch_oracc.py\n- 评估: 哪些数据源可用, 哪些不可用,\
+    \ 互补价值"
+  assigned_to: historian
+  verified_by: verifier
+  verify_prompt: '验证 ORACC 探索:
+
+    1. 是否实际测试了 API 可访问性
+
+    2. 评估是否合理
+
+    3. 脚本是否真的能拉取数据
+
+    报告 PASS/FAIL 加实际可用的数据源列表'
+  timeout_ms: 1800000

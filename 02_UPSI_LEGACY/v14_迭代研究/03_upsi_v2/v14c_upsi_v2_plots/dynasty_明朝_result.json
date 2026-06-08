@@ -1,0 +1,108 @@
+{
+  "n_points": 29,
+  "psi_high_threshold": 0.6244017061027776,
+  "spi_high_threshold": 0.4405172317476041,
+  "quadrant_distribution": {
+    "Gradual Decline": 6,
+    "Stable": 22,
+    "Sudden Crisis": 1
+  },
+  "n_alerts": 11,
+  "alerts": [
+    {
+      "time_idx": 1,
+      "year_label": 1370,
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 4,
+      "year_label": 1400,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 5,
+      "year_label": 1410,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 6,
+      "year_label": 1420,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 7,
+      "year_label": 1430,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 8,
+      "year_label": 1440,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 9,
+      "year_label": 1450,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 14,
+      "year_label": 1500,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 16,
+      "year_label": 1520,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 19,
+      "year_label": 1550,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 20,
+      "year_label": 1560,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    }
+  ],
+  "metadata": {
+    "domain": "chinese_dynasty",
+    "dynasty": "明朝",
+    "source_file": "/Users/wangzr/Desktop/历史事件预测建模/v14_迭代研究/../output/decade_psi_summary.json",
+    "n_decades": 29,
+    "note": "SPI computed as proxy from PSI decade-to-decade derivative."
+  }
+}

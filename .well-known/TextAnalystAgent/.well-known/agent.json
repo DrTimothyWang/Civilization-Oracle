@@ -1,0 +1,56 @@
+{
+  "name": "TextAnalystAgent",
+  "description": "古籍 NLP、情感分析、隐喻识别。基于 MiniMax API 进行古文语义分析。",
+  "version": "3.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateDiff": false
+  },
+  "skills": [
+    {
+      "id": "sentiment_analysis",
+      "name": "古文情感分析",
+      "description": "对古文文本进行情感极性分析，返回 -1 到 1 的分数",
+      "tags": [
+        "sentiment",
+        "classical_chinese",
+        "nlp",
+        "minimax"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "metaphor_detection",
+      "name": "隐喻识别",
+      "description": "基于 CPM-KB 知识库识别文本中的概念隐喻，输出心理状态映射",
+      "tags": [
+        "metaphor",
+        "cpm-kb",
+        "psychology",
+        "classical_chinese"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "api_key",
+    "header": "X-API-Key"
+  },
+  "endpoint": "http://localhost:8003/a2a",
+  "metadata": {
+    "generated_at": "2026-05-30T15:55:07.167984Z",
+    "four_diagnosis": "问",
+    "role": "nlp"
+  }
+}

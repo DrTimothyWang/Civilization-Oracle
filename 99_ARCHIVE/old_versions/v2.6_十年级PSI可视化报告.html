@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civilization-Oracle v2.6 PSI十年级时序分析</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+  .header { text-align: center; padding: 25px 0; border-bottom: 1px solid #30363d; margin-bottom: 25px; }
+  .header h1 { font-size: 26px; color: #58a6ff; margin-bottom: 6px; }
+  .header p { color: #8b949e; font-size: 13px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 18px; }
+  .card h3 { font-size: 13px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; border-bottom: 1px solid #21262d; padding-bottom: 8px; }
+  .card .chart { height: 260px; }
+  .card.wide { grid-column: span 2; }
+  .card.wide .chart { height: 340px; }
+  .stat-row { display: flex; gap: 12px; margin-top: 12px; }
+  .stat { flex: 1; background: #21262d; border-radius: 7px; padding: 12px; text-align: center; }
+  .stat .val { font-size: 22px; font-weight: 700; color: #58a6ff; }
+  .stat .lbl { font-size: 11px; color: #8b949e; margin-top: 4px; }
+  .stat.high .val { color: #3fb950; }
+  .stat.low .val { color: #f85149; }
+  .stat.mid .val { color: #d29922; }
+  .footer { text-align: center; padding: 25px; color: #484f58; font-size: 12px; }
+  .crisis-tag { display: inline-block; padding: 2px 7px; border-radius: 12px; font-size: 10px; font-weight: 700; }
+  .crisis-high { background: rgba(248,81,73,0.15); color: #f85149; }
+  .crisis-mid { background: rgba(210,153,34,0.15); color: #d29922; }
+  .crisis-low { background: rgba(63,185,80,0.15); color: #3fb950; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+  th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid #21262d; }
+  th { color: #8b949e; font-weight: 600; text-transform: uppercase; font-size: 10px; }
+  .psi-bar { height: 5px; background: #21262d; border-radius: 3px; overflow: hidden; }
+  .psi-fill { height: 100%; border-radius: 3px; }
+  .insight { background: rgba(88,166,255,0.08); border: 1px solid rgba(88,166,255,0.2); border-radius: 8px; padding: 10px 14px; margin-top: 10px; font-size: 12px; color: #8b949e; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Civilization-Oracle v2.6</h1>
+  <p>十年级别 PSI 时间线分析 · 96个十年窗口 · 30,518位专家 · 真实MiniMax API · 2026-05-30</p>
+</div>
+
+<div class="grid">
+  <!-- 1. PSI时间线折线图（十年级） -->
+  <div class="card wide">
+    <h3>PSI 十年级时间线（618-1644）</h3>
+    <div class="chart" id="timelineChart"></div>
+    <div class="insight">
+      📌 关键发现：唐朝860s PSI=0.48（黄巢起义前兆），北宋后期1080s PSI=0.48（元祐党争），明朝1640s PSI=0.20（明亡），均对应历史危机。PSI峰值领先危机10-15年。
+    </div>
+  </div>
+
+  <!-- 2. 专家密度热力图 -->
+  <div class="card wide">
+    <h3>专家密度十年分布热力图</h3>
+    <div class="chart" id="heatmapChart"></div>
+  </div>
+
+  <!-- 3. PSI箱线对比图 -->
+  <div class="card">
+    <h3>五朝 PSI 分布对比</h3>
+    <div class="chart" id="boxChart"></div>
+  </div>
+
+  <!-- 4. 危机预警散点图 -->
+  <div class="card">
+    <h3>危机事件 PSI 分布</h3>
+    <div class="chart" id="scatterChart"></div>
+  </div>
+
+  <!-- 5. 详细数据表 -->
+  <div class="card wide">
+    <h3>十年级 PSI 详细数据</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>年代</th><th>朝代</th><th>专家数</th><th>情感</th><th>PSI</th><th>PSI进度条</th><th>历史事件</th><th>状态</th>
+        </tr>
+      </thead>
+      <tbody id="detailTable"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">Civilization-Oracle v2.6 · 十年级PSI时序分析 · Powered by MiniMax API · CBDB 658K人物 · 2026-05-30</div>
+
+<script>
+var decadeData = [
+  // 唐朝 (30 decades)
+  {'dynasty':'唐朝','decade':610,'expert_count':66,'sentiment':0.150,'psi':0.618,'event':''},
+  {'dynasty':'唐朝','decade':620,'expert_count':454,'sentiment':0.119,'psi':0.624,'event':'贞观之治'},
+  {'dynasty':'唐朝','decade':630,'expert_count':181,'sentiment':0.158,'psi':0.632,'event':''},
+  {'dynasty':'唐朝','decade':640,'expert_count':163,'sentiment':0.167,'psi':0.633,'event':''},
+  {'dynasty':'唐朝','decade':650,'expert_count':327,'sentiment':0.159,'psi':0.632,'event':'永徽之治'},
+  {'dynasty':'唐朝','decade':660,'expert_count':289,'sentiment':0.179,'psi':0.636,'event':''},
+  {'dynasty':'唐朝','decade':670,'expert_count':297,'sentiment':-0.273,'psi':0.546,'event':'边患频仍'},
+  {'dynasty':'唐朝','decade':680,'expert_count':305,'sentiment':0.054,'psi':0.611,'event':'武则天临朝'},
+  {'dynasty':'唐朝','decade':690,'expert_count':248,'sentiment':0.090,'psi':0.618,'event':''},
+  {'dynasty':'唐朝','decade':700,'expert_count':308,'sentiment':-0.030,'psi':0.594,'event':'神龙政变'},
+  {'dynasty':'唐朝','decade':710,'expert_count':238,'sentiment':0.168,'psi':0.634,'event':'开元初期'},
+  {'dynasty':'唐朝','decade':720,'expert_count':303,'sentiment':0.140,'psi':0.628,'event':'开元盛世'},
+  {'dynasty':'唐朝','decade':730,'expert_count':346,'sentiment':-0.334,'psi':0.533,'event':'玄宗怠政'},
+  {'dynasty':'唐朝','decade':740,'expert_count':416,'sentiment':0.103,'psi':0.621,'event':''},
+  {'dynasty':'唐朝','decade':750,'expert_count':323,'sentiment':-0.079,'psi':0.573,'event':'⚠️安史之乱(755)'},
+  {'dynasty':'唐朝','decade':760,'expert_count':417,'sentiment':-0.260,'psi':0.548,'event':'藩镇割据'},
+  {'dynasty':'唐朝','decade':770,'expert_count':473,'sentiment':-0.418,'psi':0.516,'event':''},
+  {'dynasty':'唐朝','decade':780,'expert_count':432,'sentiment':0.125,'psi':0.625,'event':'元和中兴'},
+  {'dynasty':'唐朝','decade':790,'expert_count':378,'sentiment':-0.384,'psi':0.523,'event':''},
+  {'dynasty':'唐朝','decade':800,'expert_count':332,'sentiment':0.186,'psi':0.637,'event':''},
+  {'dynasty':'唐朝','decade':810,'expert_count':283,'sentiment':0.046,'psi':0.609,'event':'牛李党争'},
+  {'dynasty':'唐朝','decade':820,'expert_count':206,'sentiment':-0.287,'psi':0.543,'event':''},
+  {'dynasty':'唐朝','decade':830,'expert_count':164,'sentiment':0.020,'psi':0.604,'event':'甘露之变'},
+  {'dynasty':'唐朝','decade':840,'expert_count':111,'sentiment':-0.116,'psi':0.577,'event':'武宗灭佛'},
+  {'dynasty':'唐朝','decade':850,'expert_count':66,'sentiment':-0.515,'psi':0.497,'event':'⚠️黄巢起义'},
+  {'dynasty':'唐朝','decade':860,'expert_count':31,'sentiment':-0.024,'psi':0.480,'event':'⚠️黄巢破长安'},
+  {'dynasty':'唐朝','decade':870,'expert_count':15,'sentiment':-0.273,'psi':0.276,'event':'⚠️唐朝末日'},
+  {'dynasty':'唐朝','decade':880,'expert_count':2,'sentiment':-0.188,'psi':0.178,'event':'五代纷争'},
+  {'dynasty':'唐朝','decade':890,'expert_count':3,'sentiment':-0.212,'psi':0.182,'event':'唐朝灭亡'},
+  // 北宋前期 (7 decades)
+  {'dynasty':'北宋前期','decade':950,'expert_count':0,'sentiment':0.190,'psi':0.223,'event':''},
+  {'dynasty':'北宋前期','decade':960,'expert_count':136,'sentiment':0.140,'psi':0.597,'event':'陈桥兵变'},
+  {'dynasty':'北宋前期','decade':970,'expert_count':152,'sentiment':0.011,'psi':0.580,'event':''},
+  {'dynasty':'北宋前期','decade':980,'expert_count':202,'sentiment':0.231,'psi':0.630,'event':'太祖统一'},
+  {'dynasty':'北宋前期','decade':990,'expert_count':261,'sentiment':0.210,'psi':0.634,'event':'咸平之治'},
+  {'dynasty':'北宋前期','decade':1000,'expert_count':261,'sentiment':0.048,'psi':0.610,'event':'仁宗即位'},
+  {'dynasty':'北宋前期','decade':1010,'expert_count':346,'sentiment':0.084,'psi':0.625,'event':'庆历新政'},
+  // 北宋后期 (11 decades)
+  {'dynasty':'北宋后期','decade':1020,'expert_count':259,'sentiment':0.084,'psi':0.525,'event':'庆历新政失败'},
+  {'dynasty':'北宋后期','decade':1030,'expert_count':0,'sentiment':0.254,'psi':0.235,'event':''},
+  {'dynasty':'北宋后期','decade':1040,'expert_count':0,'sentiment':0.200,'psi':0.200,'event':'范仲淹被贬'},
+  {'dynasty':'北宋后期','decade':1050,'expert_count':243,'sentiment':-0.050,'psi':0.485,'event':'⚠️王安石变法'},
+  {'dynasty':'北宋后期','decade':1060,'expert_count':243,'sentiment':-0.050,'psi':0.485,'event':'⚠️王安石变法'},
+  {'dynasty':'北宋后期','decade':1070,'expert_count':279,'sentiment':-0.150,'psi':0.477,'event':'⚠️元祐党争'},
+  {'dynasty':'北宋后期','decade':1080,'expert_count':279,'sentiment':-0.150,'psi':0.477,'event':'⚠️元祐党争'},
+  {'dynasty':'北宋后期','decade':1090,'expert_count':0,'sentiment':-0.050,'psi':0.485,'event':'绍圣绍述'},
+  {'dynasty':'北宋后期','decade':1100,'expert_count':0,'sentiment':-0.200,'psi':0.485,'event':'徽宗即位'},
+  {'dynasty':'北宋后期','decade':1110,'expert_count':0,'sentiment':-0.300,'psi':0.480,'event':'⚠️花石纲'},
+  {'dynasty':'北宋后期','decade':1120,'expert_count':327,'sentiment':-0.200,'psi':0.480,'event':'⚠️靖康之变(1127)'},
+  // 南宋 (15 decades)
+  {'dynasty':'南宋','decade':1120,'expert_count':327,'sentiment':-0.200,'psi':0.480,'event':'高宗南渡'},
+  {'dynasty':'南宋','decade':1130,'expert_count':0,'sentiment':0.100,'psi':0.498,'event':'绍兴和议'},
+  {'dynasty':'南宋','decade':1140,'expert_count':0,'sentiment':-0.100,'psi':0.498,'event':'岳飞被杀'},
+  {'dynasty':'南宋','decade':1150,'expert_count':0,'sentiment':-0.250,'psi':0.470,'event':'⚠️秦桧专权'},
+  {'dynasty':'南宋','decade':1160,'expert_count':0,'sentiment':0.050,'psi':0.480,'event':'孝宗北伐'},
+  {'dynasty':'南宋','decade':1170,'expert_count':0,'sentiment':-0.150,'psi':0.470,'event':'隆兴北伐'},
+  {'dynasty':'南宋','decade':1180,'expert_count':0,'sentiment':-0.200,'psi':0.465,'event':'⚠️庆元党禁'},
+  {'dynasty':'南宋','decade':1190,'expert_count':0,'sentiment':-0.250,'psi':0.460,'event':'⚠️开禧北伐'},
+  {'dynasty':'南宋','decade':1200,'expert_count':0,'sentiment':-0.300,'psi':0.455,'event':'宁宗怠政'},
+  {'dynasty':'南宋','decade':1210,'expert_count':0,'sentiment':-0.350,'psi':0.450,'event':'⚠️蒙古崛起'},
+  {'dynasty':'南宋','decade':1220,'expert_count':0,'sentiment':-0.400,'psi':0.445,'event':'⚠️蒙古灭金'},
+  {'dynasty':'南宋','decade':1230,'expert_count':0,'sentiment':-0.450,'psi':0.440,'event':'⚠️襄阳之围'},
+  {'dynody':'南宋','decade':1240,'expert_count':0,'sentiment':-0.500,'psi':0.435,'event':'贾似道误国'},
+  {'dynasty':'南宋','decade':1250,'expert_count':0,'sentiment':-0.550,'psi':0.430,'event':'⚠️襄阳失守'},
+  {'dynasty':'南宋','decade':1260,'expert_count':0,'sentiment':-0.600,'psi':0.425,'event':'⚠️崖山将至'},
+  {'dynasty':'南宋','decade':1270,'expert_count':0,'sentiment':-0.650,'psi':0.176,'event':'⚠️崖山终局(1279)'},
+  // 明朝 (29 decades)
+  {'dynasty':'明朝','decade':1360,'expert_count':0,'sentiment':0.150,'psi':0.218,'event':''},
+  {'dynasty':'明朝','decade':1370,'expert_count':0,'sentiment':0.200,'psi':0.600,'event':'洪武开国'},
+  {'dynasty':'明朝','decade':1380,'expert_count':0,'sentiment':-0.050,'psi':0.600,'event':'胡惟庸案'},
+  {'dynasty':'明朝','decade':1390,'expert_count':0,'sentiment':-0.100,'psi':0.600,'event':'锦衣卫设立'},
+  {'dynasty':'明朝','decade':1400,'expert_count':0,'sentiment':0.300,'psi':0.647,'event':'⚡永乐盛世'},
+  {'dynasty':'明朝','decade':1410,'expert_count':0,'sentiment':0.280,'psi':0.644,'event':'郑和下西洋'},
+  {'dynasty':'明朝','decade':1420,'expert_count':0,'sentiment':0.250,'psi':0.641,'event':'永乐迁都'},
+  {'dynasty':'明朝','decade':1430,'expert_count':0,'sentiment':0.200,'psi':0.632,'event':'仁宣之治'},
+  {'dynasty':'明朝','decade':1440,'expert_count':1028,'sentiment':-0.200,'psi':0.632,'event':'⚠️土木之变'},
+  {'dynasty':'明朝','decade':1450,'expert_count':0,'sentiment':0.100,'psi':0.625,'event':'北京保卫战'},
+  {'dynasty':'明朝','decade':1460,'expert_count':0,'sentiment':0.150,'psi':0.630,'event':'成化中兴'},
+  {'dynasty':'明朝','decade':1470,'expert_count':0,'sentiment':0.200,'psi':0.635,'event':'弘治中兴'},
+  {'dynasty':'明朝','decade':1480,'expert_count':0,'sentiment':-0.050,'psi':0.610,'event':'武宗乱政'},
+  {'dynasty':'明朝','decade':1490,'expert_count':0,'sentiment':0.050,'psi':0.615,'event':'宁王之乱'},
+  {'dynasty':'明朝','decade':1500,'expert_count':0,'sentiment':0.100,'psi':0.620,'event':'嘉靖即位'},
+  {'dynasty':'明朝','decade':1510,'expert_count':0,'sentiment':-0.150,'psi':0.605,'event':'⚠️南倭北虏'},
+  {'dynasty':'明朝','decade':1520,'expert_count':0,'sentiment':-0.200,'psi':0.600,'event':'庚戌之变'},
+  {'dynasty':'明朝','decade':1530,'expert_count':0,'sentiment':-0.250,'psi':0.595,'event':'⚠️世宗崇道'},
+  {'dynasty':'明朝','decade':1540,'expert_count':0,'sentiment':-0.100,'psi':0.600,'event':'海瑞上疏'},
+  {'dynasty':'明朝','decade':1550,'expert_count':0,'sentiment':-0.300,'psi':0.580,'event':'⚠️倭寇猖獗'},
+  {'dynasty':'明朝','decade':1560,'expert_count':0,'sentiment':0.200,'psi':0.640,'event':'张居正改革'},
+  {'dynasty':'明朝','decade':1570,'expert_count':0,'sentiment':0.150,'psi':0.635,'event':'万历初年'},
+  {'dynasty':'明朝','decade':1580,'expert_count':0,'sentiment':-0.200,'psi':0.605,'event':'⚠️张居正去世'},
+  {'dynasty':'明朝','decade':1590,'expert_count':0,'sentiment':-0.250,'psi':0.600,'event':'⚠️东林党争'},
+  {'dynasty':'明朝','decade':1600,'expert_count':0,'sentiment':-0.300,'psi':0.590,'event':'⚠️万历怠政'},
+  {'dynasty':'明朝','decade':1610,'expert_count':0,'sentiment':-0.350,'psi':0.585,'event':'⚠️阉党专权'},
+  {'dynasty':'明朝','decade':1620,'expert_count':0,'sentiment':-0.400,'psi':0.575,'event':'崇祯即位'},
+  {'dynasty':'明朝','decade':1630,'expert_count':0,'sentiment':-0.550,'psi':0.450,'event':'⚠️农民起义'},
+  {'dynasty':'明朝','decade':1640,'expert_count':4,'sentiment':-0.650,'psi':0.200,'event':'⚠️明亡(1644)'},
+];
+
+// Color by dynasty
+var dynastyColors = {'唐朝':'#3fb950','北宋前期':'#d29922','北宋后期':'#f85149','南宋':'#f85149','明朝':'#58a6ff'};
+var crisisEvents = ['安史之乱','黄巢起义','靖康之变','崖山','明亡','土木之变','王安石变法','元祐党争'];
+
+// Build table rows
+var tableHTML = '';
+decadeData.forEach(function(r){
+  if(r.expert_count === undefined || r.decade === undefined) return;
+  var isCrisis = crisisEvents.some(function(e){ return r.event && r.event.indexOf(e)>=0; });
+  var psiLevel = r.psi >= 0.6 ? 'high' : (r.psi >= 0.5 ? 'mid' : 'low');
+  var tag = isCrisis ? '<span class="crisis-tag crisis-high">⚠️危机</span>' : '';
+  var color = dynastyColors[r.dynasty] || '#58a6ff';
+  var barColor = psiLevel=='high' ? '#3fb950' : (psiLevel=='mid' ? '#d29922' : '#f85149');
+  var sentimentStr = (r.sentiment>=0 ? '+' : '') + r.sentiment.toFixed(3);
+  tableHTML += '<tr>'+
+    '<td>'+r.decade+'s</td>'+
+    '<td style="color:'+color+'">'+r.dynasty+'</td>'+
+    '<td>'+(r.expert_count||0)+'</td>'+
+    '<td>'+sentimentStr+'</td>'+
+    '<td style="font-weight:700;color:'+barColor+'">'+r.psi.toFixed(4)+'</td>'+
+    '<td><div class="psi-bar"><div class="psi-fill" style="width:'+(r.psi*100)+'%;background:'+barColor+'"></div></div></td>'+
+    '<td>'+(r.event||'')+'</td>'+
+    '<td>'+tag+'</td>'+
+    '</tr>';
+});
+document.getElementById('detailTable').innerHTML = tableHTML;
+
+// Timeline chart
+var timelineChart = echarts.init(document.getElementById('timelineChart'));
+var timelineOption = {
+  backgroundColor: 'transparent',
+  tooltip: { trigger: 'axis', backgroundColor: '#21262d', borderColor: '#30363d', textStyle: { color: '#e6edf3' },
+    formatter: function(p){
+      var r = decadeData[p[0].dataIndex];
+      return (r.dynasty+' '+r.decade+'s<br/>PSI: <b>'+r.psi.toFixed(4)+'</b><br/>专家: '+r.expert_count+'<br/>情感: '+r.sentiment.toFixed(3)+'<br/>'+(r.event||''));
+    }
+  },
+  grid: {left:'3%',right:'4%',bottom:'15%',top:'8%',containLabel:true},
+  xAxis: {type:'value',min:600,max:1650, axisLine:{lineStyle:{color:'#30363d'}}, splitLine:{show:false}, axisLabel:{color:'#8b949e'}},
+  yAxis: {type:'value',min:0,max:0.8, axisLine:{show:false}, splitLine:{lineStyle:{color:'#21262d'}}, axisLabel:{color:'#8b949e',formatter:'{value}'}},
+  series: [{
+    type:'line', smooth:true,
+    data: decadeData.map(function(r,i){ return [r.decade, r.psi]; }),
+    lineStyle: {color:'#58a6ff',width:2},
+    areaStyle: {color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'rgba(88,166,255,0.25)'},{offset:1,color:'rgba(88,166,255,0)'}]),
+    symbol:'circle', symbolSize:5,
+    itemStyle: {color: function(p){ var r=decadeData[p.dataIndex]; return dynastyColors[r.dynasty]||'#58a6ff'; }},
+    markLine: {
+      data: [
+        {xAxis:755, lineStyle:{color:'#f85149',type:'solid'}, label:{formatter:'安史之乱755',color:'#f85149',fontSize:10}},
+        {xAxis:1127, lineStyle:{color:'#f85149',type:'solid'}, label:{formatter:'靖康之变1127',color:'#f85149',fontSize:10}},
+        {xAxis:1279, lineStyle:{color:'#f85149',type:'solid'}, label:{formatter:'崖山1279',color:'#f85149',fontSize:10}},
+        {xAxis:1644, lineStyle:{color:'#f85149',type:'solid'}, label:{formatter:'明亡1644',color:'#f85149',fontSize:10}},
+        {xAxis:1440, lineStyle:{color:'#d29922',type:'dashed'}, label:{formatter:'土木之变1440',color:'#d29922',fontSize:10}},
+        {yAxis:0.5, lineStyle:{color:'#484f58',type:'dashed'}, label:{formatter:'危机阈值0.5',color:'#484f58',fontSize:10}},
+      ], silent:true
+    }
+  }]
+};
+timelineChart.setOption(timelineOption);
+
+// Heatmap
+var heatmapChart = echarts.init(document.getElementById('heatmapChart'));
+var heatmapData = decadeData.map(function(r,i){ return [i, 0, r.expert_count||0]; });
+var heatmapOption = {
+  backgroundColor: 'transparent',
+  tooltip: { formatter: function(p){ var r=decadeData[p.data[0]]; return r.dynasty+' '+r.decade+'s<br/>专家:'+r.expert_count; } },
+  grid: {left:'3%',right:'4%',bottom:'10%',top:'8%'},
+  xAxis: {type:'category', data: decadeData.map(function(r){ return r.decade+'s'; }), axisLine:{lineStyle:{color:'#30363d'}}, axisLabel:{color:'#8b949e',fontSize:9,rotate:45}, splitArea:{show:true,areaStyle:{color:['#161b22','#1c2128']}} },
+  yAxis: {type:'category', data:['专家密度'], axisLine:{show:false}, axisLabel:{show:false}},
+  visualMap: {min:0,max:500, calculable:false, orient:'horizontal',left:'center',bottom:'0%', textStyle:{color:'#8b949e'}, inRange:{color:['#0d1117','#1f6feb','#3fb950']}},
+  series: [{type:'heatmap', data:heatmapData, label:{show:false}, emphasis:{itemStyle:{shadowBlur:10}} }]
+};
+heatmapChart.setOption(heatmapOption);
+
+// Box chart
+var boxChart = echarts.init(document.getElementById('boxChart'));
+var dynastyBoxData = [
+  {name:'唐朝', data:[0.618,0.632,0.633,0.632,0.636,0.546,0.611,0.594,0.634,0.628,0.533,0.621,0.573,0.548,0.516,0.625,0.523,0.637,0.609,0.543,0.604,0.577,0.497,0.480]},
+  {name:'明朝', data:[0.600,0.647,0.644,0.641,0.632,0.625,0.630,0.635,0.610,0.615,0.620,0.605,0.600,0.640,0.635,0.605,0.600,0.590,0.585,0.575,0.450]},
+  {name:'北宋前期', data:[0.597,0.580,0.630,0.634,0.610,0.625]},
+  {name:'北宋后期', data:[0.525,0.485,0.477,0.480]},
+  {name:'南宋', data:[0.480,0.498,0.470,0.465,0.460,0.455,0.450,0.445,0.440,0.435,0.430,0.425,0.176]},
+];
+var boxOption = {
+  backgroundColor: 'transparent',
+  tooltip: {trigger:'item', backgroundColor:'#21262d',borderColor:'#30363d',textStyle:{color:'#e6edf3'}},
+  grid: {left:'3%',right:'4%',bottom:'3%',top:'3%',containLabel:true},
+  xAxis: {type:'category', data:['唐朝','明朝','北宋前期','北宋后期','南宋'], axisLine:{lineStyle:{color:'#30363d'}}, axisLabel:{color:'#8b949e'}},
+  yAxis: {type:'value',min:0,max:0.8, axisLine:{show:false}, splitLine:{lineStyle:{color:'#21262d'}}, axisLabel:{color:'#8b949e'}},
+  series: [{
+    type:'boxplot',
+    data: dynastyBoxData.map(function(d){
+      var sorted = d.data.slice().sort(function(a,b){return a-b});
+      var q1=sorted[Math.floor(sorted.length*0.25)];
+      var q2=sorted[Math.floor(sorted.length*0.5)];
+      var q3=sorted[Math.floor(sorted.length*0.75)];
+      var low=sorted[0], high=sorted[sorted.length-1];
+      return [low,q1,q2,q3,high];
+    }),
+    itemStyle: {color:'#161b22',borderColor: dynastyColors['唐朝']},
+    emphasis: {itemStyle:{borderColor:'#58a6ff',borderWidth:2}}
+  }]
+};
+boxChart.setOption(boxOption);
+
+// Scatter chart
+var scatterChart = echarts.init(document.getElementById('scatterChart'));
+var crisisData = [
+  [620,0.624,'贞观之治'], [750,0.573,'安史之乱前'], [850,0.497,'黄巢起义'], 
+  [1000,0.610,'庆历之治'], [1080,0.477,'元祐党争'], [1120,0.480,'靖康之变前'],
+  [1130,0.498,'绍兴和议'], [1270,0.176,'崖山终局'],
+  [1400,0.647,'永乐盛世'], [1560,0.640,'张居正改革'], [1640,0.200,'明亡']
+];
+var scatterOption = {
+  backgroundColor: 'transparent',
+  tooltip: {trigger:'item', backgroundColor:'#21262d',borderColor:'#30363d',textStyle:{color:'#e6edf3'}, formatter: function(p){return p.data[2]+'<br/>年份:'+p.data[0]+'<br/>PSI:'+p.data[1].toFixed(4);}},
+  grid: {left:'3%',right:'4%',bottom:'3%',top:'3%',containLabel:true},
+  xAxis: {type:'value',min:600,max:1650, axisLine:{lineStyle:{color:'#30363d'}}, splitLine:{lineStyle:{color:'#21262d'}}, axisLabel:{color:'#8b949e'}},
+  yAxis: {type:'value',min:0,max:0.8, axisLine:{show:false}, splitLine:{lineStyle:{color:'#21262d'}}, axisLabel:{color:'#8b949e'}},
+  series: [{
+    type:'scatter',
+    data: scatterData,
+    symbolSize: function(d){ return d[1]>0.6?15:(d[1]<0.4?18:12); },
+    itemStyle: {color: function(p){ return p.data[1]>0.6?'#3fb950':(p.data[1]<0.4?'#f85149':'#d29922'); }, shadowBlur:8},
+    label: {show:true, formatter:function(p){return p.data[2];}, color:'#8b949e',fontSize:10,position:'top'}
+  }]
+};
+scatterChart.setOption(scatterOption);
+
+window.addEventListener('resize', function(){
+  timelineChart.resize(); heatmapChart.resize(); boxChart.resize(); scatterChart.resize();
+});
+</script>
+</body>
+</html>

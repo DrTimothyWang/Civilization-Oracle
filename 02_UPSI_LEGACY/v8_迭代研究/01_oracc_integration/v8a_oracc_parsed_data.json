@@ -1,0 +1,601 @@
+{
+  "project_stats": {
+    "dcclt": {
+      "total": 10215,
+      "with_year": 8250,
+      "exact_year": 0,
+      "periods": {
+        "Old Babylonian": 5302,
+        "Neo-Assyrian": 1232,
+        "Unknown": 735,
+        "Uruk III": 689,
+        "Middle Babylonian": 651,
+        "Neo-Babylonian": 484,
+        "ED IIIa": 282,
+        "Ebla": 208,
+        "First Millennium": 171,
+        "Middle Assyrian": 131
+      }
+    },
+    "riao": {
+      "total": 1927,
+      "with_year": 1927,
+      "exact_year": 1006,
+      "periods": {
+        "Neo-Assyrian": 1505,
+        "Middle Assyrian": 297,
+        "Old Assyrian": 122,
+        "Akkadian": 2,
+        "Ur III": 1
+      }
+    },
+    "rinap": {
+      "total": 1037,
+      "with_year": 1037,
+      "exact_year": 536,
+      "periods": {
+        "Neo-Assyrian": 1037
+      }
+    },
+    "saao": {
+      "total": 5055,
+      "with_year": 5055,
+      "exact_year": 3308,
+      "periods": {
+        "Neo-Assyrian": 5055
+      }
+    },
+    "etcsri": {
+      "total": 1802,
+      "with_year": 1802,
+      "exact_year": 0,
+      "periods": {
+        "Ur III": 993,
+        "Early Dynastic": 450,
+        "Old Babylonian": 293,
+        "Akkadian": 66
+      }
+    },
+    "epsd2-admin-ed3b": {
+      "total": 3477,
+      "with_year": 3477,
+      "exact_year": 1676,
+      "periods": {
+        "Early Dynastic": 3472,
+        "Akkadian": 4,
+        "Ebla": 1
+      }
+    },
+    "epsd2-admin-oakk": {
+      "total": 5472,
+      "with_year": 5462,
+      "exact_year": 27,
+      "periods": {
+        "Akkadian": 5455,
+        "Unknown": 10,
+        "Ur III": 5,
+        "Early Dynastic": 1,
+        "Old Babylonian": 1
+      }
+    },
+    "epsd2-literary": {
+      "total": 1254,
+      "with_year": 1239,
+      "exact_year": 2,
+      "periods": {
+        "Old Babylonian": 1226,
+        "Unknown": 13,
+        "Neo-Babylonian": 5,
+        "Middle Babylonian": 4,
+        "Neo-Assyrian": 3,
+        "Uncertain": 2,
+        "Ur III": 1
+      }
+    },
+    "epsd2-royal": {
+      "total": 1928,
+      "with_year": 1927,
+      "exact_year": 1,
+      "periods": {
+        "Ur III": 992,
+        "Early Dynastic": 445,
+        "Old Babylonian": 362,
+        "Akkadian": 83,
+        "Neo-Assyrian": 23,
+        "Neo-Babylonian": 22,
+        "Unknown": 1
+      }
+    },
+    "epsd2-praxis-varia": {
+      "total": 3,
+      "with_year": 3,
+      "exact_year": 0,
+      "periods": {
+        "Ur III": 2,
+        "Early Dynastic": 1
+      }
+    },
+    "epsd2-admin-ur3": {
+      "total": 80181,
+      "with_year": 80165,
+      "exact_year": 62192,
+      "periods": {
+        "Ur III": 79974,
+        "Old Babylonian": 178,
+        "Unknown": 13,
+        "Akkadian": 6,
+        "Neo-Assyrian": 4,
+        "fake": 2,
+        "Middle Babylonian": 2,
+        "Neo-Babylonian": 1,
+        "Pre-Uruk V": 1
+      }
+    }
+  },
+  "period_distribution": {
+    "Uruk III": 689,
+    "Uruk IV": 11,
+    "ED I-II": 9,
+    "ED IIIa": 282,
+    "ED IIIb": 23,
+    "Old Babylonian": 7362,
+    "Ur III": 82006,
+    "Akkadian": 5661,
+    "Ebla": 209,
+    "Neo-Assyrian": 8859,
+    "Unknown": 772,
+    "Middle Babylonian": 657,
+    "Neo-Babylonian": 512,
+    "Uncertain": 33,
+    "Middle Assyrian": 428,
+    "Hellenistic": 49,
+    "Late Babylonian": 77,
+    "Achaemenid": 3,
+    "Old Assyrian": 123,
+    "Archaic": 14,
+    "Early Dynastic": 4398,
+    "First Millennium": 171,
+    "fake": 2,
+    "Pre-Uruk V": 1
+  },
+  "event_coverage": [
+    {
+      "event": "Gutian入侵",
+      "year": -2190,
+      "target_periods": [
+        "Akkadian",
+        "Ur III",
+        "Early Dynastic"
+      ],
+      "covered_periods": [
+        "Akkadian"
+      ],
+      "has_period_data": true,
+      "nearby_count": 5652,
+      "period_nearby_count": 5661,
+      "note": "可能超出所有数据范围"
+    },
+    {
+      "event": "Ur III衰亡/Elamite入侵",
+      "year": -2004,
+      "target_periods": [
+        "Ur III"
+      ],
+      "covered_periods": [
+        "Ur III"
+      ],
+      "has_period_data": true,
+      "nearby_count": 77841,
+      "period_nearby_count": 82006,
+      "note": "v7已验证"
+    },
+    {
+      "event": "Old Babylonian终结",
+      "year": -1595,
+      "target_periods": [
+        "Old Babylonian",
+        "Middle Babylonian",
+        "Kassite"
+      ],
+      "covered_periods": [
+        "Old Babylonian",
+        "Middle Babylonian"
+      ],
+      "has_period_data": true,
+      "nearby_count": 0,
+      "period_nearby_count": 8019,
+      "note": "需要MB/Kassite数据"
+    },
+    {
+      "event": "Hammurabi死后帝国分裂",
+      "year": -1750,
+      "target_periods": [
+        "Old Babylonian"
+      ],
+      "covered_periods": [
+        "Old Babylonian"
+      ],
+      "has_period_data": true,
+      "nearby_count": 7484,
+      "period_nearby_count": 7362,
+      "note": "需要OB数据"
+    },
+    {
+      "event": "Assyria危机/新亚述灭亡",
+      "year": -612,
+      "target_periods": [
+        "Neo-Assyrian"
+      ],
+      "covered_periods": [
+        "Neo-Assyrian"
+      ],
+      "has_period_data": true,
+      "nearby_count": 3288,
+      "period_nearby_count": 8859,
+      "note": "需要NA数据"
+    },
+    {
+      "event": "Neo-Babylonian陷落",
+      "year": -539,
+      "target_periods": [
+        "Neo-Babylonian",
+        "Achaemenid"
+      ],
+      "covered_periods": [
+        "Neo-Babylonian",
+        "Achaemenid"
+      ],
+      "has_period_data": true,
+      "nearby_count": 594,
+      "period_nearby_count": 515,
+      "note": "需要NB数据"
+    },
+    {
+      "event": "Kassite王朝终结",
+      "year": -1155,
+      "target_periods": [
+        "Kassite",
+        "Middle Babylonian"
+      ],
+      "covered_periods": [
+        "Middle Babylonian"
+      ],
+      "has_period_data": true,
+      "nearby_count": 413,
+      "period_nearby_count": 657,
+      "note": "需要Kassite/MB数据"
+    },
+    {
+      "event": "Sumerian城市Umma衰落",
+      "year": -2037,
+      "target_periods": [
+        "Ur III"
+      ],
+      "covered_periods": [
+        "Ur III"
+      ],
+      "has_period_data": true,
+      "nearby_count": 77841,
+      "period_nearby_count": 82006,
+      "note": "Ur III数据"
+    }
+  ],
+  "event_validation": [
+    {
+      "event": "Gutian入侵",
+      "year": -2190,
+      "has_data": true,
+      "nearby_exact_count": 0,
+      "nearby_period_count": 26456,
+      "event_density": 13228.0,
+      "avg_density": 10986.3,
+      "density_ratio": 1.2,
+      "window_count": 3,
+      "median_density": 0,
+      "event_window_density": 0,
+      "window_ratio": 0,
+      "max_ratio": 0,
+      "global_sfd_z": null,
+      "period_sfd_z": null,
+      "is_trough": false,
+      "conclusion": "时期数据覆盖但非SFD低谷(无精确年份)"
+    },
+    {
+      "event": "Ur III衰亡/Elamite入侵",
+      "year": -2004,
+      "has_data": true,
+      "nearby_exact_count": 53380,
+      "nearby_period_count": 77838,
+      "event_density": 38919.0,
+      "avg_density": 75931.5,
+      "density_ratio": 0.51,
+      "window_count": 2,
+      "median_density": 0,
+      "event_window_density": 0,
+      "window_ratio": 0,
+      "max_ratio": 0,
+      "global_sfd_z": null,
+      "period_sfd_z": 1.0,
+      "is_trough": true,
+      "conclusion": "验证通过: 密度低谷"
+    },
+    {
+      "event": "Old Babylonian终结",
+      "year": -1595,
+      "has_data": true,
+      "nearby_exact_count": 0,
+      "nearby_period_count": 8014,
+      "event_density": 4007.0,
+      "avg_density": 680.2,
+      "density_ratio": 5.89,
+      "window_count": 3,
+      "median_density": 0,
+      "event_window_density": 0,
+      "window_ratio": 0,
+      "max_ratio": 0,
+      "global_sfd_z": null,
+      "period_sfd_z": null,
+      "is_trough": false,
+      "conclusion": "时期数据覆盖但非SFD低谷(无精确年份)"
+    },
+    {
+      "event": "Hammurabi死后帝国分裂",
+      "year": -1750,
+      "has_data": true,
+      "nearby_exact_count": 2,
+      "nearby_period_count": 7361,
+      "event_density": 3680.5,
+      "avg_density": 2462.2,
+      "density_ratio": 1.49,
+      "window_count": 3,
+      "median_density": 0,
+      "event_window_density": 0,
+      "window_ratio": 0,
+      "max_ratio": 0,
+      "global_sfd_z": null,
+      "period_sfd_z": null,
+      "is_trough": false,
+      "conclusion": "数据覆盖但非SFD低谷"
+    },
+    {
+      "event": "Assyria危机/新亚述灭亡",
+      "year": -612,
+      "has_data": true,
+      "nearby_exact_count": 561,
+      "nearby_period_count": 8469,
+      "event_density": 4234.5,
+      "avg_density": 2962.9,
+      "density_ratio": 1.43,
+      "window_count": 5,
+      "median_density": 318,
+      "event_window_density": 2777,
+      "window_ratio": 8.73,
+      "max_ratio": 1.0,
+      "global_sfd_z": null,
+      "period_sfd_z": 1.67,
+      "is_trough": false,
+      "conclusion": "数据覆盖: 窗口密度正常(比=8.73)"
+    },
+    {
+      "event": "Neo-Babylonian陷落",
+      "year": -539,
+      "has_data": true,
+      "nearby_exact_count": 0,
+      "nearby_period_count": 514,
+      "event_density": 257.0,
+      "avg_density": 174.0,
+      "density_ratio": 1.48,
+      "window_count": 1,
+      "median_density": 0,
+      "event_window_density": 0,
+      "window_ratio": 0,
+      "max_ratio": 0,
+      "global_sfd_z": null,
+      "period_sfd_z": null,
+      "is_trough": false,
+      "conclusion": "时期数据覆盖但非SFD低谷(无精确年份)"
+    },
+    {
+      "event": "Kassite王朝终结",
+      "year": -1155,
+      "has_data": true,
+      "nearby_exact_count": 0,
+      "nearby_period_count": 657,
+      "event_density": 328.5,
+      "avg_density": 74.7,
+      "density_ratio": 4.4,
+      "window_count": 0,
+      "median_density": 0,
+      "event_window_density": 0,
+      "window_ratio": 0,
+      "max_ratio": 0,
+      "global_sfd_z": null,
+      "period_sfd_z": null,
+      "is_trough": false,
+      "conclusion": "时期数据覆盖但非SFD低谷(无精确年份)"
+    },
+    {
+      "event": "Sumerian城市Umma衰落",
+      "year": -2037,
+      "has_data": true,
+      "nearby_exact_count": 57978,
+      "nearby_period_count": 77838,
+      "event_density": 38919.0,
+      "avg_density": 75931.5,
+      "density_ratio": 0.51,
+      "window_count": 2,
+      "median_density": 0,
+      "event_window_density": 0,
+      "window_ratio": 0,
+      "max_ratio": 0,
+      "global_sfd_z": null,
+      "period_sfd_z": 1.0,
+      "is_trough": true,
+      "conclusion": "验证通过: 密度低谷"
+    }
+  ],
+  "sfd_series": [
+    {
+      "window_start": -2500,
+      "window_end": -2400,
+      "count": 86,
+      "sfd_z": -0.3752642580474616
+    },
+    {
+      "window_start": -2400,
+      "window_end": -2300,
+      "count": 1590,
+      "sfd_z": -0.28369805225504835
+    },
+    {
+      "window_start": -2100,
+      "window_end": -2000,
+      "count": 58024,
+      "sfd_z": 3.152104645676501
+    },
+    {
+      "window_start": -1900,
+      "window_end": -1800,
+      "count": 2,
+      "sfd_z": -0.3803783280518251
+    },
+    {
+      "window_start": -1800,
+      "window_end": -1700,
+      "count": 2,
+      "sfd_z": -0.3803783280518251
+    },
+    {
+      "window_start": -1100,
+      "window_end": -1000,
+      "count": 84,
+      "sfd_z": -0.3753860216189941
+    },
+    {
+      "window_start": -1000,
+      "window_end": -900,
+      "count": 22,
+      "sfd_z": -0.37916069233650046
+    },
+    {
+      "window_start": -900,
+      "window_end": -800,
+      "count": 318,
+      "sfd_z": -0.36113968374969574
+    },
+    {
+      "window_start": -800,
+      "window_end": -700,
+      "count": 1669,
+      "sfd_z": -0.27888839117951597
+    },
+    {
+      "window_start": -700,
+      "window_end": -600,
+      "count": 2777,
+      "sfd_z": -0.21143137255053068
+    },
+    {
+      "window_start": 0,
+      "window_end": 100,
+      "count": 4174,
+      "sfd_z": -0.12637951783510426
+    }
+  ],
+  "period_sfd": {
+    "Early Dynastic": [
+      {
+        "window_start": -2500,
+        "window_end": -2400,
+        "count": 86,
+        "sfd_z": -1.0
+      },
+      {
+        "window_start": -2400,
+        "window_end": -2300,
+        "count": 1590,
+        "sfd_z": 1.0
+      }
+    ],
+    "Middle Assyrian": [
+      {
+        "window_start": -1100,
+        "window_end": -1000,
+        "count": 84,
+        "sfd_z": 1.0
+      },
+      {
+        "window_start": -1000,
+        "window_end": -900,
+        "count": 4,
+        "sfd_z": -1.0
+      }
+    ],
+    "Ur III": [
+      {
+        "window_start": -2100,
+        "window_end": -2000,
+        "count": 58021,
+        "sfd_z": 1.0
+      },
+      {
+        "window_start": 0,
+        "window_end": 100,
+        "count": 4168,
+        "sfd_z": -1.0
+      }
+    ],
+    "Akkadian": [
+      {
+        "window_start": -2100,
+        "window_end": -2000,
+        "count": 1,
+        "sfd_z": -0.7558268968858911
+      },
+      {
+        "window_start": -800,
+        "window_end": -700,
+        "count": 23,
+        "sfd_z": 1.4130676767866661
+      },
+      {
+        "window_start": 0,
+        "window_end": 100,
+        "count": 2,
+        "sfd_z": -0.6572407799007749
+      }
+    ],
+    "Neo-Assyrian": [
+      {
+        "window_start": -1000,
+        "window_end": -900,
+        "count": 18,
+        "sfd_z": -0.8542179967222513
+      },
+      {
+        "window_start": -900,
+        "window_end": -800,
+        "count": 318,
+        "sfd_z": -0.5800200521291897
+      },
+      {
+        "window_start": -800,
+        "window_end": -700,
+        "count": 1646,
+        "sfd_z": 0.6337628492694297
+      },
+      {
+        "window_start": -700,
+        "window_end": -600,
+        "count": 2777,
+        "sfd_z": 1.667489100385272
+      },
+      {
+        "window_start": 0,
+        "window_end": 100,
+        "count": 4,
+        "sfd_z": -0.8670139008032608
+      }
+    ]
+  }
+}

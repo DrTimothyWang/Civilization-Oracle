@@ -1,0 +1,916 @@
+{
+  "meta": {
+    "domain": "Modern Finance",
+    "data_source": "yfinance (S&P 500 ^GSPC, VIX ^VIX)",
+    "window_days": 5,
+    "note": "Daily price data aggregated to 5-day windows. Velocity = rate of price change. Fragmentation = intra-window volatility change."
+  },
+  "covid_crash": {
+    "ticker": "^GSPC",
+    "window_days": 5,
+    "confidence": "EXACT",
+    "period": [
+      "2020-01-01",
+      "2020-06-01"
+    ],
+    "n_records": 103,
+    "n_windows": 30,
+    "spi_series": {
+      "2020-01-02": {
+        "spi_m": 0.068,
+        "spi_a": -0.017,
+        "spi_f": -0.889,
+        "spi_d": -1.223,
+        "spi_aggregate": -0.378,
+        "alert_level": "NORMAL",
+        "window_end": "2020-01-03",
+        "mean_close": 3246.35,
+        "n_days": 2
+      },
+      "2020-01-06": {
+        "spi_m": 0.151,
+        "spi_a": 0.051,
+        "spi_f": -0.803,
+        "spi_d": -1.223,
+        "spi_aggregate": -0.318,
+        "alert_level": "NORMAL",
+        "window_end": "2020-01-10",
+        "mean_close": 3255.31,
+        "n_days": 5
+      },
+      "2020-01-13": {
+        "spi_m": 0.36,
+        "spi_a": 0.156,
+        "spi_f": -0.385,
+        "spi_d": -0.947,
+        "spi_aggregate": -0.073,
+        "alert_level": "NORMAL",
+        "window_end": "2020-01-15",
+        "mean_close": 3286.86,
+        "n_days": 3
+      },
+      "2020-01-16": {
+        "spi_m": 0.404,
+        "spi_a": 0.02,
+        "spi_f": -0.718,
+        "spi_d": -0.974,
+        "spi_aggregate": -0.179,
+        "alert_level": "NORMAL",
+        "window_end": "2020-01-17",
+        "mean_close": 3323.22,
+        "n_days": 2
+      },
+      "2020-01-21": {
+        "spi_m": 0.0,
+        "spi_a": -0.351,
+        "spi_f": -0.634,
+        "spi_d": -0.816,
+        "spi_aggregate": -0.193,
+        "alert_level": "NORMAL",
+        "window_end": "2020-01-24",
+        "mean_close": 3315.89,
+        "n_days": 4
+      },
+      "2020-01-27": {
+        "spi_m": -0.363,
+        "spi_a": -0.318,
+        "spi_f": -0.725,
+        "spi_d": -0.518,
+        "spi_aggregate": -0.052,
+        "alert_level": "NORMAL",
+        "window_end": "2020-01-30",
+        "mean_close": 3269.23,
+        "n_days": 4
+      },
+      "2020-01-31": {
+        "spi_m": -0.042,
+        "spi_a": 0.249,
+        "spi_f": -0.192,
+        "spi_d": -0.857,
+        "spi_aggregate": -0.1,
+        "alert_level": "NORMAL",
+        "window_end": "2020-02-04",
+        "mean_close": 3257.34,
+        "n_days": 3
+      },
+      "2020-02-05": {
+        "spi_m": 0.796,
+        "spi_a": 0.676,
+        "spi_f": 0.18,
+        "spi_d": -0.124,
+        "spi_aggregate": 0.474,
+        "alert_level": "NORMAL",
+        "window_end": "2020-02-07",
+        "mean_close": 3336.06,
+        "n_days": 3
+      },
+      "2020-02-10": {
+        "spi_m": 0.37,
+        "spi_a": -0.37,
+        "spi_f": -0.704,
+        "spi_d": -0.453,
+        "spi_aggregate": -0.022,
+        "alert_level": "NORMAL",
+        "window_end": "2020-02-14",
+        "mean_close": 3368.68,
+        "n_days": 5
+      },
+      "2020-02-18": {
+        "spi_m": 0.156,
+        "spi_a": -0.194,
+        "spi_f": -0.722,
+        "spi_d": -0.625,
+        "spi_aggregate": -0.171,
+        "alert_level": "NORMAL",
+        "window_end": "2020-02-19",
+        "mean_close": 3378.22,
+        "n_days": 2
+      },
+      "2020-02-20": {
+        "spi_m": -0.542,
+        "spi_a": -0.594,
+        "spi_f": 1.653,
+        "spi_d": -0.347,
+        "spi_aggregate": 0.699,
+        "alert_level": "NORMAL",
+        "window_end": "2020-02-24",
+        "mean_close": 3312.29,
+        "n_days": 3
+      },
+      "2020-02-25": {
+        "spi_m": -2.41,
+        "spi_a": -1.562,
+        "spi_f": 0.156,
+        "spi_d": 1.213,
+        "spi_aggregate": 1.455,
+        "alert_level": "NORMAL",
+        "window_end": "2020-02-28",
+        "mean_close": 3044.39,
+        "n_days": 4
+      },
+      "2020-03-02": {
+        "spi_m": 0.23,
+        "spi_a": 2.166,
+        "spi_f": 0.518,
+        "spi_d": 1.269,
+        "spi_aggregate": 0.942,
+        "alert_level": "NORMAL",
+        "window_end": "2020-03-05",
+        "mean_close": 3061.92,
+        "n_days": 4
+      },
+      "2020-03-06": {
+        "spi_m": -1.734,
+        "spi_a": -1.641,
+        "spi_f": 1.526,
+        "spi_d": 1.295,
+        "spi_aggregate": 1.593,
+        "alert_level": "ELEVATED",
+        "window_end": "2020-03-10",
+        "mean_close": 2867.05,
+        "n_days": 3
+      },
+      "2020-03-11": {
+        "spi_m": -1.992,
+        "spi_a": -0.23,
+        "spi_f": 0.895,
+        "spi_d": 1.009,
+        "spi_aggregate": 1.13,
+        "alert_level": "NORMAL",
+        "window_end": "2020-03-13",
+        "mean_close": 2644.35,
+        "n_days": 3
+      },
+      "2020-03-16": {
+        "spi_m": -2.141,
+        "spi_a": -0.14,
+        "spi_f": 1.274,
+        "spi_d": -0.845,
+        "spi_aggregate": 0.976,
+        "alert_level": "NORMAL",
+        "window_end": "2020-03-20",
+        "mean_close": 2405.55,
+        "n_days": 5
+      },
+      "2020-03-23": {
+        "spi_m": -0.106,
+        "spi_a": 1.666,
+        "spi_f": 1.348,
+        "spi_d": 0.86,
+        "spi_aggregate": 0.919,
+        "alert_level": "NORMAL",
+        "window_end": "2020-03-25",
+        "mean_close": 2386.76,
+        "n_days": 3
+      },
+      "2020-03-26": {
+        "spi_m": 2.035,
+        "spi_a": 1.753,
+        "spi_f": 3.511,
+        "spi_d": 2.611,
+        "spi_aggregate": 2.42,
+        "alert_level": "ELEVATED",
+        "window_end": "2020-03-30",
+        "mean_close": 2599.4,
+        "n_days": 3
+      },
+      "2020-03-31": {
+        "spi_m": -0.688,
+        "spi_a": -2.268,
+        "spi_f": -0.647,
+        "spi_d": 1.41,
+        "spi_aggregate": 0.858,
+        "alert_level": "NORMAL",
+        "window_end": "2020-04-03",
+        "mean_close": 2517.66,
+        "n_days": 4
+      },
+      "2020-04-06": {
+        "spi_m": 1.9,
+        "spi_a": 2.123,
+        "spi_f": -0.388,
+        "spi_d": 1.595,
+        "spi_aggregate": 1.338,
+        "alert_level": "NORMAL",
+        "window_end": "2020-04-09",
+        "mean_close": 2715.72,
+        "n_days": 4
+      },
+      "2020-04-13": {
+        "spi_m": 0.883,
+        "spi_a": -0.858,
+        "spi_f": -0.037,
+        "spi_d": 1.171,
+        "spi_aggregate": 0.69,
+        "alert_level": "NORMAL",
+        "window_end": "2020-04-14",
+        "mean_close": 2803.84,
+        "n_days": 2
+      },
+      "2020-04-15": {
+        "spi_m": 0.21,
+        "spi_a": -0.574,
+        "spi_f": -0.741,
+        "spi_d": 0.34,
+        "spi_aggregate": 0.082,
+        "alert_level": "NORMAL",
+        "window_end": "2020-04-17",
+        "mean_close": 2819.16,
+        "n_days": 3
+      },
+      "2020-04-20": {
+        "spi_m": -0.121,
+        "spi_a": -0.291,
+        "spi_f": -0.612,
+        "spi_d": -0.283,
+        "spi_aggregate": -0.08,
+        "alert_level": "NORMAL",
+        "window_end": "2020-04-24",
+        "mean_close": 2798.71,
+        "n_days": 5
+      },
+      "2020-04-27": {
+        "spi_m": 0.948,
+        "spi_a": 0.866,
+        "spi_f": -0.75,
+        "spi_d": -0.218,
+        "spi_aggregate": 0.328,
+        "alert_level": "NORMAL",
+        "window_end": "2020-04-29",
+        "mean_close": 2893.79,
+        "n_days": 3
+      },
+      "2020-04-30": {
+        "spi_m": -0.226,
+        "spi_a": -0.988,
+        "spi_f": -0.703,
+        "spi_d": -0.03,
+        "spi_aggregate": 0.146,
+        "alert_level": "NORMAL",
+        "window_end": "2020-05-04",
+        "mean_close": 2861.96,
+        "n_days": 3
+      },
+      "2020-05-05": {
+        "spi_m": 0.253,
+        "spi_a": 0.379,
+        "spi_f": -0.555,
+        "spi_d": -0.139,
+        "spi_aggregate": 0.024,
+        "alert_level": "NORMAL",
+        "window_end": "2020-05-08",
+        "mean_close": 2881.96,
+        "n_days": 4
+      },
+      "2020-05-11": {
+        "spi_m": -0.059,
+        "spi_a": -0.275,
+        "spi_f": -0.344,
+        "spi_d": -0.776,
+        "spi_aggregate": -0.113,
+        "alert_level": "NORMAL",
+        "window_end": "2020-05-14",
+        "mean_close": 2868.2,
+        "n_days": 4
+      },
+      "2020-05-15": {
+        "spi_m": 0.487,
+        "spi_a": 0.435,
+        "spi_f": -0.718,
+        "spi_d": -0.719,
+        "spi_aggregate": -0.008,
+        "alert_level": "NORMAL",
+        "window_end": "2020-05-19",
+        "mean_close": 2913.52,
+        "n_days": 3
+      },
+      "2020-05-20": {
+        "spi_m": 0.484,
+        "spi_a": -0.019,
+        "spi_f": 0.577,
+        "spi_d": -0.645,
+        "spi_aggregate": 0.222,
+        "alert_level": "NORMAL",
+        "window_end": "2020-05-22",
+        "mean_close": 2958.52,
+        "n_days": 3
+      },
+      "2020-05-26": {
+        "spi_m": 0.688,
+        "spi_a": 0.151,
+        "spi_f": -0.371,
+        "spi_d": -1.009,
+        "spi_aggregate": 0.034,
+        "alert_level": "NORMAL",
+        "window_end": "2020-05-29",
+        "mean_close": 3025.48,
+        "n_days": 4
+      }
+    },
+    "max_spi_window": "2020-03-26",
+    "max_spi_value": 2.42,
+    "alert_windows": [
+      {
+        "window_start": "2020-03-06",
+        "window_end": "2020-03-10",
+        "spi_aggregate": 1.593,
+        "alert_level": "ELEVATED"
+      },
+      {
+        "window_start": "2020-03-26",
+        "window_end": "2020-03-30",
+        "spi_aggregate": 2.42,
+        "alert_level": "ELEVATED"
+      }
+    ],
+    "crisis_alignment": [
+      {
+        "event_name": "COVID Crash",
+        "event_date": "2020-03-16",
+        "nearest_window_start": "2020-03-11",
+        "nearest_window_end": "2020-03-13",
+        "spi_at_event": 1.13,
+        "alert_at_event": "NORMAL",
+        "captured": false
+      }
+    ]
+  },
+  "russia_ukraine": {
+    "ticker": "^GSPC",
+    "window_days": 5,
+    "confidence": "EXACT",
+    "period": [
+      "2022-01-01",
+      "2022-06-01"
+    ],
+    "n_records": 103,
+    "n_windows": 31,
+    "spi_series": {
+      "2022-01-03": {
+        "spi_m": 0.232,
+        "spi_a": -0.018,
+        "spi_f": -0.921,
+        "spi_d": -2.094,
+        "spi_aggregate": -0.459,
+        "alert_level": "NORMAL",
+        "window_end": "2022-01-04",
+        "mean_close": 4795.05,
+        "n_days": 2
+      },
+      "2022-01-05": {
+        "spi_m": -0.894,
+        "spi_a": -0.903,
+        "spi_f": -0.486,
+        "spi_d": -2.094,
+        "spi_aggregate": 0.103,
+        "alert_level": "NORMAL",
+        "window_end": "2022-01-07",
+        "mean_close": 4691.22,
+        "n_days": 3
+      },
+      "2022-01-10": {
+        "spi_m": 0.179,
+        "spi_a": 0.824,
+        "spi_f": -0.041,
+        "spi_d": -0.502,
+        "spi_aggregate": 0.183,
+        "alert_level": "NORMAL",
+        "window_end": "2022-01-14",
+        "mean_close": 4686.32,
+        "n_days": 5
+      },
+      "2022-01-18": {
+        "spi_m": -1.193,
+        "spi_a": -1.096,
+        "spi_f": -0.671,
+        "spi_d": -0.287,
+        "spi_aggregate": 0.481,
+        "alert_level": "NORMAL",
+        "window_end": "2022-01-19",
+        "mean_close": 4554.93,
+        "n_days": 2
+      },
+      "2022-01-20": {
+        "spi_m": -1.12,
+        "spi_a": 0.039,
+        "spi_f": -0.084,
+        "spi_d": -0.16,
+        "spi_aggregate": 0.357,
+        "alert_level": "NORMAL",
+        "window_end": "2022-01-24",
+        "mean_close": 4430.27,
+        "n_days": 3
+      },
+      "2022-01-25": {
+        "spi_m": -0.463,
+        "spi_a": 0.498,
+        "spi_f": -0.781,
+        "spi_d": -1.087,
+        "spi_aggregate": -0.072,
+        "alert_level": "NORMAL",
+        "window_end": "2022-01-28",
+        "mean_close": 4366.19,
+        "n_days": 4
+      },
+      "2022-01-31": {
+        "spi_m": 2.033,
+        "spi_a": 1.942,
+        "spi_f": -0.918,
+        "spi_d": 2.073,
+        "spi_aggregate": 1.279,
+        "alert_level": "NORMAL",
+        "window_end": "2022-02-03",
+        "mean_close": 4532.23,
+        "n_days": 4
+      },
+      "2022-02-04": {
+        "spi_m": -0.096,
+        "spi_a": -1.691,
+        "spi_f": 0.398,
+        "spi_d": 1.282,
+        "spi_aggregate": 0.748,
+        "alert_level": "NORMAL",
+        "window_end": "2022-02-08",
+        "mean_close": 4501.98,
+        "n_days": 3
+      },
+      "2022-02-09": {
+        "spi_m": 0.246,
+        "spi_a": 0.25,
+        "spi_f": 1.852,
+        "spi_d": 0.77,
+        "spi_aggregate": 0.727,
+        "alert_level": "NORMAL",
+        "window_end": "2022-02-11",
+        "mean_close": 4503.3,
+        "n_days": 3
+      },
+      "2022-02-14": {
+        "spi_m": -0.722,
+        "spi_a": -0.779,
+        "spi_f": 0.004,
+        "spi_d": -0.864,
+        "spi_aggregate": 0.319,
+        "alert_level": "NORMAL",
+        "window_end": "2022-02-18",
+        "mean_close": 4415.38,
+        "n_days": 5
+      },
+      "2022-02-22": {
+        "spi_m": -1.398,
+        "spi_a": -0.549,
+        "spi_f": -0.446,
+        "spi_d": -0.024,
+        "spi_aggregate": 0.512,
+        "alert_level": "NORMAL",
+        "window_end": "2022-02-23",
+        "mean_close": 4265.13,
+        "n_days": 2
+      },
+      "2022-02-24": {
+        "spi_m": 1.143,
+        "spi_a": 1.977,
+        "spi_f": -0.786,
+        "spi_d": 1.201,
+        "spi_aggregate": 0.878,
+        "alert_level": "NORMAL",
+        "window_end": "2022-02-28",
+        "mean_close": 4349.1,
+        "n_days": 3
+      },
+      "2022-03-01": {
+        "spi_m": 0.202,
+        "spi_a": -0.758,
+        "spi_f": -0.276,
+        "spi_d": 1.123,
+        "spi_aggregate": 0.359,
+        "alert_level": "NORMAL",
+        "window_end": "2022-03-04",
+        "mean_close": 4346.29,
+        "n_days": 4
+      },
+      "2022-03-07": {
+        "spi_m": -1.059,
+        "spi_a": -1.008,
+        "spi_f": -0.191,
+        "spi_d": 0.673,
+        "spi_aggregate": 0.676,
+        "alert_level": "NORMAL",
+        "window_end": "2022-03-10",
+        "mean_close": 4227.3,
+        "n_days": 4
+      },
+      "2022-03-11": {
+        "spi_m": 0.08,
+        "spi_a": 0.876,
+        "spi_f": -0.583,
+        "spi_d": -0.353,
+        "spi_aggregate": 0.048,
+        "alert_level": "NORMAL",
+        "window_end": "2022-03-15",
+        "mean_close": 4213.29,
+        "n_days": 3
+      },
+      "2022-03-16": {
+        "spi_m": 2.376,
+        "spi_a": 1.784,
+        "spi_f": -0.698,
+        "spi_d": 2.287,
+        "spi_aggregate": 1.446,
+        "alert_level": "NORMAL",
+        "window_end": "2022-03-18",
+        "mean_close": 4410.88,
+        "n_days": 3
+      },
+      "2022-03-21": {
+        "spi_m": 1.182,
+        "spi_a": -0.956,
+        "spi_f": -0.414,
+        "spi_d": 0.781,
+        "spi_aggregate": 0.666,
+        "alert_level": "NORMAL",
+        "window_end": "2022-03-25",
+        "mean_close": 4498.45,
+        "n_days": 5
+      },
+      "2022-03-28": {
+        "spi_m": 1.368,
+        "spi_a": 0.128,
+        "spi_f": -0.313,
+        "spi_d": -0.486,
+        "spi_aggregate": 0.36,
+        "alert_level": "NORMAL",
+        "window_end": "2022-03-30",
+        "mean_close": 4603.19,
+        "n_days": 3
+      },
+      "2022-03-31": {
+        "spi_m": -0.313,
+        "spi_a": -1.339,
+        "spi_f": -0.883,
+        "spi_d": 0.214,
+        "spi_aggregate": 0.255,
+        "alert_level": "NORMAL",
+        "window_end": "2022-04-04",
+        "mean_close": 4552.97,
+        "n_days": 3
+      },
+      "2022-04-05": {
+        "spi_m": -0.357,
+        "spi_a": -0.053,
+        "spi_f": -0.665,
+        "spi_d": 0.369,
+        "spi_aggregate": 0.027,
+        "alert_level": "NORMAL",
+        "window_end": "2022-04-08",
+        "mean_close": 4498.69,
+        "n_days": 4
+      },
+      "2022-04-11": {
+        "spi_m": -0.705,
+        "spi_a": -0.292,
+        "spi_f": -0.67,
+        "spi_d": -1.555,
+        "spi_aggregate": -0.081,
+        "alert_level": "NORMAL",
+        "window_end": "2022-04-14",
+        "mean_close": 4412.29,
+        "n_days": 4
+      },
+      "2022-04-18": {
+        "spi_m": 0.391,
+        "spi_a": 0.842,
+        "spi_f": -0.178,
+        "spi_d": -0.691,
+        "spi_aggregate": 0.199,
+        "alert_level": "NORMAL",
+        "window_end": "2022-04-19",
+        "mean_close": 4426.95,
+        "n_days": 2
+      },
+      "2022-04-20": {
+        "spi_m": -0.332,
+        "spi_a": -0.586,
+        "spi_f": 1.372,
+        "spi_d": -0.698,
+        "spi_aggregate": 0.501,
+        "alert_level": "NORMAL",
+        "window_end": "2022-04-22",
+        "mean_close": 4374.96,
+        "n_days": 3
+      },
+      "2022-04-25": {
+        "spi_m": -1.504,
+        "spi_a": -0.939,
+        "spi_f": -0.385,
+        "spi_d": 0.301,
+        "spi_aggregate": 0.71,
+        "alert_level": "NORMAL",
+        "window_end": "2022-04-29",
+        "mean_close": 4214.94,
+        "n_days": 5
+      },
+      "2022-05-02": {
+        "spi_m": 0.182,
+        "spi_a": 1.306,
+        "spi_f": -0.858,
+        "spi_d": 0.07,
+        "spi_aggregate": 0.186,
+        "alert_level": "NORMAL",
+        "window_end": "2022-05-04",
+        "mean_close": 4210.34,
+        "n_days": 3
+      },
+      "2022-05-05": {
+        "spi_m": -1.104,
+        "spi_a": -1.029,
+        "spi_f": -0.559,
+        "spi_d": 0.113,
+        "spi_aggregate": 0.521,
+        "alert_level": "NORMAL",
+        "window_end": "2022-05-09",
+        "mean_close": 4087.15,
+        "n_days": 3
+      },
+      "2022-05-10": {
+        "spi_m": -1.011,
+        "spi_a": 0.055,
+        "spi_f": 0.598,
+        "spi_d": -0.297,
+        "spi_aggregate": 0.473,
+        "alert_level": "NORMAL",
+        "window_end": "2022-05-13",
+        "mean_close": 3972.55,
+        "n_days": 4
+      },
+      "2022-05-16": {
+        "spi_m": 0.316,
+        "spi_a": 1.024,
+        "spi_f": 1.044,
+        "spi_d": -0.103,
+        "spi_aggregate": 0.612,
+        "alert_level": "NORMAL",
+        "window_end": "2022-05-19",
+        "mean_close": 3980.33,
+        "n_days": 4
+      },
+      "2022-05-20": {
+        "spi_m": -0.218,
+        "spi_a": -0.438,
+        "spi_f": 1.686,
+        "spi_d": -0.421,
+        "spi_aggregate": 0.544,
+        "alert_level": "NORMAL",
+        "window_end": "2022-05-24",
+        "mean_close": 3938.86,
+        "n_days": 3
+      },
+      "2022-05-25": {
+        "spi_m": 1.6,
+        "spi_a": 1.409,
+        "spi_f": 1.547,
+        "spi_d": 0.245,
+        "spi_aggregate": 1.336,
+        "alert_level": "NORMAL",
+        "window_end": "2022-05-27",
+        "mean_close": 4064.94,
+        "n_days": 3
+      },
+      "2022-05-31": {
+        "spi_m": 0.961,
+        "spi_a": -0.52,
+        "spi_f": 3.305,
+        "spi_d": 0.215,
+        "spi_aggregate": 1.325,
+        "alert_level": "NORMAL",
+        "window_end": "2022-05-31",
+        "mean_close": 4132.15,
+        "n_days": 1
+      }
+    },
+    "max_spi_window": "2022-03-16",
+    "max_spi_value": 1.446,
+    "alert_windows": [],
+    "crisis_alignment": [
+      {
+        "event_name": "Russia-Ukraine Shock",
+        "event_date": "2022-02-24",
+        "nearest_window_start": "2022-02-22",
+        "nearest_window_end": "2022-02-23",
+        "spi_at_event": 0.512,
+        "alert_at_event": "NORMAL",
+        "captured": false
+      }
+    ]
+  },
+  "snowball_vix": {
+    "ticker": "^VIX",
+    "window_days": 5,
+    "confidence": "EXACT",
+    "period": [
+      "2024-01-01",
+      "2024-03-01"
+    ],
+    "n_records": 41,
+    "n_windows": 13,
+    "spi_series": {
+      "2024-01-02": {
+        "spi_m": 0.039,
+        "spi_a": 0.016,
+        "spi_f": -1.117,
+        "spi_d": -1.868,
+        "spi_aggregate": -0.542,
+        "alert_level": "NORMAL",
+        "window_end": "2024-01-04",
+        "mean_close": 13.79,
+        "n_days": 3
+      },
+      "2024-01-05": {
+        "spi_m": -0.907,
+        "spi_a": -0.536,
+        "spi_f": -0.555,
+        "spi_d": -1.868,
+        "spi_aggregate": 0.032,
+        "alert_level": "NORMAL",
+        "window_end": "2024-01-09",
+        "mean_close": 13.06,
+        "n_days": 3
+      },
+      "2024-01-10": {
+        "spi_m": -0.551,
+        "spi_a": 0.223,
+        "spi_f": -0.696,
+        "spi_d": -0.957,
+        "spi_aggregate": -0.069,
+        "alert_level": "NORMAL",
+        "window_end": "2024-01-12",
+        "mean_close": 12.61,
+        "n_days": 3
+      },
+      "2024-01-16": {
+        "spi_m": 1.868,
+        "spi_a": 1.426,
+        "spi_f": 0.242,
+        "spi_d": 1.011,
+        "spi_aggregate": 1.222,
+        "alert_level": "NORMAL",
+        "window_end": "2024-01-19",
+        "mean_close": 14.02,
+        "n_days": 4
+      },
+      "2024-01-22": {
+        "spi_m": -1.334,
+        "spi_a": -1.851,
+        "spi_f": -0.366,
+        "spi_d": 1.315,
+        "spi_aggregate": 1.035,
+        "alert_level": "NORMAL",
+        "window_end": "2024-01-24",
+        "mean_close": 12.96,
+        "n_days": 3
+      },
+      "2024-01-25": {
+        "spi_m": 0.659,
+        "spi_a": 1.178,
+        "spi_f": -0.548,
+        "spi_d": 1.215,
+        "spi_aggregate": 0.571,
+        "alert_level": "NORMAL",
+        "window_end": "2024-01-29",
+        "mean_close": 13.44,
+        "n_days": 3
+      },
+      "2024-01-30": {
+        "spi_m": 0.574,
+        "spi_a": -0.034,
+        "spi_f": -0.351,
+        "spi_d": 0.281,
+        "spi_aggregate": 0.164,
+        "alert_level": "NORMAL",
+        "window_end": "2024-02-02",
+        "mean_close": 13.85,
+        "n_days": 4
+      },
+      "2024-02-05": {
+        "spi_m": -0.95,
+        "spi_a": -0.873,
+        "spi_f": -1.104,
+        "spi_d": -0.141,
+        "spi_aggregate": 0.254,
+        "alert_level": "NORMAL",
+        "window_end": "2024-02-08",
+        "mean_close": 13.09,
+        "n_days": 4
+      },
+      "2024-02-09": {
+        "spi_m": 1.535,
+        "spi_a": 1.465,
+        "spi_f": 1.629,
+        "spi_d": 0.521,
+        "spi_aggregate": 1.389,
+        "alert_level": "NORMAL",
+        "window_end": "2024-02-13",
+        "mean_close": 14.24,
+        "n_days": 3
+      },
+      "2024-02-14": {
+        "spi_m": 0.004,
+        "spi_a": -0.877,
+        "spi_f": 2.39,
+        "spi_d": 0.522,
+        "spi_aggregate": 0.897,
+        "alert_level": "NORMAL",
+        "window_end": "2024-02-16",
+        "mean_close": 14.21,
+        "n_days": 3
+      },
+      "2024-02-20": {
+        "spi_m": 0.758,
+        "spi_a": 0.455,
+        "spi_f": 0.544,
+        "spi_d": -0.409,
+        "spi_aggregate": 0.454,
+        "alert_level": "NORMAL",
+        "window_end": "2024-02-23",
+        "mean_close": 14.76,
+        "n_days": 4
+      },
+      "2024-02-26": {
+        "spi_m": -1.383,
+        "spi_a": -1.233,
+        "spi_f": 0.448,
+        "spi_d": 0.203,
+        "spi_aggregate": 0.934,
+        "alert_level": "NORMAL",
+        "window_end": "2024-02-28",
+        "mean_close": 13.67,
+        "n_days": 3
+      },
+      "2024-02-29": {
+        "spi_m": -0.312,
+        "spi_a": 0.64,
+        "spi_f": -0.515,
+        "spi_d": 0.173,
+        "spi_aggregate": 0.167,
+        "alert_level": "NORMAL",
+        "window_end": "2024-02-29",
+        "mean_close": 13.4,
+        "n_days": 1
+      }
+    },
+    "max_spi_window": "2024-02-09",
+    "max_spi_value": 1.389,
+    "alert_windows": [],
+    "crisis_alignment": [
+      {
+        "event_name": "Snowball Crash (VIX spike)",
+        "event_date": "2024-01-17",
+        "nearest_window_start": "2024-01-16",
+        "nearest_window_end": "2024-01-19",
+        "spi_at_event": 1.222,
+        "alert_at_event": "NORMAL",
+        "captured": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "model": "Model A (PSI-only) Light",
+  "n_chains": 2,
+  "n_tune": 500,
+  "n_draws": 1000,
+  "n_obs": 6832,
+  "n_domains": 7,
+  "crisis_rate": 0.15734777517564402,
+  "summary": {
+    "mean": {
+      "mu_alpha": -0.907,
+      "mu_beta": -1.485,
+      "sigma_alpha": 24.585,
+      "sigma_beta": 161.163
+    },
+    "sd": {
+      "mu_alpha": 0.672,
+      "mu_beta": 1.63,
+      "sigma_alpha": 9.487,
+      "sigma_beta": 56.598
+    },
+    "hdi_3%": {
+      "mu_alpha": -1.67,
+      "mu_beta": -3.664,
+      "sigma_alpha": 11.46,
+      "sigma_beta": 81.898
+    },
+    "hdi_97%": {
+      "mu_alpha": -0.198,
+      "mu_beta": 1.038,
+      "sigma_alpha": 39.333,
+      "sigma_beta": 270.041
+    },
+    "mcse_mean": {
+      "mu_alpha": 0.472,
+      "mu_beta": 1.133,
+      "sigma_alpha": 6.251,
+      "sigma_beta": 34.755
+    },
+    "mcse_sd": {
+      "mu_alpha": 0.399,
+      "mu_beta": 0.953,
+      "sigma_alpha": 5.146,
+      "sigma_beta": 27.939
+    },
+    "ess_bulk": {
+      "mu_alpha": 3.0,
+      "mu_beta": 2.0,
+      "sigma_alpha": 2.0,
+      "sigma_beta": 3.0
+    },
+    "ess_tail": {
+      "mu_alpha": 24.0,
+      "mu_beta": 11.0,
+      "sigma_alpha": 12.0,
+      "sigma_beta": 14.0
+    },
+    "r_hat": {
+      "mu_alpha": 2.15,
+      "mu_beta": 2.99,
+      "sigma_alpha": 2.49,
+      "sigma_beta": 2.11
+    }
+  }
+}

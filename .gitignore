@@ -1,0 +1,125 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Large archives and zips
+99_ARCHIVE/zips/
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.rar
+*.7z
+
+# Large data files (>10MB typically)
+data/cbdb/
+data/experts/
+*.csv
+*.jsonl
+*.parquet
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# Output / temporary files
+output/
+tmp/
+temp/
+*.tmp
+*.log
+
+# Legacy cache and large extracted data
+02_UPSI_LEGACY/**/oracc_cache/
+02_UPSI_LEGACY/**/data/
+02_UPSI_LEGACY/**/*.csv
+02_UPSI_LEGACY/**/*.zip
+02_UPSI_LEGACY/**/oracc_catalog.json
+02_UPSI_LEGACY/**/catalogue.json
+
+# Legacy files with hardcoded API keys / secrets
+02_UPSI_LEGACY/v4/api_caller.py
+02_UPSI_LEGACY/v5/JIN10_INTEGRATION.md
+02_UPSI_LEGACY/v5/news_sentiment_psi.py
+decade_psi_analysis.py
+99_ARCHIVE/old_versions/psi_pipeline.py
+
+# Nested git repositories (not submodules)
+01_TCM_UPSI_CORE/
+
+# Git internals
+.git/
+
+# Sensitive files
+.env
+.env.local
+*.key
+*.pem
+*.crt
+secrets/
+credentials/
+
+# Large media (if any)
+*.mp4
+*.avi
+*.mov
+*.wmv
+*.mp3
+*.wav
+*.flac
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Documentation build
+_build/

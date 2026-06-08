@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "version": "v11c",
+    "date": "2026-06-04",
+    "model": "3-level hierarchical: global -> domain -> observation",
+    "n_domains": 7,
+    "n_observations": 6915,
+    "mcmc": {
+      "chains": 4,
+      "tune": 2000,
+      "draws": 2000
+    }
+  },
+  "bayesian": {
+    "max_rhat": 1.0,
+    "min_ess": 9684.0,
+    "p_crisis_negative": 0.977875,
+    "p_low_heterogeneity": 0.0,
+    "domain_effects": [
+      {
+        "domain": "中华历史",
+        "mean": -0.2443176440239307,
+        "hdi_low": -0.47820329682109514,
+        "hdi_high": -0.018104228848704024,
+        "p_negative": 0.980125
+      },
+      {
+        "domain": "美索不达米亚",
+        "mean": -0.6782800423324936,
+        "hdi_low": -1.0008473955302155,
+        "hdi_high": -0.33650509184296856,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "全球金融",
+        "mean": -0.0739111824123927,
+        "hdi_low": -0.4903533859087329,
+        "hdi_high": 0.34550813478610026,
+        "p_negative": 0.64
+      },
+      {
+        "domain": "全球政治",
+        "mean": -0.6910654195446709,
+        "hdi_low": -0.7677929046368245,
+        "hdi_high": -0.6059626295375266,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "中国金融",
+        "mean": -0.24811091752054937,
+        "hdi_low": -0.3065855710328536,
+        "hdi_high": -0.18429120945812713,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "古罗马",
+        "mean": -1.3465279050241334,
+        "hdi_low": -1.9140461202748378,
+        "hdi_high": -0.7989863966920447,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "COVID",
+        "mean": -10.77351175601209,
+        "hdi_low": -11.078042578945478,
+        "hdi_high": -10.461675622937127,
+        "p_negative": 1.0
+      }
+    ],
+    "pred_stable_mean": 0.9778780806878311,
+    "pred_stable_hdi": [
+      -2.6854472826798856,
+      4.659637665415791
+    ],
+    "pred_crisis_mean": -0.12800965567268524,
+    "pred_crisis_hdi": [
+      -5.4246451581916535,
+      5.069447655624558
+    ]
+  },
+  "frequentist": {
+    "global_cohens_d": -0.3865879021084429,
+    "t_statistic": -16.932181941253184,
+    "p_value": 1.827654902894707e-62,
+    "by_domain": [
+      {
+        "domain": "中华历史",
+        "n_crisis": 66,
+        "n_stable": 30,
+        "mean_crisis": 0.45122121212121213,
+        "mean_stable": 0.6886666666666666,
+        "cohens_d": -1.2746141328544394
+      },
+      {
+        "domain": "美索不达米亚",
+        "n_crisis": 23,
+        "n_stable": 17,
+        "mean_crisis": -0.2849565217391304,
+        "mean_stable": 0.3854117647058824,
+        "cohens_d": -1.4758018387411027
+      },
+      {
+        "domain": "全球金融",
+        "n_crisis": 18,
+        "n_stable": 10,
+        "mean_crisis": -0.751973115873774,
+        "mean_stable": -0.7109632823736314,
+        "cohens_d": -0.11318795783535729
+      },
+      {
+        "domain": "全球政治",
+        "n_crisis": 665,
+        "n_stable": 216,
+        "mean_crisis": -0.1693187507272612,
+        "mean_stable": 0.5212822649705031,
+        "cohens_d": -0.5056132612947196
+      },
+      {
+        "domain": "中国金融",
+        "n_crisis": 325,
+        "n_stable": 5483,
+        "mean_crisis": -0.23348504501687384,
+        "mean_stable": 0.013839620578238933,
+        "cohens_d": -0.5619064231547445
+      },
+      {
+        "domain": "古罗马",
+        "n_crisis": 8,
+        "n_stable": 6,
+        "mean_crisis": -0.755,
+        "mean_stable": 0.5916666666666667,
+        "cohens_d": -5.699739485695921
+      },
+      {
+        "domain": "COVID",
+        "n_crisis": 24,
+        "n_stable": 24,
+        "mean_crisis": -0.6785737794845845,
+        "mean_stable": 10.19624886595431,
+        "cohens_d": -4.577624189748288
+      }
+    ]
+  },
+  "pymc_version": "5.12.0"
+}

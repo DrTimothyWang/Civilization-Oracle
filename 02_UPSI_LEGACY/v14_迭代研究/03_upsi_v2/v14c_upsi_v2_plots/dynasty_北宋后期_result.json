@@ -1,0 +1,52 @@
+{
+  "n_points": 11,
+  "psi_high_threshold": 0.5111737113333463,
+  "spi_high_threshold": 0.44762270084761935,
+  "quadrant_distribution": {
+    "Gradual Decline": 4,
+    "Stable": 6,
+    "Sudden Crisis": 1
+  },
+  "n_alerts": 4,
+  "alerts": [
+    {
+      "time_idx": 2,
+      "year_label": 1040,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 4,
+      "year_label": 1060,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 7,
+      "year_label": 1090,
+      "from": "Stable",
+      "to": "Sudden Crisis",
+      "message": "Orange alert (prepare)",
+      "emoji": "🟠"
+    },
+    {
+      "time_idx": 10,
+      "year_label": 1120,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    }
+  ],
+  "metadata": {
+    "domain": "chinese_dynasty",
+    "dynasty": "北宋后期",
+    "source_file": "/Users/wangzr/Desktop/历史事件预测建模/v14_迭代研究/../output/decade_psi_summary.json",
+    "n_decades": 11,
+    "note": "SPI computed as proxy from PSI decade-to-decade derivative."
+  }
+}

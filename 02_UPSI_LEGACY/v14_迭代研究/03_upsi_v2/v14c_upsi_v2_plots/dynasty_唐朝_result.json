@@ -1,0 +1,75 @@
+{
+  "n_points": 31,
+  "psi_high_threshold": 0.6144621327825663,
+  "spi_high_threshold": 0.4360370847771567,
+  "quadrant_distribution": {
+    "Gradual Decline": 10,
+    "Stable": 21
+  },
+  "n_alerts": 7,
+  "alerts": [
+    {
+      "time_idx": 4,
+      "year_label": 650,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 6,
+      "year_label": 670,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 8,
+      "year_label": 690,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 9,
+      "year_label": 700,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 12,
+      "year_label": 730,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 19,
+      "year_label": 800,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 20,
+      "year_label": 810,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    }
+  ],
+  "metadata": {
+    "domain": "chinese_dynasty",
+    "dynasty": "唐朝",
+    "source_file": "/Users/wangzr/Desktop/历史事件预测建模/v14_迭代研究/../output/decade_psi_summary.json",
+    "n_decades": 31,
+    "note": "SPI computed as proxy from PSI decade-to-decade derivative."
+  }
+}

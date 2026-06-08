@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "domain": "Ancient Rome",
+    "data_source": "v4 LLM-evaluated PSI (14 points over 985 years)",
+    "note": "Data resolution is far too coarse for real SPI. Analysis is synthetic."
+  },
+  "rome": {
+    "domain": "Ancient Rome",
+    "confidence": "INSUFFICIENT",
+    "n_data_points": 14,
+    "time_span_years": 985,
+    "avg_resolution_years": 70.35714285714286,
+    "note": "Rome data is extremely coarse (14 points over 985 years). SPI requires 1-10 year windows. This analysis is SYNTHETIC and for illustrative purposes only. Real SPI cannot be computed on data this sparse.",
+    "synthetic_velocity": {
+      "-264": 0.00224,
+      "-218": -0.02391,
+      "-146": 0.02083,
+      "-44": -0.01569,
+      "-27": 0.08824,
+      "79": -0.00236,
+      "117": 0.01184,
+      "180": -0.02143,
+      "235": -0.00764,
+      "312": 0.01909,
+      "410": -0.015,
+      "455": -0.00067,
+      "476": 0.0
+    },
+    "synthetic_acceleration": {
+      "-218": -0.00057,
+      "-146": 0.00062,
+      "-44": -0.00036,
+      "-27": 0.00611,
+      "79": -0.00085,
+      "117": 0.00037,
+      "180": -0.00053,
+      "235": 0.00025,
+      "312": 0.00035,
+      "410": -0.00035,
+      "455": 0.00032,
+      "476": 3e-05
+    },
+    "spi_series": {
+      "-218": {
+        "spi_m": -1.013,
+        "spi_a": -0.577,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.832,
+        "alert_level": "NORMAL"
+      },
+      "-146": {
+        "spi_m": 0.595,
+        "spi_a": 0.097,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.388,
+        "alert_level": "NORMAL"
+      },
+      "-44": {
+        "spi_m": -0.718,
+        "spi_a": -0.458,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.609,
+        "alert_level": "NORMAL"
+      },
+      "-27": {
+        "spi_m": 3.019,
+        "spi_a": 3.211,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 3.099,
+        "alert_level": "CRITICAL"
+      },
+      "79": {
+        "spi_m": -0.238,
+        "spi_a": -0.74,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.447,
+        "alert_level": "NORMAL"
+      },
+      "117": {
+        "spi_m": 0.272,
+        "spi_a": -0.043,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.177,
+        "alert_level": "NORMAL"
+      },
+      "180": {
+        "spi_m": -0.924,
+        "spi_a": -0.554,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.77,
+        "alert_level": "NORMAL"
+      },
+      "235": {
+        "spi_m": -0.428,
+        "spi_a": -0.113,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.297,
+        "alert_level": "NORMAL"
+      },
+      "312": {
+        "spi_m": 0.533,
+        "spi_a": -0.058,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.335,
+        "alert_level": "NORMAL"
+      },
+      "410": {
+        "spi_m": -0.693,
+        "spi_a": -0.452,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.593,
+        "alert_level": "NORMAL"
+      },
+      "455": {
+        "spi_m": -0.178,
+        "spi_a": -0.074,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.135,
+        "alert_level": "NORMAL"
+      },
+      "476": {
+        "spi_m": -0.154,
+        "spi_a": -0.237,
+        "spi_f": null,
+        "spi_d": null,
+        "spi_aggregate": 0.188,
+        "alert_level": "NORMAL"
+      }
+    },
+    "crisis_alignment": [
+      {
+        "event_name": "Crisis of the Third Century",
+        "event_year": 235,
+        "nearest_data_point": 235,
+        "nearest_psi_z": -0.92,
+        "spi_at_event": 0.297,
+        "alert_at_event": "NORMAL",
+        "captured": false
+      },
+      {
+        "event_name": "Fall of Western Empire",
+        "event_year": 476,
+        "nearest_data_point": 476,
+        "nearest_psi_z": -0.95,
+        "spi_at_event": 0.188,
+        "alert_at_event": "NORMAL",
+        "captured": false
+      }
+    ],
+    "honest_assessment": {
+      "can_compute_real_spi": false,
+      "why": "Average resolution is 70+ years per point. SPI needs 1-10 year windows.",
+      "recommendation": "Requires primary source corpus with annual/bi-annual resolution (e.g., Livy, Tacitus, Cassius Dio with precise consular dating)."
+    }
+  }
+}

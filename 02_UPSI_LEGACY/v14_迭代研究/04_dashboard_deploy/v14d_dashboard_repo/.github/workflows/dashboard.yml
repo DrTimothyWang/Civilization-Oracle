@@ -1,0 +1,219 @@
+name: UPSI Dashboard v14d
+
+on:
+  # Run every 4 hours (UTC)
+  # Corresponds to Beijing time: 08:00, 12:00, 16:00, 20:00, 00:00, 04:00
+  schedule:
+    - cron: '0 */4 * * *'
+
+  # Allow manual trigger (for testing or emergency refresh)
+  workflow_dispatch:
+    inputs:
+      log_level:
+        description: 'Log level'
+        required: false
+        default: 'INFO'
+        type: choice
+        options:
+          - DEBUG
+          - INFO
+          - WARNING
+          - ERROR
+
+  # Auto-run when dashboard code or config updates on main
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'config/config.yaml'
+      - 'requirements.txt'
+
+# Permissions: need write to gh-pages branch
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Prevent concurrent runs causing conflicts
+concurrency:
+  group: "upsi-dashboard"
+  cancel-in-progress: false
+
+jobs:
+  build-dashboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ---------------------------------------------------------------
+      # 1. Checkout code
+      # ---------------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Need full history to commit to gh-pages
+
+      # ---------------------------------------------------------------
+      # 2. Set up Python
+      # ---------------------------------------------------------------
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      # ---------------------------------------------------------------
+      # 3. Install dependencies
+      # ---------------------------------------------------------------
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ---------------------------------------------------------------
+      # 4. Run Dashboard
+      # ---------------------------------------------------------------
+      - name: Run UPSI Dashboard
+        id: dashboard
+        run: |
+          python -m src.dashboard \
+            --mode=once \
+            --config=config/config.yaml \
+            --output-dir=./dashboard_output \
+            --log-level=${{ github.event.inputs.log_level || 'INFO' }}
+        env:
+          PYTHONUNBUFFERED: "1"
+        continue-on-error: false
+
+      # ---------------------------------------------------------------
+      # 5. Extract UPSI value for subsequent alert judgment
+      # ---------------------------------------------------------------
+      - name: Extract UPSI value
+        id: extract
+        run: |
+          UPSI=$(python -c "import json; d=json.load(open('./dashboard_output/dashboard_data_v2.json')); print(d.get('current_upsi', 0))")
+          echo "upsi=$UPSI" >> $GITHUB_OUTPUT
+          echo "UPSI value: $UPSI"
+
+          # Determine if alert should trigger
+          ALERT=false
+          if (( $(echo "$UPSI < -0.5" | bc -l) )); then
+            ALERT=true
+          fi
+          echo "alert=$ALERT" >> $GITHUB_OUTPUT
+
+      # ---------------------------------------------------------------
+      # 6. Upload JSON to Artifacts (retain 30 days)
+      # ---------------------------------------------------------------
+      - name: Upload JSON artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-data-${{ github.run_id }}
+          path: ./dashboard_output/dashboard_data_v2.json
+          retention-days: 30
+
+      # ---------------------------------------------------------------
+      # 7. Deploy to gh-pages (HTML + JSON)
+      # ---------------------------------------------------------------
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard_output
+          publish_branch: gh-pages
+          keep_files: false  # Overwrite each time to keep branch clean
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'deploy: UPSI Dashboard v14d ${{ github.event.head_commit.message }}'
+
+      # ---------------------------------------------------------------
+      # 8. Optional: Webhook alert
+      # ---------------------------------------------------------------
+      - name: Send alert webhook
+        if: steps.extract.outputs.alert == 'true' && env.ALERT_WEBHOOK_URL != ''
+        env:
+          ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+        run: |
+          curl -X POST ${{ secrets.ALERT_WEBHOOK_URL }} \
+            -H "Content-Type: application/json" \
+            -d '{
+              "source": "upsi-dashboard",
+              "level": "CRITICAL",
+              "upsi": "${{ steps.extract.outputs.upsi }}",
+              "time": "${{ github.event.repository.updated_at }}",
+              "url": "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/dashboard_latest.html"
+            }' || true
+
+      # ---------------------------------------------------------------
+      # 9. Optional: Create GitHub Issue alert record
+      # ---------------------------------------------------------------
+      - name: Create alert issue
+        if: steps.extract.outputs.alert == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const upsi = '${{ steps.extract.outputs.upsi }}';
+            const url = `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/dashboard_latest.html`;
+            const title = `🚨 UPSI Alert: ${upsi} (below -0.5)`;
+            const body = `**Triggered**: ${new Date().toISOString()}\n\n**UPSI Value**: ${upsi}\n\n**Dashboard**: [View Live](${url})\n\n---\n*Auto-generated by UPSI Dashboard v14d*`;
+            
+            // Check if a similar issue exists within the last 24 hours to avoid duplicates
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'upsi-alert',
+              state: 'open',
+              per_page: 5
+            });
+            const recent = issues.data.find(i => new Date(i.created_at) > new Date(Date.now() - 24*60*60*1000));
+            if (!recent) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['upsi-alert', 'automated']
+              });
+              console.log('Created alert issue');
+            } else {
+              console.log('Recent alert issue already exists, skipping');
+            }
+
+      # ---------------------------------------------------------------
+      # 10. Notification: GitHub automatically emails on workflow failure
+      # ---------------------------------------------------------------
+      # GitHub defaults to emailing the repo owner on workflow failure; no extra config needed
+
+  # ---------------------------------------------------------------
+  # Optional: Daily summary (lower frequency to reduce minute usage)
+  # ---------------------------------------------------------------
+  daily-summary:
+    runs-on: ubuntu-latest
+    needs: build-dashboard
+    if: github.event.schedule == '0 0 * * *'  # Only run at 00:00 UTC
+    steps:
+      - name: Download latest artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dashboard-data-${{ github.run_id }}
+          path: ./summary
+
+      - name: Generate daily summary
+        run: |
+          echo "## UPSI Daily Summary" > summary.md
+          echo "Generated at: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> summary.md
+          echo "" >> summary.md
+          echo "\`\`\`json" >> summary.md
+          cat ./summary/dashboard_data_v2.json >> summary.md
+          echo "\`\`\`" >> summary.md
+
+      - name: Upload summary to Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: daily-${{ github.run_id }}
+          name: "UPSI Daily Snapshot ${{ github.run_id }}"
+          body_path: summary.md
+          files: ./summary/dashboard_data_v2.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

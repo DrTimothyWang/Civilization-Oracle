@@ -1,0 +1,162 @@
+{
+  "total": 18999,
+  "by_project": {
+    "dcclt": 10215,
+    "saao": 5055,
+    "etcsri": 1802,
+    "rinap": 1037,
+    "riao": 890
+  },
+  "top_periods": [
+    [
+      "Neo-Assyrian",
+      7780
+    ],
+    [
+      "Old Babylonian",
+      5343
+    ],
+    [
+      "Ur III",
+      768
+    ],
+    [
+      "unknown",
+      735
+    ],
+    [
+      "Uruk III",
+      689
+    ],
+    [
+      "Middle Babylonian",
+      651
+    ],
+    [
+      "Neo-Babylonian",
+      484
+    ],
+    [
+      "Early Dynastic",
+      449
+    ],
+    [
+      "Middle Assyrian",
+      428
+    ],
+    [
+      "ED IIIa",
+      282
+    ],
+    [
+      "Lagaš II",
+      264
+    ],
+    [
+      "Early Old Babylonian",
+      252
+    ],
+    [
+      "Ebla",
+      208
+    ],
+    [
+      "First Millennium",
+      171
+    ],
+    [
+      "Old Assyrian",
+      123
+    ]
+  ],
+  "top_genres": [
+    [
+      "OTHER",
+      9993
+    ],
+    [
+      "LEXICAL",
+      8123
+    ],
+    [
+      "EDU",
+      644
+    ],
+    [
+      "LITERARY",
+      217
+    ],
+    [
+      "TECH",
+      13
+    ],
+    [
+      "RITUAL",
+      5
+    ],
+    [
+      "COMM",
+      2
+    ],
+    [
+      "ADMIN",
+      1
+    ],
+    [
+      "LEGAL",
+      1
+    ]
+  ],
+  "top_languages": [
+    [
+      "Akkadian",
+      7245
+    ],
+    [
+      "unknown",
+      5711
+    ],
+    [
+      "Sumerian",
+      4931
+    ],
+    [
+      "undetermined",
+      695
+    ],
+    [
+      "Eblaite",
+      140
+    ],
+    [
+      "Sumerian; Akkadian",
+      111
+    ],
+    [
+      "Hittite",
+      90
+    ],
+    [
+      "bilingual",
+      19
+    ],
+    [
+      "Sumerian ?",
+      17
+    ],
+    [
+      "Akkadian, Aramaic",
+      13
+    ]
+  ],
+  "data_quality": {
+    "with_period": 18264,
+    "with_year": 17519,
+    "with_pleiades_id": 16414,
+    "with_coordinates": 16399,
+    "with_atf_transliteration": 12528,
+    "with_lemmatization": 9321,
+    "with_english_translation": 2677,
+    "admin_genre": 1
+  }
+}

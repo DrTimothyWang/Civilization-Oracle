@@ -1,0 +1,30 @@
+{
+  "note": "v17b Bayesian reparameterization - CODE VALIDATED, FULL RUN PENDING",
+  "validation_date": "2026-06-05",
+  "pyMC_version": "5.12.0",
+  "nuts_param_test": "PASSED - nuts=dict(max_treedepth=12) is valid in PyMC 5.12.0",
+  "step_kwargs_error": "RESOLVED - Error was from previous code version or environment. Current code uses correct 'nuts' parameter.",
+  "quick_test_results": {
+    "model_a": {
+      "status": "SAMPLING_SUCCEEDED",
+      "draws": 200,
+      "tune": 100,
+      "chains": 2,
+      "elapsed_seconds": 9.6,
+      "divergences": 364,
+      "max_rhat": 3.0,
+      "note": "High divergences expected with small sample test. Full run with 4000 draws, 2000 tune, 4 chains, target_accept=0.95 needed for reliable inference."
+    }
+  },
+  "full_run_requirements": {
+    "estimated_time": "2-4 hours for all 3 models + sensitivity analysis",
+    "recommended_approach": "Run overnight or on compute cluster",
+    "divergence_mitigation": "Non-centered parameterization is implemented. If divergences persist in full run, consider: (1) increasing target_accept to 0.99, (2) using ADVI approximation for Model C, (3) simplifying Model B to binary classification"
+  },
+  "models": {
+    "model_a": "PSI-only Bernoulli hierarchical - CODE READY",
+    "model_b": "PSI+SPI joint Bernoulli hierarchical with LKJ Cholesky - CODE READY",
+    "model_c": "UPSI_v2 quadrants Categorical with reference category - CODE READY"
+  },
+  "status": "CODE_VALIDATED_AWAITING_FULL_COMPUTE"
+}

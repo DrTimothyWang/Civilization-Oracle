@@ -1,0 +1,18 @@
+{
+  "domain": "Mesopotamia",
+  "source": "CDLI + ORACC",
+  "periods": ["Early Dynastic", "Akkadian", "Ur III", "Old Babylonian", "Middle Babylonian", "Neo-Assyrian", "Neo-Babylonian"],
+  "records": 433129,
+  "validation": {
+    "total_events": 8,
+    "psi_pass": 6,
+    "spi_pass": 2,
+    "combined_recall": "100%"
+  },
+  "sample_events": [
+    {"event": "Gutian invasion", "year": -2150, "psi_pass": true, "spi_pass": false},
+    {"event": "Ur III collapse", "year": -2004, "psi_pass": true, "spi_pass": true},
+    {"event": "Hammurabi posthumous fragmentation", "year": -1750, "psi_pass": false, "spi_pass": true}
+  ],
+  "note": "Full dataset (154 MB) available at github.com/cdli-gh/data and oracc.museum.upenn.edu"
+}

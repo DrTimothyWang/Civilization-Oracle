@@ -1,0 +1,60 @@
+{
+  "n_points": 8,
+  "psi_high_threshold": 0.571683816214794,
+  "spi_high_threshold": 0.5122312462395618,
+  "quadrant_distribution": {
+    "Gradual Decline": 2,
+    "Stable": 5,
+    "Sudden Crisis": 1
+  },
+  "n_alerts": 5,
+  "alerts": [
+    {
+      "time_idx": 1,
+      "year_label": 960,
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 3,
+      "year_label": 980,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 4,
+      "year_label": 990,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 5,
+      "year_label": 1000,
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 6,
+      "year_label": 1010,
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    }
+  ],
+  "metadata": {
+    "domain": "chinese_dynasty",
+    "dynasty": "北宋前期",
+    "source_file": "/Users/wangzr/Desktop/历史事件预测建模/v14_迭代研究/../output/decade_psi_summary.json",
+    "n_decades": 8,
+    "note": "SPI computed as proxy from PSI decade-to-decade derivative."
+  }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "dynasty": "北宋",
+    "period": "960-1127",
+    "n_experts": 50,
+    "psi_mean": 0.4999,
+    "psi_corrected": 0.3149,
+    "gsi": 1.6328,
+    "stability": "crisis"
+  },
+  {
+    "dynasty": "南宋",
+    "period": "1127-1279",
+    "n_experts": 40,
+    "psi_mean": 0.5301,
+    "psi_corrected": 0.3074,
+    "gsi": 1.7142,
+    "stability": "crisis"
+  },
+  {
+    "dynasty": "明朝",
+    "period": "1368-1644",
+    "n_experts": 50,
+    "psi_mean": 0.4801,
+    "psi_corrected": 0.264,
+    "gsi": 1.6161,
+    "stability": "crisis"
+  },
+  {
+    "dynasty": "唐朝",
+    "period": "618-907",
+    "n_experts": 50,
+    "psi_mean": 0.4854,
+    "psi_corrected": 0.2912,
+    "gsi": 1.7164,
+    "stability": "crisis"
+  }
+]

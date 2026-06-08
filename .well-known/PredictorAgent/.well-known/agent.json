@@ -1,0 +1,55 @@
+{
+  "name": "PredictorAgent",
+  "description": "ST-GNN 预测与情景生成。输出短/中/长期 PSI 预警与多路径情景。",
+  "version": "3.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": true,
+    "stateDiff": false
+  },
+  "skills": [
+    {
+      "id": "psi_forecast",
+      "name": "PSI 预测",
+      "description": "基于 ST-GNN 和 Goldstone 模型输出 PSI 预测值与置信区间",
+      "tags": [
+        "psi",
+        "forecast",
+        "st-gnn",
+        "goldstone"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "scenario_generation",
+      "name": "情景生成",
+      "description": "生成多条演化路径及其概率分布（MCTS 驱动）",
+      "tags": [
+        "scenario",
+        "mcts",
+        "simulation",
+        "long-term"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "endpoint": "http://localhost:8005/a2a",
+  "metadata": {
+    "generated_at": "2026-05-30T15:55:07.169660Z",
+    "four_diagnosis": "切",
+    "role": "prediction"
+  }
+}

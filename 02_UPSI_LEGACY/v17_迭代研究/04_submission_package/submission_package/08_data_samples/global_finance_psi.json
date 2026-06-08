@@ -1,0 +1,17 @@
+{
+  "improved_strategy": {
+    "n_trades": 42,
+    "final_capital": 14.589061328105673,
+    "buy_hold": 402.8470106423797,
+    "outperform": false
+  },
+  "blind_test": {
+    "train_years": "2020-2023",
+    "test_years": "2024-2025",
+    "train_mean_psi": 0.3119856139676256,
+    "test_mean_psi": 0.0744974372464089,
+    "train_neg_rate": 0.16500994035785288,
+    "test_neg_rate": 0.14741035856573706,
+    "test_predicted_pressure": true
+  }
+}

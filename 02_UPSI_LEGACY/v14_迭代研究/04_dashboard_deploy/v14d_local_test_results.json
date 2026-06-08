@@ -1,0 +1,46 @@
+{
+  "test_run": {
+    "timestamp": "2026-06-04T23:49:12+08:00",
+    "version": "v14d",
+    "exit_code": 2,
+    "exit_code_meaning": "PARTIAL_SUCCESS (1 asset fell back to simulated data)",
+    "command": "python3 -m src.dashboard --mode=once --config=config/config.yaml --output-dir=./dashboard_output --log-level=INFO",
+    "working_directory": "/Users/wangzr/Desktop/历史事件预测建模/v14_迭代研究/04_dashboard_deploy/v14d_dashboard_repo"
+  },
+  "results": {
+    "generated_at": "2026-06-04 23:49:12",
+    "current_upsi": -0.014,
+    "upsi_status": "⚠️ 关注",
+    "upsi_series_length": 192,
+    "assets_total": 20,
+    "assets_real_data": 19,
+    "assets_simulated": 1,
+    "simulated_asset": "RU.IMOEX (delisted / no price data available)",
+    "alert_level": "WARNING",
+    "alert_assets_count": 3,
+    "alert_assets": ["VIX", "BR.BVSP", "GOLD"],
+    "real_data_ratio": 0.95,
+    "output_files": [
+      "dashboard_output/dashboard_latest.html",
+      "dashboard_output/dashboard_data_v2.json"
+    ]
+  },
+  "validation": {
+    "html_generated": true,
+    "json_generated": true,
+    "json_valid": true,
+    "upsi_series_nonempty": true,
+    "all_assets_have_psi": true,
+    "alert_system_functional": true,
+    "renderer_functional": true,
+    "data_fetcher_functional": true,
+    "psi_engine_functional": true
+  },
+  "notes": [
+    "RU.IMOEX (Russian MOEX) is currently delisted from Yahoo Finance; simulated fallback is expected.",
+    "All other 19 assets successfully fetched real historical data (252 days each).",
+    "UPSI = -0.014 indicates a mild watch zone (WARNING level, not CRITICAL).",
+    "Dashboard HTML contains Chart.js time-series, heatmap, alert table, and asset ranking.",
+    "Local test passed all functional checks. Ready for GitHub deployment."
+  ]
+}

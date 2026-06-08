@@ -1,0 +1,35 @@
+assets:
+  US.SP500: "^GSPC"
+  JP.N225: "^N225"
+  CA.TSX: "^GSPTSE"
+  UK.FTSE: "^FTSE"
+  DE.DAX: "^GDAXI"
+  HK.HSI: "^HSI"
+  BR.BVSP: "^BVSP"
+  AR.MERVAL: "^MERV"
+  TR.XU100: "XU100.IS"
+  AU.ASX: "^AXJO"
+  FR.CAC: "^FCHI"
+  IN.NIFTY: "^NSEI"
+  RU.IMOEX: "IMOEX.ME"
+  USDJPY: "JPY=X"
+  EURUSD: "EURUSD=X"
+  GBPUSD: "GBPUSD=X"
+  US.10Y: "^TNX"
+  GOLD: "GC=F"
+  OIL.WTI: "CL=F"
+  VIX: "^VIX"
+
+history_days: 252
+alert_threshold_upsi: -0.5
+alert_threshold_asset: -0.5
+alert_assets_count_critical: 5
+output_dir: "."
+output_html: "dashboard_latest.html"
+output_json: "dashboard_data_v2.json"
+log_level: "INFO"
+daemon_interval_hours: 4.0
+max_retries_yf: 3
+retry_delay_seconds: 2.0
+simulated_data_bias: -0.0002
+simulated_data_volatility: 0.012

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSI 实时 Dashboard v10.0 | Global Pressure Index</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+body {
+  font-family: -apple-system, "PingFang SC", "Segoe UI", sans-serif;
+  background: #f5f6fa;
+  color: #2c3e50;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+h1 {
+  color: #2c3e50;
+  font-size: 28px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.subtitle {
+  color: #7f8c8d;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.kpi {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-left: 4px solid #3498db;
+}
+.kpi.alert { border-left-color: #c0392b; }
+.kpi.warn { border-left-color: #f39c12; }
+.kpi.ok { border-left-color: #27ae60; }
+.kpi-num {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.kpi-num.alert { color: #c0392b; }
+.kpi-num.warn { color: #f39c12; }
+.kpi-num.ok { color: #27ae60; }
+.kpi-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.kpi-status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.status-alert { background: #c0392b; }
+.status-warn { background: #f39c12; }
+.status-ok { background: #27ae60; }
+.section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+h2 {
+  color: #34495e;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+.chart {
+  height: 300px;
+  position: relative;
+}
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+.heatmap-item {
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.heatmap-value {
+  font-size: 20px;
+  margin-top: 4px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+th {
+  background: #f8f9fa;
+  color: #7f8c8d;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+tr:hover { background: #f8f9fa; }
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+.tag-alert { background: #c0392b; }
+.tag-warn { background: #f39c12; }
+.tag-ok { background: #27ae60; }
+.footer {
+  text-align: center;
+  color: #95a5a6;
+  font-size: 12px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+.info-box {
+  background: #e8f4f8;
+  border-left: 3px solid #3498db;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: #2c3e50;
+  margin-bottom: 16px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🌍 UPSI 全球压力指数 Dashboard v10.0</h1>
+<div class="subtitle">20 全球资产 + 金十情绪 | 生成于 2026-06-04 10:44:33</div>
+
+<div class="info-box">
+  <b>UPSI 统一公式:</b> UPSI = 0.40 × Material(回撤) + 0.30 × Fragmentation(波动) + 0.30 × Disengagement(动量衰减)<br>
+  阈值: UPSI &lt; -0.5 为警报状态，UPSI &lt; 0 为关注状态
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi warn">
+    <div class="kpi-num warn">-0.02</div>
+    <div class="kpi-label">全球 UPSI (最新)</div>
+    <span class="kpi-status status-warn">⚠️ 关注</span>
+  </div>
+  <div class="kpi ok">
+    <div class="kpi-num ok">3</div>
+    <div class="kpi-label">警报资产数 (PSI &lt; -0.5)</div>
+  </div>
+  <div class="kpi ok">
+    <div class="kpi-num ok">+0</div>
+    <div class="kpi-label">金十今日情绪</div>
+  </div>
+  <div class="kpi ok">
+    <div class="kpi-num ok">0</div>
+    <div class="kpi-label">今日快讯条数</div>
+  </div>
+</div>
+
+<div class="section">
+<h2>📈 全球 UPSI 时间序列 (最近 100 天)</h2>
+<div class="chart"><canvas id="upsiChart"></canvas></div>
+</div>
+
+<div class="section">
+<h2>🔥 20 资产 PSI 热力图 (当前)</h2>
+<div class="heatmap-grid">
+  <div class="heatmap-item" style="background:#f39c12">US SP500<div class="heatmap-value">-0.32</div></div>
+  <div class="heatmap-item" style="background:#27ae60">JP N225<div class="heatmap-value">+0.18</div></div>
+  <div class="heatmap-item" style="background:#f39c12">CA TSX<div class="heatmap-value">-0.14</div></div>
+  <div class="heatmap-item" style="background:#f39c12">UK FTSE<div class="heatmap-value">-0.08</div></div>
+  <div class="heatmap-item" style="background:#27ae60">DE DAX<div class="heatmap-value">+0.26</div></div>
+  <div class="heatmap-item" style="background:#27ae60">HK HSI<div class="heatmap-value">+0.17</div></div>
+  <div class="heatmap-item" style="background:#e74c3c">BR BVSP<div class="heatmap-value">-0.86</div></div>
+  <div class="heatmap-item" style="background:#27ae60">AR MERVAL<div class="heatmap-value">+0.18</div></div>
+  <div class="heatmap-item" style="background:#2ecc71">TR XU100<div class="heatmap-value">+0.68</div></div>
+  <div class="heatmap-item" style="background:#2ecc71">AU ASX<div class="heatmap-value">+0.59</div></div>
+  <div class="heatmap-item" style="background:#27ae60">FR CAC<div class="heatmap-value">+0.38</div></div>
+  <div class="heatmap-item" style="background:#f39c12">IN NIFTY<div class="heatmap-value">-0.12</div></div>
+  <div class="heatmap-item" style="background:#f39c12">RU IMOEX<div class="heatmap-value">-0.24</div></div>
+  <div class="heatmap-item" style="background:#f39c12">USDJPY<div class="heatmap-value">-0.38</div></div>
+  <div class="heatmap-item" style="background:#f39c12">EURUSD<div class="heatmap-value">-0.04</div></div>
+  <div class="heatmap-item" style="background:#27ae60">GBPUSD<div class="heatmap-value">+0.44</div></div>
+  <div class="heatmap-item" style="background:#27ae60">US 10Y<div class="heatmap-value">+0.30</div></div>
+  <div class="heatmap-item" style="background:#e74c3c">GOLD<div class="heatmap-value">-0.60</div></div>
+  <div class="heatmap-item" style="background:#27ae60">OIL WTI<div class="heatmap-value">+0.13</div></div>
+  <div class="heatmap-item" style="background:#e74c3c">VIX<div class="heatmap-value">-0.96</div></div>
+
+</div>
+</div>
+
+<div class="section">
+<h2>⚠️ 警报资产列表 (PSI &lt; -0.5)</h2>
+<table>
+<tr><th>资产</th><th>当前 PSI</th><th>状态</th><th>Material</th><th>Fragmentation</th><th>Disengagement</th></tr>
+<tr><td>VIX</td><td>-0.96</td><td><span class="tag tag-warn">警报</span></td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>BR.BVSP</td><td>-0.86</td><td><span class="tag tag-warn">警报</span></td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>GOLD</td><td>-0.60</td><td><span class="tag tag-warn">警报</span></td><td>—</td><td>—</td><td>—</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>📊 全部资产 PSI 排名</h2>
+<table>
+<tr><th>排名</th><th>资产</th><th>当前 PSI</th><th>状态</th></tr>
+<tr><td>1</td><td>VIX</td><td>-0.96</td><td><span class="tag tag-alert">警报</span></td></tr>
+<tr><td>2</td><td>BR.BVSP</td><td>-0.86</td><td><span class="tag tag-alert">警报</span></td></tr>
+<tr><td>3</td><td>GOLD</td><td>-0.60</td><td><span class="tag tag-alert">警报</span></td></tr>
+<tr><td>4</td><td>USDJPY</td><td>-0.38</td><td><span class="tag tag-warn">关注</span></td></tr>
+<tr><td>5</td><td>US.SP500</td><td>-0.32</td><td><span class="tag tag-warn">关注</span></td></tr>
+<tr><td>6</td><td>RU.IMOEX</td><td>-0.24</td><td><span class="tag tag-warn">关注</span></td></tr>
+<tr><td>7</td><td>CA.TSX</td><td>-0.14</td><td><span class="tag tag-warn">关注</span></td></tr>
+<tr><td>8</td><td>IN.NIFTY</td><td>-0.12</td><td><span class="tag tag-warn">关注</span></td></tr>
+<tr><td>9</td><td>UK.FTSE</td><td>-0.08</td><td><span class="tag tag-warn">关注</span></td></tr>
+<tr><td>10</td><td>EURUSD</td><td>-0.04</td><td><span class="tag tag-warn">关注</span></td></tr>
+<tr><td>11</td><td>OIL.WTI</td><td>+0.13</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>12</td><td>HK.HSI</td><td>+0.17</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>13</td><td>JP.N225</td><td>+0.18</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>14</td><td>AR.MERVAL</td><td>+0.18</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>15</td><td>DE.DAX</td><td>+0.26</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>16</td><td>US.10Y</td><td>+0.30</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>17</td><td>FR.CAC</td><td>+0.38</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>18</td><td>GBPUSD</td><td>+0.44</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>19</td><td>AU.ASX</td><td>+0.59</td><td><span class="tag tag-ok">正常</span></td></tr>
+<tr><td>20</td><td>TR.XU100</td><td>+0.68</td><td><span class="tag tag-ok">正常</span></td></tr>
+
+</table>
+</div>
+
+<div class="footer">
+  UPSI Dashboard v10.0 | 数据来源: yfinance (20 资产) + 金十数据 (情绪) | 更新频率: 每日 09:00<br>
+  局限: yfinance 数据有 15-30 分钟延迟; 金十数据需 MCP 接入; 部分新兴市场资产可能使用模拟数据
+</div>
+</div>
+
+<script>
+const upsiLabels = ["02-25", "02-26", "02-27", "02-28", "03-01", "03-02", "03-03", "03-04", "03-05", "03-06", "03-07", "03-08", "03-09", "03-10", "03-11", "03-12", "03-13", "03-14", "03-15", "03-16", "03-17", "03-18", "03-19", "03-20", "03-21", "03-22", "03-23", "03-24", "03-25", "03-26", "03-27", "03-28", "03-29", "03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09", "04-10", "04-11", "04-12", "04-13", "04-14", "04-15", "04-16", "04-17", "04-18", "04-19", "04-20", "04-21", "04-22", "04-23", "04-24", "04-25", "04-26", "04-27", "04-28", "04-29", "04-30", "05-01", "05-02", "05-03", "05-04", "05-05", "05-06", "05-07", "05-08", "05-09", "05-10", "05-11", "05-12", "05-13", "05-14", "05-15", "05-16", "05-17", "05-18", "05-19", "05-20", "05-21", "05-22", "05-23", "05-24", "05-25", "05-26", "05-27", "05-28", "05-29", "05-30", "05-31", "06-01", "06-02", "06-03", "06-04"];
+const upsiValues = [0.01, 0.027, -0.012, -0.056, -0.058, -0.099, -0.123, -0.107, -0.038, -0.087, -0.082, -0.064, -0.061, -0.07, -0.158, -0.035, 0.016, 0.075, 0.06, 0.132, 0.239, 0.249, 0.19, 0.145, 0.241, 0.252, 0.284, 0.242, 0.287, 0.288, 0.29, 0.281, 0.246, 0.237, 0.213, 0.073, 0.043, 0.093, -0.043, -0.178, -0.16, -0.045, -0.083, -0.106, -0.052, -0.011, -0.065, 0.011, -0.016, -0.032, -0.0, 0.045, 0.085, 0.133, 0.146, 0.187, 0.231, 0.234, 0.291, 0.269, 0.249, 0.415, 0.398, 0.387, 0.356, 0.372, 0.299, 0.234, 0.164, 0.05, -0.001, -0.062, -0.118, -0.199, -0.257, -0.253, -0.181, -0.195, -0.154, -0.049, -0.031, -0.092, -0.084, -0.021, -0.078, -0.091, -0.104, -0.125, -0.079, -0.055, -0.053, -0.001, 0.081, 0.013, 0.011, 0.008, 0.031, -0.085, 0.011, -0.021];
+
+// 阈值线
+const alertLine = upsiValues.map(() => -0.5);
+
+const ctx = document.getElementById('upsiChart').getContext('2d');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: upsiLabels,
+    datasets: [
+      {
+        label: '全球 UPSI',
+        data: upsiValues,
+        borderColor: '#3498db',
+        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+        borderWidth: 2,
+        pointRadius: 2,
+        tension: 0.3,
+        fill: true
+      },
+      {
+        label: '警报阈值 (-0.5)',
+        data: alertLine,
+        borderColor: '#c0392b',
+        borderWidth: 1.5,
+        borderDash: [6, 4],
+        pointRadius: 0,
+        fill: false
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: { color: '#2c3e50', font: { size: 12 } }
+      },
+      tooltip: {
+        mode: 'index',
+        intersect: false
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: '#7f8c8d', maxTicksLimit: 12, font: { size: 11 } },
+        grid: { color: '#ecf0f1' }
+      },
+      y: {
+        ticks: { color: '#7f8c8d', font: { size: 11 } },
+        grid: { color: '#ecf0f1' },
+        suggestedMin: -2,
+        suggestedMax: 2
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>

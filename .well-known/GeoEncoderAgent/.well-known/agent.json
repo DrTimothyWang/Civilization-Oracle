@@ -1,0 +1,38 @@
+{
+  "name": "GeoEncoderAgent",
+  "description": "古今地名映射与空间数据标准化。将历史地名编码为现代地理坐标，支持 CHGIS/CNHGIS。",
+  "version": "3.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateDiff": false
+  },
+  "skills": [
+    {
+      "id": "place_standardization",
+      "name": "古今地名标准化",
+      "description": "将古地名映射为现代经纬度坐标",
+      "tags": [
+        "geocoding",
+        "chgis",
+        "cnhgis",
+        "historical_gis"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "endpoint": "http://localhost:8002/a2a",
+  "metadata": {
+    "generated_at": "2026-05-30T15:55:07.167090Z",
+    "four_diagnosis": "望",
+    "role": "geo"
+  }
+}

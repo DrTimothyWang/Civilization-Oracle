@@ -1,0 +1,162 @@
+{
+  "n_points": 120,
+  "psi_high_threshold": 0.5753871287172756,
+  "spi_high_threshold": 0.7504809701196462,
+  "quadrant_distribution": {
+    "Gradual Decline": 32,
+    "Stable": 77,
+    "Sudden Crisis": 11
+  },
+  "n_alerts": 18,
+  "alerts": [
+    {
+      "time_idx": 36,
+      "year_label": "Year 36",
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 37,
+      "year_label": "Year 37",
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 39,
+      "year_label": "Year 39",
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 69,
+      "year_label": "Year 69",
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 71,
+      "year_label": "Year 71",
+      "from": "Stable",
+      "to": "Gradual Decline",
+      "message": "Yellow alert (monitor)",
+      "emoji": "🟡"
+    },
+    {
+      "time_idx": 72,
+      "year_label": "Year 72",
+      "from": "Gradual Decline",
+      "to": "Stable",
+      "message": "Green (all clear - stabilized)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 74,
+      "year_label": "Year 74",
+      "from": "Stable",
+      "to": "Sudden Crisis",
+      "message": "Orange alert (prepare)",
+      "emoji": "🟠"
+    },
+    {
+      "time_idx": 76,
+      "year_label": "Year 76",
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 77,
+      "year_label": "Year 77",
+      "from": "Stable",
+      "to": "Sudden Crisis",
+      "message": "Orange alert (prepare)",
+      "emoji": "🟠"
+    },
+    {
+      "time_idx": 80,
+      "year_label": "Year 80",
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 82,
+      "year_label": "Year 82",
+      "from": "Stable",
+      "to": "Sudden Crisis",
+      "message": "Orange alert (prepare)",
+      "emoji": "🟠"
+    },
+    {
+      "time_idx": 84,
+      "year_label": "Year 84",
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 89,
+      "year_label": "Year 89",
+      "from": "Stable",
+      "to": "Sudden Crisis",
+      "message": "Orange alert (prepare)",
+      "emoji": "🟠"
+    },
+    {
+      "time_idx": 90,
+      "year_label": "Year 90",
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 91,
+      "year_label": "Year 91",
+      "from": "Stable",
+      "to": "Sudden Crisis",
+      "message": "Orange alert (prepare)",
+      "emoji": "🟠"
+    },
+    {
+      "time_idx": 93,
+      "year_label": "Year 93",
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    },
+    {
+      "time_idx": 95,
+      "year_label": "Year 95",
+      "from": "Stable",
+      "to": "Sudden Crisis",
+      "message": "Orange alert (prepare)",
+      "emoji": "🟠"
+    },
+    {
+      "time_idx": 96,
+      "year_label": "Year 96",
+      "from": "Sudden Crisis",
+      "to": "Stable",
+      "message": "Green (all clear - resolved)",
+      "emoji": "🟢"
+    }
+  ],
+  "metadata": {
+    "domain": "synthetic",
+    "description": "Synthetic civilization lifecycle: Stable -> Gradual Decline -> Accelerating Collapse -> Sudden Crisis -> Stable",
+    "note": "This is synthetic data for demonstration purposes only."
+  }
+}

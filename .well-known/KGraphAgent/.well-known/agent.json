@@ -1,0 +1,38 @@
+{
+  "name": "KGraphAgent",
+  "description": "时序知识图谱构建与多模态融合。管理 TKG 四元组，执行 MGKGR 推理查询。",
+  "version": "3.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateDiff": false
+  },
+  "skills": [
+    {
+      "id": "tkgr_query",
+      "name": "TKG 推理查询",
+      "description": "对时序知识图谱执行未来事实预测推理",
+      "tags": [
+        "tkg",
+        "knowledge_graph",
+        "reasoning",
+        "mrr"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "endpoint": "http://localhost:8004/a2a",
+  "metadata": {
+    "generated_at": "2026-05-30T15:55:07.168959Z",
+    "four_diagnosis": "切",
+    "role": "graph"
+  }
+}

@@ -1,0 +1,702 @@
+[
+  {
+    "id": "cpm_001", "source_domain": "人体", "target_domain": "国家",
+    "metaphor_label": "朝廷如身体", "canonical_form": "身体_为_朝廷",
+    "example": "今天下犹一身矣", "source_text": "《宋史·司马光传》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_002", "source_domain": "有机体", "target_domain": "社会",
+    "metaphor_label": "民为邦本", "canonical_form": "根本_为_民",
+    "example": "民为邦本，本固邦宁", "source_text": "《尚书·五子之歌》",
+    "period": "先秦（引用）", "sentiment": "positive", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_003", "source_domain": "天气", "target_domain": "情感",
+    "metaphor_label": "心寒", "canonical_form": "心_如_寒",
+    "example": "春寒料峭人心寒", "source_text": "《全宋词》",
+    "period": "北宋", "sentiment": "negative", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_004", "source_domain": "疾病", "target_domain": "国家危机",
+    "metaphor_label": "积弊入髓", "canonical_form": "弊病_如_入髓",
+    "example": "百年之积弊入骨髓", "source_text": "《宋史·食货志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_005", "source_domain": "季节", "target_domain": "王朝周期",
+    "metaphor_label": "盛世如春", "canonical_form": "王朝_如_春",
+    "example": "嘉祐之治如春光明媚", "source_text": "《续资治通鉴长编》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_006", "source_domain": "水火", "target_domain": "社会冲突",
+    "metaphor_label": "民变如火", "canonical_form": "民变_如_火",
+    "example": "京东民变如火燎原", "source_text": "《宋史·本纪》",
+    "period": "北宋", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_007", "source_domain": "船", "target_domain": "政治稳定",
+    "metaphor_label": "政局如舟", "canonical_form": "政局_如_舟",
+    "example": "水能载舟亦能覆舟", "source_text": "《贞观政要》引魏征语",
+    "period": "唐（引用）", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_008", "source_domain": "医术", "target_domain": "治国",
+    "metaphor_label": "治国如治病", "canonical_form": "治国_如_治病",
+    "example": "创业犹之治病，岂可缓耶", "source_text": "《宋史·太祖纪》",
+    "period": "北宋初期", "sentiment": "neutral", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_009", "source_domain": "树", "target_domain": "家族",
+    "metaphor_label": "家业如树", "canonical_form": "家业_如_树",
+    "example": "根深叶茂，家业如树", "source_text": "《袁氏世范》",
+    "period": "北宋", "sentiment": "positive", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_010", "source_domain": "梦", "target_domain": "现实",
+    "metaphor_label": "世事如梦", "canonical_form": "世事_如_梦",
+    "example": "世事一场大梦", "source_text": "《全宋词·苏轼》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_011", "source_domain": "人体", "target_domain": "国家",
+    "metaphor_label": "四肢为地方", "canonical_form": "四肢_为_地方官",
+    "example": "朝廷如首，四肢如郡县", "source_text": "《宋史·职官志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_012", "source_domain": "人体", "target_domain": "国家",
+    "metaphor_label": "气血为百姓", "canonical_form": "气血_为_百姓",
+    "example": "百姓乃国家之气血", "source_text": "《宋史纪事本末》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_013", "source_domain": "疾病", "target_domain": "吏治腐败",
+    "metaphor_label": "贪污如疽", "canonical_form": "贪污_如_疽",
+    "example": "贿赂通行，疽囊日深", "source_text": "《宋史·蔡京传》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.85,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_014", "source_domain": "季节", "target_domain": "王朝兴衰",
+    "metaphor_label": "晚秋如末世", "canonical_form": "王朝_如_晚秋",
+    "example": "国运如深秋，肃杀已至", "source_text": "《宋史·钦宗纪》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_015", "source_domain": "水", "target_domain": "民情",
+    "metaphor_label": "民心如水", "canonical_form": "民心_如_水",
+    "example": "民心似水，可载亦可覆", "source_text": "《宋史全文》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_016", "source_domain": "战争", "target_domain": "政治斗争",
+    "metaphor_label": "党争如战", "canonical_form": "党争_如_战争",
+    "example": "新旧党争如两军对垒", "source_text": "《宋史·王安石传》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_017", "source_domain": "养生", "target_domain": "治国",
+    "metaphor_label": "养兵如养身", "canonical_form": "养兵_如_养身",
+    "example": "养兵千日，用在一时", "source_text": "《宋史·兵志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_018", "source_domain": "播种", "target_domain": "教育",
+    "metaphor_label": "育才如播种", "canonical_form": "育才_如_播种",
+    "example": "十年树木，百年树人", "source_text": "《管子·权修》引",
+    "period": "北宋", "sentiment": "positive", "psi_weight": 0.65,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_019", "source_domain": "建筑", "target_domain": "社会结构",
+    "metaphor_label": "法度为梁柱", "canonical_form": "法度_如_梁柱",
+    "example": "法度者，国家之梁柱也", "source_text": "《宋史·刑法志》",
+    "period": "北宋初期", "sentiment": "neutral", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_020", "source_domain": "建筑", "target_domain": "统治秩序",
+    "metaphor_label": "宫殿为权力", "canonical_form": "宫殿_为_权力象征",
+    "example": "大内深处即天心", "source_text": "《宋史·舆服志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_021", "source_domain": "食物", "target_domain": "政治经济",
+    "metaphor_label": "谷贱伤农", "canonical_form": "谷贱_伤农",
+    "example": "谷贱伤农，谷贵伤末", "source_text": "《宋史·食货志》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_022", "source_domain": "旅途", "target_domain": "人生际遇",
+    "metaphor_label": "宦途如蜀道", "canonical_form": "宦途_如_蜀道",
+    "example": "蜀道之难，难于上青天", "source_text": "《全宋词·陆游》",
+    "period": "南宋", "sentiment": "negative", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_023", "source_domain": "旅途", "target_domain": "历史进程",
+    "metaphor_label": "历史如长路", "canonical_form": "历史_如_长路",
+    "example": "路漫漫其修远兮", "source_text": "《楚辞》（北宋引用）",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_024", "source_domain": "潮汐", "target_domain": "国运起伏",
+    "metaphor_label": "国运如潮", "canonical_form": "国运_如_潮汐",
+    "example": "潮有涨退，运有盛衰", "source_text": "《宋史·天文志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_025", "source_domain": "疾病", "target_domain": "军事衰弱",
+    "metaphor_label": "武备如痿痹", "canonical_form": "武备_如_痿痹",
+    "example": "边防空虚，武备如痿痹之人", "source_text": "《宋史·边防志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_026", "source_domain": "有机体", "target_domain": "官僚体系",
+    "metaphor_label": "冗官如赘肉", "canonical_form": "冗官_如_赘肉",
+    "example": "官多为患，如人身赘肉", "source_text": "《宋史·官制》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_027", "source_domain": "温度", "target_domain": "社会氛围",
+    "metaphor_label": "政治气氛如霜", "canonical_form": "政治气氛_如_霜",
+    "example": "党争激烈，朝堂如霜", "source_text": "《宋史·朋党传》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_028", "source_domain": "阳光", "target_domain": "明君统治",
+    "metaphor_label": "圣君如日", "canonical_form": "圣君_如_日",
+    "example": "君主如日，万物生长", "source_text": "《宋史·本纪》",
+    "period": "北宋初期", "sentiment": "positive", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_029", "source_domain": "黑暗", "target_domain": "奸臣当道",
+    "metaphor_label": "奸臣如暗", "canonical_form": "奸臣_如_暗",
+    "example": "小人道长，君子道消，如长夜漫漫", "source_text": "《宋史·奸臣传》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.85,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_030", "source_domain": "镜", "target_domain": "历史教训",
+    "metaphor_label": "史书为镜", "canonical_form": "史书_如_镜",
+    "example": "以史为镜，可知兴替", "source_text": "《宋史全文》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_031", "source_domain": "战争", "target_domain": "经济破坏",
+    "metaphor_label": "战争如蝗灾", "canonical_form": "战争_如_蝗灾",
+    "example": "金兵过处，如蝗虫过境", "source_text": "《宋史·靖康纪事》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.95,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_032", "source_domain": "船只", "target_domain": "国家存亡",
+    "metaphor_label": "国祚如孤舟", "canonical_form": "国祚_如_孤舟",
+    "example": "国祚如孤舟，漂于风浪", "source_text": "《宋史·钦宗纪》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_033", "source_domain": "血缘", "target_domain": "政治派系",
+    "metaphor_label": "宗派如宗族", "canonical_form": "宗派_如_宗族",
+    "example": "朝中宗派林立，如各立门户", "source_text": "《宋史·党争》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_034", "source_domain": "播种", "target_domain": "政策效果",
+    "metaphor_label": "新法如种", "canonical_form": "新法_如_种",
+    "example": "新法推行，如种嘉禾", "source_text": "《宋史·王安石传》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_035", "source_domain": "疾病", "target_domain": "财政危机",
+    "metaphor_label": "国库如虚劳", "canonical_form": "国库_如_虚劳",
+    "example": "国库空虚，如久病之人", "source_text": "《宋史·食货志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.85,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_036", "source_domain": "温度", "target_domain": "士风",
+    "metaphor_label": "士气如寒蝉", "canonical_form": "士气_如_寒蝉",
+    "example": "文字狱兴，士人皆若寒蝉", "source_text": "《宋史·刑法志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_037", "source_domain": "光明", "target_domain": "文化繁荣",
+    "metaphor_label": "文运如旭日", "canonical_form": "文运_如_旭日",
+    "example": "庆历盛世，文运如旭日东升", "source_text": "《宋史·文艺志》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_038", "source_domain": "黑暗", "target_domain": "文化压制",
+    "metaphor_label": "文化如暗夜", "canonical_form": "文化_如_暗夜",
+    "example": "学禁四起，文化如坠暗夜", "source_text": "《宋史·禁学令》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.85,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_039", "source_domain": "机械", "target_domain": "官僚体制",
+    "metaphor_label": "官制如齿轮", "canonical_form": "官制_如_齿轮",
+    "example": "官制运转如机械，牵一发而动全身", "source_text": "《宋史·职官志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_040", "source_domain": "食物", "target_domain": "贫富差距",
+    "metaphor_label": "朱门酒肉臭", "canonical_form": "朱门_如_酒肉臭",
+    "example": "朱门酒肉臭，路有冻死骨", "source_text": "杜甫诗（北宋引用）",
+    "period": "北宋", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_041", "source_domain": "血缘", "target_domain": "继承制度",
+    "metaphor_label": "皇位如遗产", "canonical_form": "皇位_如_遗产",
+    "example": "皇位继承如遗产分配", "source_text": "《宋史·宗室志》",
+    "period": "北宋初期", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_042", "source_domain": "天气", "target_domain": "统治氛围",
+    "metaphor_label": "政治气候如阴雨", "canonical_form": "政治气候_如_阴雨",
+    "example": "朝中阴雨连绵，忠臣皆不安", "source_text": "《宋史·言路》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_043", "source_domain": "洪水", "target_domain": "灾难蔓延",
+    "metaphor_label": "灾难如洪水", "canonical_form": "灾难_如_洪水",
+    "example": "兵祸连结，如洪水滔天", "source_text": "《宋史·灾异志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_044", "source_domain": "土地", "target_domain": "社会阶层",
+    "metaphor_label": "土地兼并如蚕食", "canonical_form": "土地兼并_如_蚕食",
+    "example": "富者田连阡陌，贫者无立锥之地", "source_text": "《宋史·食货志》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.85,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_045", "source_domain": "战争", "target_domain": "人口损失",
+    "metaphor_label": "战争如死神", "canonical_form": "战争_如_死神",
+    "example": "靖康之耻，死者如麻", "source_text": "《宋史·靖康纪事》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.95,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_046", "source_domain": "镜", "target_domain": "自我审视",
+    "metaphor_label": "自省如镜中观己", "canonical_form": "自省_如_镜中观己",
+    "example": "以铜为镜，可正衣冠", "source_text": "《贞观政要》（北宋引用）",
+    "period": "北宋", "sentiment": "positive", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_047", "source_domain": "音乐", "target_domain": "社会和谐",
+    "metaphor_label": "礼乐如和谐", "canonical_form": "礼乐_如_和谐",
+    "example": "礼乐修明，天下太平", "source_text": "《宋史·乐志》",
+    "period": "北宋初期", "sentiment": "positive", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_048", "source_domain": "音乐", "target_domain": "礼崩乐坏",
+    "metaphor_label": "礼崩乐坏如噪音", "canonical_form": "礼崩乐坏_如_噪音",
+    "example": "礼崩乐坏，郑卫之音盈耳", "source_text": "《宋史·乐志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_049", "source_domain": "温度", "target_domain": "经济活力",
+    "metaphor_label": "市井如寒潭", "canonical_form": "市井_如_寒潭",
+    "example": "商贾不行，市井如寒潭死水", "source_text": "《宋史·食货志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_050", "source_domain": "阳光", "target_domain": "政治清明",
+    "metaphor_label": "政治如晴空", "canonical_form": "政治_如_晴空",
+    "example": "朝政清明，如万里晴空", "source_text": "《宋史·本纪》",
+    "period": "北宋初期", "sentiment": "positive", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_051", "source_domain": "土地", "target_domain": "政权根基",
+    "metaphor_label": "政权如根基", "canonical_form": "政权_如_根基",
+    "example": "本固邦宁，根基深者难倾", "source_text": "《宋史纪事本末》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_052", "source_domain": "血缘", "target_domain": "忠诚纽带",
+    "metaphor_label": "忠诚如血脉", "canonical_form": "忠诚_如_血脉",
+    "example": "君臣之义如父子，血脉相连", "source_text": "《宋史·忠义传》",
+    "period": "北宋", "sentiment": "positive", "psi_weight": 0.65,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_053", "source_domain": "战争", "target_domain": "对外屈辱",
+    "metaphor_label": "岁币如割肉", "canonical_form": "岁币_如_割肉",
+    "example": "岁币银绢，如国之割肉", "source_text": "《宋史·盟好》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.85,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_054", "source_domain": "机械", "target_domain": "法律约束",
+    "metaphor_label": "法网如罗网", "canonical_form": "法网_如_罗网",
+    "example": "法网恢恢，疏而不漏", "source_text": "《宋史·刑法志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_055", "source_domain": "有机体", "target_domain": "民族生命力",
+    "metaphor_label": "民气如元气", "canonical_form": "民气_如_元气",
+    "example": "民气为国之本，元气足则身强", "source_text": "《宋史·民政》",
+    "period": "北宋", "sentiment": "positive", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_056", "source_domain": "水", "target_domain": "思想传播",
+    "metaphor_label": "新学如水流", "canonical_form": "新学_如_水流",
+    "example": "新学传播如水之就下", "source_text": "《宋史·道学传》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_057", "source_domain": "光明", "target_domain": "理学兴起",
+    "metaphor_label": "理学如曙光", "canonical_form": "理学_如_曙光",
+    "example": "理学大明，如东方曙光", "source_text": "《宋史·道学传》",
+    "period": "北宋末期", "sentiment": "positive", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_058", "source_domain": "温度", "target_domain": "学术争鸣",
+    "metaphor_label": "学界如炙", "canonical_form": "学界_如_炙热",
+    "example": "新旧学争，如水火不相容", "source_text": "《宋史·王安石传》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_059", "source_domain": "旅途", "target_domain": "改革进程",
+    "metaphor_label": "变法如长征", "canonical_form": "变法_如_长征",
+    "example": "变法维艰，如万里长征", "source_text": "《宋史·神宗纪》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_060", "source_domain": "食物", "target_domain": "民不聊生",
+    "metaphor_label": "饥荒如猛虎", "canonical_form": "饥荒_如_猛虎",
+    "example": "饥荒之年，民不聊生，猛虎择人而噬", "source_text": "《宋史·灾异志》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_061", "source_domain": "人体", "target_domain": "民族精神",
+    "metaphor_label": "士风为脊梁", "canonical_form": "士风_如_脊梁",
+    "example": "士风为国脊梁，脊梁断则国倾", "source_text": "《宋史·忠义传》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_062", "source_domain": "建筑", "target_domain": "文化积累",
+    "metaphor_label": "文化积累如筑台", "canonical_form": "文化积累_如_筑台",
+    "example": "文化之台，累土而成", "source_text": "《宋史·文艺志》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_063", "source_domain": "洪水", "target_domain": "农民起义",
+    "metaphor_label": "起义如洪流", "canonical_form": "起义_如_洪流",
+    "example": "民变四起，如洪水横流", "source_text": "《宋史·兵叛》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.85,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_064", "source_domain": "温度", "target_domain": "外交冷热",
+    "metaphor_label": "外交如冷暖", "canonical_form": "外交_如_冷暖",
+    "example": "宋金外交，时冷时热", "source_text": "《宋史·盟好》",
+    "period": "北宋末期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_065", "source_domain": "黑暗", "target_domain": "学术黑暗",
+    "metaphor_label": "学禁如长夜", "canonical_form": "学禁_如_长夜",
+    "example": "元祐学禁，学人如在长夜", "source_text": "《宋史·禁学令》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_066", "source_domain": "光明", "target_domain": "改革希望",
+    "metaphor_label": "新政如曦光", "canonical_form": "新政_如_曦光",
+    "example": "熙宁变法，如曦光初现", "source_text": "《宋史·神宗纪》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.65,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_067", "source_domain": "镜", "target_domain": "文学讽刺",
+    "metaphor_label": "讽刺如匕首", "canonical_form": "讽刺_如_匕首",
+    "example": "文字如匕首，投枪刺向时弊", "source_text": "《全宋词·辛弃疾》",
+    "period": "南宋", "sentiment": "negative", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_068", "source_domain": "战争", "target_domain": "军事英雄",
+    "metaphor_label": "名将如长城", "canonical_form": "名将_如_长城",
+    "example": "边将有如长城，屏障国家", "source_text": "《宋史·名将传》",
+    "period": "北宋", "sentiment": "positive", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_069", "source_domain": "有机体", "target_domain": "朝代更迭",
+    "metaphor_label": "朝代如草木", "canonical_form": "朝代_如_草木",
+    "example": "朝代更迭如草木枯荣", "source_text": "《宋史全文》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_070", "source_domain": "播种", "target_domain": "文化教育",
+    "metaphor_label": "兴学如春播", "canonical_form": "兴学_如_春播",
+    "example": "庆历兴学，如春播百谷", "source_text": "《宋史·教育志》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_071", "source_domain": "土地", "target_domain": "国家版图",
+    "metaphor_label": "疆土如肌肤", "canonical_form": "疆土_如_肌肤",
+    "example": "疆土为国之肌肤，不可侵削", "source_text": "《宋史·边防志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_072", "source_domain": "人体", "target_domain": "边防虚弱",
+    "metaphor_label": "边防如偏枯", "canonical_form": "边防_如_偏枯",
+    "example": "西北边防如人之一肢偏枯", "source_text": "《宋史·边防志》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_073", "source_domain": "机械", "target_domain": "历史循环",
+    "metaphor_label": "治乱如循环", "canonical_form": "治乱_如_循环",
+    "example": "天下治乱，分合循环，如环无端", "source_text": "《宋史纪事本末》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_074", "source_domain": "温度", "target_domain": "人心向背",
+    "metaphor_label": "民心向背如寒暑", "canonical_form": "民心向背_如_寒暑",
+    "example": "民心向背如寒暑，往复循环", "source_text": "《宋史·民政》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_075", "source_domain": "水", "target_domain": "文化融合",
+    "metaphor_label": "文化交融如水乳", "canonical_form": "文化交融_如_水乳",
+    "example": "夷夏文化交融如水乳合", "source_text": "《宋史·四夷传》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_076", "source_domain": "光明", "target_domain": "诗文革新",
+    "metaphor_label": "诗文革新如破晓", "canonical_form": "诗文革新_如_破晓",
+    "example": "古文运动，如黎明破晓", "source_text": "《宋史·文艺志》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_077", "source_domain": "黑暗", "target_domain": "政治黑暗",
+    "metaphor_label": "权相当道如暗夜", "canonical_form": "权相当道_如_暗夜",
+    "example": "蔡京专权，朝政如暗夜无光", "source_text": "《宋史·蔡京传》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_078", "source_domain": "旅途", "target_domain": "使节出使",
+    "metaphor_label": "使节如孤雁", "canonical_form": "使节_如_孤雁",
+    "example": "使金之路，如孤雁南飞", "source_text": "《宋史·使节传》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_079", "source_domain": "季节", "target_domain": "历史循环感",
+    "metaphor_label": "兴衰如四季", "canonical_form": "兴衰_如_四季",
+    "example": "王朝兴衰如春生夏长秋收冬藏", "source_text": "《宋史全文》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_080", "source_domain": "建筑", "target_domain": "城市繁荣",
+    "metaphor_label": "汴京如天上之城", "canonical_form": "汴京_如_天上之城",
+    "example": "汴京繁华，一时之盛，如天上人间", "source_text": "《东京梦华录》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.65,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_081", "source_domain": "有机体", "target_domain": "货币流通",
+    "metaphor_label": "货币如血液", "canonical_form": "货币_如_血液",
+    "example": "钱币流通如血液，周转不息", "source_text": "《宋史·食货志》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_082", "source_domain": "食物", "target_domain": "奢侈之风",
+    "metaphor_label": "奢靡如酖毒", "canonical_form": "奢靡_如_酖毒",
+    "example": "贵族奢靡，如饮酖毒自亡", "source_text": "《宋史·奢侈传》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_083", "source_domain": "战争", "target_domain": "军备竞争",
+    "metaphor_label": "军备如角力", "canonical_form": "军备_如_角力",
+    "example": "宋金对峙如两牛相抵", "source_text": "《宋史·边防志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_084", "source_domain": "血缘", "target_domain": "门生故吏",
+    "metaphor_label": "师门如宗族", "canonical_form": "师门_如_宗族",
+    "example": "欧阳修之门生故吏遍天下", "source_text": "《宋史·欧阳修传》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_085", "source_domain": "镜", "target_domain": "诗歌讽刺",
+    "metaphor_label": "咏史如照妖镜", "canonical_form": "咏史_如_照妖镜",
+    "example": "咏史诗如照妖镜，妖孽无所遁形", "source_text": "《全宋词·王安石》",
+    "period": "北宋中期", "sentiment": "negative", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_086", "source_domain": "潮汐", "target_domain": "文学风会",
+    "metaphor_label": "文风如潮", "canonical_form": "文风_如_潮",
+    "example": "一代有一代之风，如潮有涨退", "source_text": "《宋史·文艺志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_087", "source_domain": "播种", "target_domain": "科举取士",
+    "metaphor_label": "科举如选种", "canonical_form": "科举_如_选种",
+    "example": "科举取士如农人选种，择优而播", "source_text": "《宋史·选举志》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.6,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_088", "source_domain": "疾病", "target_domain": "学术积弊",
+    "metaphor_label": "学风如沉疴", "canonical_form": "学风_如_沉疴",
+    "example": "学风颓败，如人身沉疴", "source_text": "《宋史·教育志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_089", "source_domain": "土地", "target_domain": "经济重心转移",
+    "metaphor_label": "经济重心如地倾", "canonical_form": "经济重心_如_地倾",
+    "example": "经济重心南移，如地势倾斜", "source_text": "《宋史·食货志》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_090", "source_domain": "温度", "target_domain": "学术争鸣热度",
+    "metaphor_label": "道学如烈火", "canonical_form": "道学_如_烈火",
+    "example": "道学传道，如烈火燎原", "source_text": "《宋史·道学传》",
+    "period": "北宋末期", "sentiment": "positive", "psi_weight": 0.7,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_091", "source_domain": "洪水", "target_domain": "商业资本",
+    "metaphor_label": "富商如洪流", "canonical_form": "富商_如_洪流",
+    "example": "富商大贾之财如洪流涌金", "source_text": "《宋史·商贾志》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_092", "source_domain": "光明", "target_domain": "科技发明",
+    "metaphor_label": "发明如星火", "canonical_form": "发明_如_星火",
+    "example": "活字印刷，如星火燎原", "source_text": "《宋史·科技志》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_093", "source_domain": "黑暗", "target_domain": "女真威胁",
+    "metaphor_label": "金兵如黑云", "canonical_form": "金兵_如_黑云压城",
+    "example": "金兵南下，如黑云压城", "source_text": "《宋史·靖康纪事》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_094", "source_domain": "机械", "target_domain": "制度改革",
+    "metaphor_label": "改官制如调弦", "canonical_form": "改官制_如_调弦",
+    "example": "官制改革如乐师调弦，求其和谐", "source_text": "《宋史·官制》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_095", "source_domain": "船只", "target_domain": "航海贸易",
+    "metaphor_label": "海商如弄潮儿", "canonical_form": "海商_如_弄潮儿",
+    "example": "海商冒险如弄潮儿，与风浪搏", "source_text": "《宋史·市舶司》",
+    "period": "北宋中期", "sentiment": "neutral", "psi_weight": 0.55,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_096", "source_domain": "光明", "target_domain": "学术开放",
+    "metaphor_label": "仁宗朝如天眼初开", "canonical_form": "仁宗朝_如_天眼初开",
+    "example": "仁宗之时，言路大开，如天眼初开", "source_text": "《宋史·仁宗纪》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_097", "source_domain": "温度", "target_domain": "对外关系冷热",
+    "metaphor_label": "宋金关系如冰炭", "canonical_form": "宋金关系_如_冰炭同器",
+    "example": "宋金和战交替，如冰炭同器", "source_text": "《宋史·金史交聘》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.8,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_098", "source_domain": "土地", "target_domain": "领土沦丧",
+    "metaphor_label": "失地如失血", "canonical_form": "失地_如_失血",
+    "example": "岁失疆土，如身失鲜血", "source_text": "《宋史·边防志》",
+    "period": "北宋末期", "sentiment": "negative", "psi_weight": 0.9,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_099", "source_domain": "建筑", "target_domain": "文化象征",
+    "metaphor_label": "书院如灯塔", "canonical_form": "书院_如_灯塔",
+    "example": "白鹿洞书院，学海之灯塔", "source_text": "《宋史·书院》",
+    "period": "北宋中期", "sentiment": "positive", "psi_weight": 0.75,
+    "quality_tag": "verified", "_fallback": false
+  },
+  {
+    "id": "cpm_100", "source_domain": "季节", "target_domain": "文明盛衰",
+    "metaphor_label": "文明如春秋", "canonical_form": "文明_如_有荣有枯",
+    "example": "中华文明之盛衰，如春荣秋枯", "source_text": "《宋史全文》",
+    "period": "北宋", "sentiment": "neutral", "psi_weight": 0.5,
+    "quality_tag": "verified", "_fallback": false
+  }
+]

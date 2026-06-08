@@ -1,0 +1,3726 @@
+{
+  "metadata": {
+    "version": "v13b",
+    "date": "2026-06-04T11:54:04.419286",
+    "events_tested": 2
+  },
+  "hammurabi": {
+    "event": "Hammurabi_death_empire_split",
+    "year": -1750,
+    "period": "Old Babylonian",
+    "captured": true,
+    "capture_reason": "Sudden drop(s) detected near -1750: 1 window(s) with >50% count reduction",
+    "spi_result": {
+      "period": "Old Babylonian",
+      "tau": 5,
+      "confidence": "INTERPOLATED",
+      "period_start": -1894,
+      "period_end": -1595,
+      "n_records": 7362,
+      "n_exact_records": 5,
+      "n_windows": 3,
+      "windows": {
+        "-1830": {
+          "weighted_count": 2.0,
+          "raw_count": 2,
+          "proveniences": {
+            "Nippur": 1
+          }
+        },
+        "-1745": {
+          "weighted_count": 5015.6,
+          "raw_count": 7357,
+          "proveniences": {
+            "unclear": 1054,
+            "Kiš": 19,
+            "Nippur": 3926,
+            "Sippar": 30,
+            "Kisurra": 4,
+            "Ur": 699,
+            "Der": 3,
+            "Šaduppum": 129,
+            "Uruk": 71,
+            "Diyala": 5,
+            "Shuruppak": 1,
+            "Umma": 7,
+            "Nerebtum": 10,
+            "Susa": 166,
+            "Larsa": 33,
+            "Isin": 73,
+            "Nineveh": 16,
+            "Tutub": 2,
+            "Sealand": 3,
+            "Sippar-Amnanum": 1,
+            "Babylon": 4,
+            "Adab": 4,
+            "Tell Hammam et-Turkman": 1,
+            "Kish": 14,
+            "Byblos": 1,
+            "Ṭabatum": 1,
+            "Ešnunna": 42,
+            "Girsu": 9,
+            "Šaduppûm": 1,
+            "Eridu": 2,
+            "Bad-tibira": 1,
+            "Zabala": 3,
+            "Diqdiqqah": 3,
+            "Terqa": 2,
+            "Diniktum": 1,
+            "Maškan-šapir": 1,
+            "Sippar-Yahrurum": 24,
+            "Mari": 1,
+            "Hattusa": 2,
+            "Assur": 2,
+            "Bābili": 3,
+            "Zabalam": 1,
+            "Tell Muhammad": 1,
+            "northern Babylonia": 2,
+            "Malgium": 1,
+            "Babylonia": 1,
+            "Irisagrig": 117,
+            "Dilbat": 1,
+            "Tilmen Höyük": 1,
+            "Šubat-Enlil": 1,
+            "Umma region": 1
+          }
+        },
+        "-1735": {
+          "weighted_count": 1.4,
+          "raw_count": 2,
+          "proveniences": {
+            "Ur": 1
+          }
+        }
+      },
+      "spi_series": {
+        "-1830": {
+          "spi_m": 0.0,
+          "spi_a": 0.267,
+          "spi_f": -1.414,
+          "spi_d": -0.707,
+          "spi_aggregate": -0.393,
+          "alert_level": "NORMAL"
+        },
+        "-1745": {
+          "spi_m": 1.225,
+          "spi_a": 1.069,
+          "spi_f": 0.707,
+          "spi_d": -0.707,
+          "spi_aggregate": 0.767,
+          "alert_level": "NORMAL"
+        },
+        "-1735": {
+          "spi_m": -1.225,
+          "spi_a": -1.336,
+          "spi_f": 0.707,
+          "spi_d": 1.414,
+          "spi_aggregate": 1.152,
+          "alert_level": "NORMAL"
+        }
+      },
+      "velocity": {
+        "-1830": 0.0,
+        "-1745": 1002.72,
+        "-1735": -1002.84
+      },
+      "acceleration": {
+        "-1830": 0.0,
+        "-1745": 200.544,
+        "-1735": -401.112
+      },
+      "cv": {
+        "-1830": 0.0,
+        "-1745": 4.429,
+        "-1735": 0.0
+      },
+      "fragmentation_velocity": {
+        "-1830": 0.0,
+        "-1745": 0.886,
+        "-1735": -0.886
+      },
+      "volatility": {
+        "-1830": 0.0,
+        "-1745": 0.0,
+        "-1735": 818.766
+      },
+      "sudden_drops": [
+        {
+          "window_start": -1735,
+          "previous_count": 5015.6,
+          "current_count": 1.4,
+          "drop_ratio": 0.0,
+          "velocity": -1002.84,
+          "type": "sudden_drop"
+        }
+      ],
+      "volatility_spikes": [],
+      "correlation_breakdown": null,
+      "max_spi_window": -1735,
+      "max_spi_value": 1.152
+    }
+  },
+  "umma": {
+    "event": "Umma_sudden_decline",
+    "year": -2037,
+    "period": "Ur III",
+    "captured": true,
+    "capture_reason": "Umma-specific sudden drop(s) near -2037: 4 window(s)",
+    "ruler_counts": {
+      "SS": 17746,
+      "SH": 15172,
+      "AS": 18995,
+      "IS": 6334,
+      "UN": 16
+    },
+    "umma_records": 30194,
+    "spi_empire": {
+      "period": "Ur III",
+      "tau": 1,
+      "confidence": "EXACT",
+      "period_start": -2112,
+      "period_end": -2004,
+      "n_records": 77838,
+      "n_exact_records": 58021,
+      "n_windows": 85,
+      "windows": {
+        "-2094": {
+          "weighted_count": 1.8,
+          "raw_count": 3,
+          "proveniences": {
+            "Girsu": 2,
+            "Nippur": 1
+          }
+        },
+        "-2093": {
+          "weighted_count": 0.6,
+          "raw_count": 1,
+          "proveniences": {
+            "Nippur": 1
+          }
+        },
+        "-2092": {
+          "weighted_count": 2.4,
+          "raw_count": 4,
+          "proveniences": {
+            "Girsu": 4
+          }
+        },
+        "-2091": {
+          "weighted_count": 1.8,
+          "raw_count": 3,
+          "proveniences": {
+            "Girsu": 3
+          }
+        },
+        "-2090": {
+          "weighted_count": 3.6,
+          "raw_count": 6,
+          "proveniences": {
+            "Girsu": 6
+          }
+        },
+        "-2089": {
+          "weighted_count": 9.6,
+          "raw_count": 16,
+          "proveniences": {
+            "Girsu": 16
+          }
+        },
+        "-2088": {
+          "weighted_count": 6.0,
+          "raw_count": 10,
+          "proveniences": {
+            "Girsu": 10
+          }
+        },
+        "-2087": {
+          "weighted_count": 9.0,
+          "raw_count": 15,
+          "proveniences": {
+            "Girsu": 15
+          }
+        },
+        "-2086": {
+          "weighted_count": 7.8,
+          "raw_count": 13,
+          "proveniences": {
+            "Girsu": 13
+          }
+        },
+        "-2085": {
+          "weighted_count": 5.4,
+          "raw_count": 9,
+          "proveniences": {
+            "Girsu": 9
+          }
+        },
+        "-2084": {
+          "weighted_count": 1.8,
+          "raw_count": 3,
+          "proveniences": {
+            "Girsu": 3
+          }
+        },
+        "-2081": {
+          "weighted_count": 2.4,
+          "raw_count": 4,
+          "proveniences": {
+            "Girsu": 4
+          }
+        },
+        "-2080": {
+          "weighted_count": 4.2,
+          "raw_count": 7,
+          "proveniences": {
+            "Girsu": 7
+          }
+        },
+        "-2079": {
+          "weighted_count": 3.0,
+          "raw_count": 5,
+          "proveniences": {
+            "Girsu": 5
+          }
+        },
+        "-2078": {
+          "weighted_count": 1.2,
+          "raw_count": 2,
+          "proveniences": {
+            "Girsu": 2
+          }
+        },
+        "-2077": {
+          "weighted_count": 1.2,
+          "raw_count": 2,
+          "proveniences": {
+            "Ur": 1,
+            "Girsu": 1
+          }
+        },
+        "-2075": {
+          "weighted_count": 6.0,
+          "raw_count": 10,
+          "proveniences": {
+            "Nippur": 1,
+            "Umma": 7,
+            "Girsu": 1
+          }
+        },
+        "-2074": {
+          "weighted_count": 6.6,
+          "raw_count": 11,
+          "proveniences": {
+            "Nippur": 2,
+            "Umma": 8,
+            "Girsu": 1
+          }
+        },
+        "-2073": {
+          "weighted_count": 18.0,
+          "raw_count": 30,
+          "proveniences": {
+            "Girsu": 10,
+            "Umma": 19,
+            "Nippur": 1
+          }
+        },
+        "-2072": {
+          "weighted_count": 19.8,
+          "raw_count": 33,
+          "proveniences": {
+            "Umma": 27,
+            "Girsu": 4,
+            "Ur": 2
+          }
+        },
+        "-2071": {
+          "weighted_count": 28.8,
+          "raw_count": 48,
+          "proveniences": {
+            "Umma": 36,
+            "Nippur": 2,
+            "Girsu": 5,
+            "Ur": 4
+          }
+        },
+        "-2070": {
+          "weighted_count": 154.0,
+          "raw_count": 246,
+          "proveniences": {
+            "Umma": 110,
+            "Girsu": 63,
+            "Nippur": 37,
+            "Puzriš-Dagan": 6,
+            "Ur": 19,
+            "Nippur Region": 1,
+            "Umma region": 3
+          }
+        },
+        "-2069": {
+          "weighted_count": 24.2,
+          "raw_count": 40,
+          "proveniences": {
+            "Girsu": 13,
+            "Puzriš-Dagan": 5,
+            "Umma": 14,
+            "Nippur": 3,
+            "Ur": 3,
+            "Umma region": 2
+          }
+        },
+        "-2068": {
+          "weighted_count": 37.8,
+          "raw_count": 63,
+          "proveniences": {
+            "Girsu": 32,
+            "Umma": 15,
+            "Puzriš-Dagan": 4,
+            "Nippur": 1,
+            "Ur": 6,
+            "Umma region": 1
+          }
+        },
+        "-2067": {
+          "weighted_count": 96.8,
+          "raw_count": 159,
+          "proveniences": {
+            "Umma": 52,
+            "Nippur": 21,
+            "Girsu": 55,
+            "Puzriš-Dagan": 5,
+            "Ur": 12,
+            "Umma region": 4
+          }
+        },
+        "-2066": {
+          "weighted_count": 39.8,
+          "raw_count": 66,
+          "proveniences": {
+            "Umma": 27,
+            "Girsu": 7,
+            "Puzriš-Dagan": 17,
+            "Nippur": 7,
+            "Ur": 3,
+            "Umma region": 1
+          }
+        },
+        "-2065": {
+          "weighted_count": 117.6,
+          "raw_count": 195,
+          "proveniences": {
+            "Umma": 114,
+            "Ešnunna": 4,
+            "Puzriš-Dagan": 17,
+            "Girsu": 38,
+            "Nippur": 12,
+            "Ur": 6,
+            "Umma region": 1
+          }
+        },
+        "-2064": {
+          "weighted_count": 105.6,
+          "raw_count": 175,
+          "proveniences": {
+            "Umma": 92,
+            "Girsu": 48,
+            "Puzriš-Dagan": 21,
+            "Nippur": 6,
+            "Ur": 2,
+            "Ešnunna": 2
+          }
+        },
+        "-2063": {
+          "weighted_count": 139.2,
+          "raw_count": 229,
+          "proveniences": {
+            "Umma": 104,
+            "Puzriš-Dagan": 35,
+            "Girsu": 76,
+            "Nippur": 4,
+            "Ur": 1,
+            "Ešnunna": 2
+          }
+        },
+        "-2062": {
+          "weighted_count": 244.2,
+          "raw_count": 403,
+          "proveniences": {
+            "Umma": 247,
+            "Girsu": 100,
+            "Puzriš-Dagan": 43,
+            "Nippur": 2,
+            "Ur": 3,
+            "Ešnunna": 1
+          }
+        },
+        "-2061": {
+          "weighted_count": 281.4,
+          "raw_count": 465,
+          "proveniences": {
+            "Umma": 287,
+            "Girsu": 140,
+            "Puzriš-Dagan": 29,
+            "Nippur": 1,
+            "Ur": 2
+          }
+        },
+        "-2060": {
+          "weighted_count": 281.4,
+          "raw_count": 468,
+          "proveniences": {
+            "Umma": 287,
+            "Puzriš-Dagan": 44,
+            "Girsu": 125,
+            "Nippur": 1,
+            "Ur": 4,
+            "Ešnunna": 1
+          }
+        },
+        "-2059": {
+          "weighted_count": 204.2,
+          "raw_count": 339,
+          "proveniences": {
+            "Umma": 217,
+            "Girsu": 71,
+            "Puzriš-Dagan": 38,
+            "Nippur": 2,
+            "Ur": 2,
+            "Ešnunna": 2,
+            "Umma region": 2
+          }
+        },
+        "-2058": {
+          "weighted_count": 12881.6,
+          "raw_count": 20190,
+          "proveniences": {
+            "unclear": 54,
+            "Kiš": 1,
+            "Nippur": 1812,
+            "Girsu": 5785,
+            "Ur": 2233,
+            "Uruk": 33,
+            "Lagash": 13,
+            "Diqdiqqah": 16,
+            "Eridu": 5,
+            "Larsa": 6,
+            "Adab": 63,
+            "Ešnunna": 29,
+            "Susa": 91,
+            "Umma": 4972,
+            "Tell Hammam": 2,
+            "Kuar": 1,
+            "Bad-tibira": 1,
+            "Isin": 5,
+            "Šaduppum": 2,
+            "Larak": 2,
+            "Puzriš-Dagan": 2173,
+            "Sippar": 1,
+            "Garšana": 274,
+            "Irisagrig": 579,
+            "Sirara": 1,
+            "Bābili": 2,
+            "Kesh": 5,
+            "SI.A-a Arch.": 15,
+            "Sippar-Yahrurum": 1,
+            "Umma (mod. Tell Jokha)": 7,
+            "Išan Mizyad": 30,
+            "Turam-ili Arch.": 3,
+            "Umma region": 51,
+            "Mari": 23,
+            "Girsu (mod. Tello)": 4,
+            "Elbonia": 2,
+            "Tell al-Wilayah": 7,
+            "Kish": 13,
+            "Shuruppak": 1,
+            "Nippur Region": 16,
+            "Aradmu Arch.": 39,
+            "Šat-Eštar Arch.": 15,
+            "Kisurra": 1,
+            "Irisagrig (mod. uncertain)": 3,
+            "Ešnunna (mod. Tell Asmar)": 1,
+            "Adab Region": 3,
+            "Sippar-Amnanum": 1,
+            "Dusabar": 1,
+            "Beydar": 2,
+            "uncertain (mod. uncertain)": 1,
+            "Puzriš-Dagan (mod. Drehem)": 3,
+            "Anšan": 1,
+            "Garšana (mod. uncertain)": 1,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2057": {
+          "weighted_count": 209.8,
+          "raw_count": 345,
+          "proveniences": {
+            "Umma": 178,
+            "Girsu": 77,
+            "Puzriš-Dagan": 57,
+            "Nippur": 3,
+            "Adab": 1,
+            "Ur": 21,
+            "Nippur Region": 1,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2056": {
+          "weighted_count": 245.0,
+          "raw_count": 401,
+          "proveniences": {
+            "Umma": 217,
+            "Puzriš-Dagan": 82,
+            "Girsu": 51,
+            "Nippur": 8,
+            "Adab": 4,
+            "Adab Region": 1,
+            "Ur": 23,
+            "Ešnunna": 1,
+            "Umma region": 1,
+            "Kian": 1
+          }
+        },
+        "-2055": {
+          "weighted_count": 268.0,
+          "raw_count": 439,
+          "proveniences": {
+            "Umma": 175,
+            "Puzriš-Dagan": 107,
+            "Girsu": 118,
+            "Nippur": 11,
+            "Adab": 8,
+            "SI.A-a Arch.": 1,
+            "Ur": 8,
+            "Ešnunna": 3
+          }
+        },
+        "-2054": {
+          "weighted_count": 279.4,
+          "raw_count": 465,
+          "proveniences": {
+            "Umma": 254,
+            "Girsu": 73,
+            "Puzriš-Dagan": 106,
+            "Adab": 3,
+            "Nippur": 4,
+            "Ur": 16,
+            "Ešnunna": 1,
+            "Irisagrig": 2
+          }
+        },
+        "-2053": {
+          "weighted_count": 439.4,
+          "raw_count": 725,
+          "proveniences": {
+            "Umma": 253,
+            "Puzriš-Dagan": 107,
+            "Girsu": 270,
+            "Nippur": 35,
+            "Ur": 42,
+            "Turam-ili Arch.": 1,
+            "Umma region": 2,
+            "Ešnunna": 1,
+            "Eṣidum Arch.": 1,
+            "Adab": 1
+          }
+        },
+        "-2052": {
+          "weighted_count": 452.0,
+          "raw_count": 750,
+          "proveniences": {
+            "Umma": 293,
+            "Girsu": 121,
+            "Puzriš-Dagan": 286,
+            "Nippur": 5,
+            "Adab": 2,
+            "Ur": 30,
+            "Turam-ili Arch.": 1,
+            "Irisagrig": 1,
+            "Ešnunna": 1,
+            "Umma region": 1
+          }
+        },
+        "-2051": {
+          "weighted_count": 800.6,
+          "raw_count": 1312,
+          "proveniences": {
+            "Umma": 476,
+            "Girsu": 321,
+            "Puzriš-Dagan": 414,
+            "Nippur": 56,
+            "Adab Region": 1,
+            "Adab": 6,
+            "Ur": 17,
+            "Ešnunna": 4,
+            "Umma region": 2,
+            "Aradmu Arch.": 1
+          }
+        },
+        "-2050": {
+          "weighted_count": 742.6,
+          "raw_count": 1231,
+          "proveniences": {
+            "Umma": 503,
+            "Puzriš-Dagan": 372,
+            "Girsu": 300,
+            "Nippur": 7,
+            "Adab": 3,
+            "Ur": 23,
+            "Ešnunna": 2,
+            "Irisagrig": 3,
+            "Umma region": 2,
+            "Adab Region": 1
+          }
+        },
+        "-2049": {
+          "weighted_count": 1466.0,
+          "raw_count": 2433,
+          "proveniences": {
+            "Umma": 702,
+            "Girsu": 850,
+            "Puzriš-Dagan": 830,
+            "Nippur": 12,
+            "Ur": 9,
+            "Ešnunna": 1,
+            "Irisagrig": 8,
+            "Umma region": 2
+          }
+        },
+        "-2048": {
+          "weighted_count": 1181.6,
+          "raw_count": 1958,
+          "proveniences": {
+            "Umma": 489,
+            "Puzriš-Dagan": 839,
+            "Girsu": 571,
+            "Nippur": 18,
+            "Adab": 2,
+            "Ešnunna": 5,
+            "SI.A-a Arch.": 1,
+            "Ur": 14,
+            "Aradmu Arch.": 1,
+            "Irisagrig": 1
+          }
+        },
+        "-2047": {
+          "weighted_count": 993.8,
+          "raw_count": 1642,
+          "proveniences": {
+            "Umma": 679,
+            "Girsu": 525,
+            "Puzriš-Dagan": 380,
+            "Nippur": 31,
+            "SI.A-a Arch.": 1,
+            "Ur": 7,
+            "Nippur Region": 1,
+            "Adab": 1,
+            "Aradmu Arch.": 1,
+            "Ešnunna": 2,
+            "Irisagrig": 5,
+            "Umma region": 1
+          }
+        },
+        "-2046": {
+          "weighted_count": 1150.2,
+          "raw_count": 1906,
+          "proveniences": {
+            "Umma": 605,
+            "Puzriš-Dagan": 624,
+            "Girsu": 617,
+            "Nippur": 24,
+            "SI.A-a Arch.": 1,
+            "Ur": 11,
+            "Adab": 1,
+            "Nippur Region": 3,
+            "Irisagrig": 6,
+            "Ešnunna": 2,
+            "Umma region": 3,
+            "Aradmu Arch.": 1
+          }
+        },
+        "-2045": {
+          "weighted_count": 995.6,
+          "raw_count": 1631,
+          "proveniences": {
+            "Umma": 541,
+            "Girsu": 369,
+            "Puzriš-Dagan": 686,
+            "Nippur": 10,
+            "SI.A-a Arch.": 1,
+            "Ur": 8,
+            "Adab": 1,
+            "Irisagrig": 5,
+            "Aradmu Arch.": 1,
+            "Umma region": 2
+          }
+        },
+        "-2044": {
+          "weighted_count": 884.4,
+          "raw_count": 1457,
+          "proveniences": {
+            "Umma": 511,
+            "Puzriš-Dagan": 550,
+            "Girsu": 333,
+            "Nippur": 23,
+            "Sippar": 1,
+            "Ur": 12,
+            "Adab": 3,
+            "Aradmu Arch.": 2,
+            "Irisagrig": 8,
+            "Umma region": 1,
+            "Šat-Eštar Arch.": 1
+          }
+        },
+        "-2043": {
+          "weighted_count": 1109.6,
+          "raw_count": 1838,
+          "proveniences": {
+            "Puzriš-Dagan": 960,
+            "Umma": 483,
+            "Girsu": 330,
+            "Nippur": 23,
+            "Susa": 1,
+            "SI.A-a Arch.": 4,
+            "Ur": 13,
+            "Irisagrig": 3,
+            "Ešnunna": 1,
+            "Garšana": 3,
+            "Umma region": 3
+          }
+        },
+        "-2042": {
+          "weighted_count": 1520.0,
+          "raw_count": 2511,
+          "proveniences": {
+            "Umma": 913,
+            "Girsu": 297,
+            "Puzriš-Dagan": 1219,
+            "Nippur": 24,
+            "Umma region": 6,
+            "Susa": 2,
+            "Ur": 14,
+            "Ešnunna": 1,
+            "Aradmu Arch.": 5,
+            "Garšana": 5,
+            "Irisagrig": 3,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2041": {
+          "weighted_count": 1180.8,
+          "raw_count": 1954,
+          "proveniences": {
+            "Umma": 931,
+            "Girsu": 174,
+            "Puzriš-Dagan": 802,
+            "Nippur": 12,
+            "Ur": 5,
+            "Umma region": 3,
+            "Garšana": 9,
+            "Irisagrig": 8,
+            "Aradmu Arch.": 4,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2040": {
+          "weighted_count": 1742.4,
+          "raw_count": 2891,
+          "proveniences": {
+            "Qalat Sherqat (Assur)": 1,
+            "Umma": 1513,
+            "Girsu": 439,
+            "Puzriš-Dagan": 701,
+            "Nippur": 38,
+            "SI.A-a Arch.": 1,
+            "Ur": 18,
+            "Umma region": 7,
+            "Aradmu Arch.": 4,
+            "Nippur Region": 1,
+            "Irisagrig": 146,
+            "Ešnunna": 3,
+            "Garšana": 2,
+            "Adab": 1
+          }
+        },
+        "-2039": {
+          "weighted_count": 1774.6,
+          "raw_count": 2928,
+          "proveniences": {
+            "Umma": 1280,
+            "Puzriš-Dagan": 810,
+            "Girsu": 489,
+            "Nippur": 41,
+            "SI.A-a Arch.": 5,
+            "Ur": 7,
+            "Adab": 2,
+            "Irisagrig": 273,
+            "Ešnunna": 8,
+            "Garšana": 1,
+            "Umma region": 3
+          }
+        },
+        "-2038": {
+          "weighted_count": 1133.4,
+          "raw_count": 1858,
+          "proveniences": {
+            "Girsu": 338,
+            "Puzriš-Dagan": 420,
+            "Umma": 927,
+            "Nippur": 55,
+            "Adab": 2,
+            "Ur": 20,
+            "Irisagrig": 64,
+            "Nippur Region": 2,
+            "Ešnunna": 5,
+            "Aradmu Arch.": 3,
+            "Adab Region": 1,
+            "Garšana": 2,
+            "Umma region": 5,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2037": {
+          "weighted_count": 1542.8,
+          "raw_count": 2528,
+          "proveniences": {
+            "Puzriš-Dagan": 341,
+            "Umma": 1553,
+            "Girsu": 455,
+            "Nippur": 86,
+            "SI.A-a Arch.": 8,
+            "Ur": 17,
+            "Turam-ili Arch.": 1,
+            "Shuruppak": 1,
+            "Adab": 2,
+            "Garšana": 5,
+            "Nippur Region": 2,
+            "Irisagrig": 24,
+            "Ešnunna": 4,
+            "Aradmu Arch.": 6,
+            "Umma region": 4
+          }
+        },
+        "-2036": {
+          "weighted_count": 1498.8,
+          "raw_count": 2477,
+          "proveniences": {
+            "Umma": 1690,
+            "Girsu": 244,
+            "Puzriš-Dagan": 401,
+            "Nippur": 55,
+            "Susa": 1,
+            "Tell al-Wilayah": 1,
+            "Ur": 9,
+            "Adab": 3,
+            "Garšana": 7,
+            "Irisagrig": 34,
+            "Ešnunna": 1,
+            "Nippur Region": 2,
+            "Aradmu Arch.": 4,
+            "Umma region": 6,
+            "Adab Region": 1
+          }
+        },
+        "-2035": {
+          "weighted_count": 1465.0,
+          "raw_count": 2415,
+          "proveniences": {
+            "Umma": 1541,
+            "Girsu": 303,
+            "Puzriš-Dagan": 360,
+            "Nippur": 52,
+            "Ešnunna": 3,
+            "Turam-ili Arch.": 2,
+            "Umma region": 5,
+            "SI.A-a Arch.": 8,
+            "Ur": 6,
+            "Adab": 2,
+            "Garšana": 19,
+            "Nippur Region": 2,
+            "Irisagrig": 72,
+            "Aradmu Arch.": 8,
+            "Šat-Eštar Arch.": 5,
+            "Eṣidum Arch.": 1,
+            "Adab Region": 2
+          }
+        },
+        "-2034": {
+          "weighted_count": 1246.2,
+          "raw_count": 2057,
+          "proveniences": {
+            "Umma": 1401,
+            "Puzriš-Dagan": 229,
+            "Girsu": 208,
+            "Nippur": 56,
+            "Turam-ili Arch.": 1,
+            "Susa": 2,
+            "Ur": 27,
+            "Kisurra": 1,
+            "Aradmu Arch.": 7,
+            "Adab": 2,
+            "SI.A-a Arch.": 1,
+            "Garšana": 17,
+            "Irisagrig": 70,
+            "Ešnunna": 8,
+            "Umma region": 3,
+            "Šat-Eštar Arch.": 3
+          }
+        },
+        "-2033": {
+          "weighted_count": 1087.6,
+          "raw_count": 1784,
+          "proveniences": {
+            "Umma": 1029,
+            "Girsu": 201,
+            "Puzriš-Dagan": 189,
+            "Nippur": 126,
+            "Turam-ili Arch.": 2,
+            "Adab": 6,
+            "SI.A-a Arch.": 7,
+            "Ur": 19,
+            "Irisagrig": 97,
+            "Garšana": 38,
+            "Nippur Region": 1,
+            "Susa": 2,
+            "Aradmu Arch.": 13,
+            "Ešnunna": 11,
+            "Šat-Eštar Arch.": 21,
+            "Umma region": 6
+          }
+        },
+        "-2032": {
+          "weighted_count": 1145.8,
+          "raw_count": 1879,
+          "proveniences": {
+            "Umma": 924,
+            "Puzriš-Dagan": 147,
+            "Girsu": 255,
+            "Nippur": 60,
+            "Adab": 4,
+            "Ur": 23,
+            "SI.A-a Arch.": 2,
+            "Garšana": 268,
+            "Umma region": 13,
+            "Irisagrig": 127,
+            "Turam-ili Arch.": 1,
+            "Aradmu Arch.": 17,
+            "Ešnunna": 4,
+            "Nippur Region": 1,
+            "Šat-Eštar Arch.": 9,
+            "Adab Region": 1
+          }
+        },
+        "-2031": {
+          "weighted_count": 981.8,
+          "raw_count": 1600,
+          "proveniences": {
+            "Girsu": 204,
+            "Puzriš-Dagan": 248,
+            "Umma": 412,
+            "Nippur": 96,
+            "SI.A-a Arch.": 7,
+            "Turam-ili Arch.": 1,
+            "Adab": 1,
+            "Ur": 17,
+            "Nippur Region": 1,
+            "Garšana": 398,
+            "Susa": 2,
+            "Irisagrig": 163,
+            "Ešnunna": 1,
+            "Aradmu Arch.": 7,
+            "Umma region": 26,
+            "Šat-Eštar Arch.": 1,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2030": {
+          "weighted_count": 803.2,
+          "raw_count": 1301,
+          "proveniences": {
+            "Puzriš-Dagan": 218,
+            "Umma": 238,
+            "Girsu": 348,
+            "Nippur": 78,
+            "SI.A-a Arch.": 7,
+            "Turam-ili Arch.": 7,
+            "Ur": 13,
+            "Garšana": 261,
+            "Irisagrig": 93,
+            "Adab": 1,
+            "Susa": 3,
+            "Ešnunna": 5,
+            "Šat-Eštar Arch.": 6,
+            "Aradmu Arch.": 4,
+            "Umma region": 6,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2029": {
+          "weighted_count": 996.4,
+          "raw_count": 1597,
+          "proveniences": {
+            "Girsu": 338,
+            "Umma": 444,
+            "Puzriš-Dagan": 355,
+            "Nippur": 69,
+            "Turam-ili Arch.": 8,
+            "SI.A-a Arch.": 2,
+            "Sippar-Amnanum": 1,
+            "Ur": 27,
+            "Aradmu Arch.": 3,
+            "Garšana": 153,
+            "Irisagrig": 145,
+            "Adab": 1,
+            "Umma region": 9,
+            "Ešnunna": 3,
+            "Šat-Eštar Arch.": 7
+          }
+        },
+        "-2028": {
+          "weighted_count": 1046.0,
+          "raw_count": 1673,
+          "proveniences": {
+            "Umma": 389,
+            "Girsu": 310,
+            "Puzriš-Dagan": 300,
+            "Nippur": 105,
+            "Turam-ili Arch.": 7,
+            "SI.A-a Arch.": 3,
+            "Ur": 62,
+            "Garšana": 104,
+            "Adab": 3,
+            "Irisagrig": 321,
+            "Susa": 4,
+            "Ešnunna": 1,
+            "Aradmu Arch.": 16,
+            "Šat-Eštar Arch.": 13,
+            "Umma region": 14,
+            "Eṣidum Arch.": 3
+          }
+        },
+        "-2027": {
+          "weighted_count": 1154.2,
+          "raw_count": 1879,
+          "proveniences": {
+            "Umma": 468,
+            "Girsu": 433,
+            "Puzriš-Dagan": 169,
+            "Išan Mizyad": 4,
+            "Nippur": 134,
+            "Sippar": 1,
+            "Kisurra": 1,
+            "Ešnunna": 4,
+            "Turam-ili Arch.": 11,
+            "Umma region": 16,
+            "Susa": 1,
+            "Ur": 55,
+            "Adab": 17,
+            "SI.A-a Arch.": 10,
+            "Nippur Region": 4,
+            "Irisagrig": 365,
+            "Garšana": 120,
+            "Aradmu Arch.": 25,
+            "Šat-Eštar Arch.": 8,
+            "Adab Region": 1
+          }
+        },
+        "-2026": {
+          "weighted_count": 490.2,
+          "raw_count": 799,
+          "proveniences": {
+            "Umma": 218,
+            "Girsu": 176,
+            "Nippur": 69,
+            "Puzriš-Dagan": 12,
+            "Uruk": 2,
+            "Sippar": 1,
+            "Turam-ili Arch.": 12,
+            "Umma region": 4,
+            "Susa": 1,
+            "Ur": 51,
+            "Nippur Region": 3,
+            "Garšana": 80,
+            "Irisagrig": 91,
+            "SI.A-a Arch.": 1,
+            "Aradmu Arch.": 54,
+            "Adab": 1,
+            "Šat-Eštar Arch.": 7,
+            "Eṣidum Arch.": 1
+          }
+        },
+        "-2025": {
+          "weighted_count": 156.6,
+          "raw_count": 253,
+          "proveniences": {
+            "Nippur": 23,
+            "Girsu": 64,
+            "Umma": 43,
+            "Kisurra": 1,
+            "Ur": 84,
+            "Garšana": 14,
+            "Irisagrig": 6,
+            "Umma region": 1,
+            "Šat-Eštar Arch.": 8,
+            "Aradmu Arch.": 4
+          }
+        },
+        "-2024": {
+          "weighted_count": 155.6,
+          "raw_count": 255,
+          "proveniences": {
+            "Girsu": 46,
+            "Ur": 181,
+            "Nippur": 17,
+            "Umma": 5,
+            "Irisagrig": 1,
+            "Aradmu Arch.": 2
+          }
+        },
+        "-2023": {
+          "weighted_count": 183.4,
+          "raw_count": 303,
+          "proveniences": {
+            "Nippur": 40,
+            "Ur": 261,
+            "Girsu": 2
+          }
+        },
+        "-2022": {
+          "weighted_count": 182.4,
+          "raw_count": 300,
+          "proveniences": {
+            "Nippur": 17,
+            "Ur": 282,
+            "Nippur Region": 1
+          }
+        },
+        "-2021": {
+          "weighted_count": 104.8,
+          "raw_count": 173,
+          "proveniences": {
+            "Ur": 171,
+            "Nippur": 2
+          }
+        },
+        "-2020": {
+          "weighted_count": 1.4,
+          "raw_count": 2,
+          "proveniences": {
+            "Ur": 2
+          }
+        },
+        "-2018": {
+          "weighted_count": 4.2,
+          "raw_count": 6,
+          "proveniences": {
+            "Nippur": 1,
+            "Ur": 5
+          }
+        },
+        "-2017": {
+          "weighted_count": 5.4,
+          "raw_count": 9,
+          "proveniences": {
+            "Ur": 9
+          }
+        },
+        "-2016": {
+          "weighted_count": 3.6,
+          "raw_count": 6,
+          "proveniences": {
+            "Ur": 6
+          }
+        },
+        "-2015": {
+          "weighted_count": 5.4,
+          "raw_count": 8,
+          "proveniences": {
+            "Ur": 8
+          }
+        },
+        "-2014": {
+          "weighted_count": 267.0,
+          "raw_count": 445,
+          "proveniences": {
+            "Ur": 445
+          }
+        },
+        "-2013": {
+          "weighted_count": 44.4,
+          "raw_count": 74,
+          "proveniences": {
+            "Ur": 73,
+            "Nippur": 1
+          }
+        },
+        "-2012": {
+          "weighted_count": 18.8,
+          "raw_count": 31,
+          "proveniences": {
+            "Ur": 31
+          }
+        },
+        "-2011": {
+          "weighted_count": 3.8,
+          "raw_count": 6,
+          "proveniences": {
+            "Ur": 6
+          }
+        },
+        "-2010": {
+          "weighted_count": 3.8,
+          "raw_count": 6,
+          "proveniences": {
+            "Ur": 6
+          }
+        },
+        "-2009": {
+          "weighted_count": 2.4,
+          "raw_count": 4,
+          "proveniences": {
+            "Ur": 4
+          }
+        },
+        "-2008": {
+          "weighted_count": 6.0,
+          "raw_count": 10,
+          "proveniences": {
+            "Ur": 10
+          }
+        },
+        "-2007": {
+          "weighted_count": 2.6,
+          "raw_count": 4,
+          "proveniences": {
+            "Ur": 4
+          }
+        },
+        "-2006": {
+          "weighted_count": 3.6,
+          "raw_count": 6,
+          "proveniences": {
+            "Ur": 6
+          }
+        }
+      },
+      "spi_series": {
+        "-2094": {
+          "spi_m": -0.0,
+          "spi_a": -0.0,
+          "spi_f": -0.713,
+          "spi_d": -0.275,
+          "spi_aggregate": -0.22,
+          "alert_level": "NORMAL"
+        },
+        "-2093": {
+          "spi_m": -0.001,
+          "spi_a": -0.0,
+          "spi_f": 0.28,
+          "spi_d": -0.275,
+          "spi_aggregate": 0.029,
+          "alert_level": "NORMAL"
+        },
+        "-2092": {
+          "spi_m": 0.001,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2091": {
+          "spi_m": -0.0,
+          "spi_a": -0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2090": {
+          "spi_m": 0.001,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2089": {
+          "spi_m": 0.003,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.218,
+          "alert_level": "NORMAL"
+        },
+        "-2088": {
+          "spi_m": -0.002,
+          "spi_a": -0.003,
+          "spi_f": -0.713,
+          "spi_d": -0.272,
+          "spi_aggregate": -0.218,
+          "alert_level": "NORMAL"
+        },
+        "-2087": {
+          "spi_m": 0.002,
+          "spi_a": 0.002,
+          "spi_f": -0.713,
+          "spi_d": -0.272,
+          "spi_aggregate": -0.218,
+          "alert_level": "NORMAL"
+        },
+        "-2086": {
+          "spi_m": -0.001,
+          "spi_a": -0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2085": {
+          "spi_m": -0.001,
+          "spi_a": -0.0,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2084": {
+          "spi_m": -0.002,
+          "spi_a": -0.0,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2081": {
+          "spi_m": 0.0,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2080": {
+          "spi_m": 0.001,
+          "spi_a": 0.0,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2079": {
+          "spi_m": -0.001,
+          "spi_a": -0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2078": {
+          "spi_m": -0.001,
+          "spi_a": -0.0,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2077": {
+          "spi_m": -0.0,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2075": {
+          "spi_m": 0.002,
+          "spi_a": 0.001,
+          "spi_f": 2.096,
+          "spi_d": -0.273,
+          "spi_aggregate": 0.484,
+          "alert_level": "NORMAL"
+        },
+        "-2074": {
+          "spi_m": 0.0,
+          "spi_a": -0.001,
+          "spi_f": -0.416,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.145,
+          "alert_level": "NORMAL"
+        },
+        "-2073": {
+          "spi_m": 0.006,
+          "spi_a": 0.003,
+          "spi_f": -0.391,
+          "spi_d": -0.272,
+          "spi_aggregate": -0.136,
+          "alert_level": "NORMAL"
+        },
+        "-2072": {
+          "spi_m": 0.001,
+          "spi_a": -0.003,
+          "spi_f": 0.17,
+          "spi_d": -0.272,
+          "spi_aggregate": 0.003,
+          "alert_level": "NORMAL"
+        },
+        "-2071": {
+          "spi_m": 0.005,
+          "spi_a": 0.002,
+          "spi_f": -0.225,
+          "spi_d": -0.272,
+          "spi_aggregate": -0.095,
+          "alert_level": "NORMAL"
+        },
+        "-2070": {
+          "spi_m": 0.064,
+          "spi_a": 0.034,
+          "spi_f": -0.398,
+          "spi_d": -0.243,
+          "spi_aggregate": -0.105,
+          "alert_level": "NORMAL"
+        },
+        "-2069": {
+          "spi_m": -0.066,
+          "spi_a": -0.075,
+          "spi_f": 0.333,
+          "spi_d": -0.216,
+          "spi_aggregate": 0.093,
+          "alert_level": "NORMAL"
+        },
+        "-2068": {
+          "spi_m": 0.007,
+          "spi_a": 0.042,
+          "spi_f": 0.413,
+          "spi_d": -0.216,
+          "spi_aggregate": 0.084,
+          "alert_level": "NORMAL"
+        },
+        "-2067": {
+          "spi_m": 0.03,
+          "spi_a": 0.013,
+          "spi_f": 0.089,
+          "spi_d": -0.229,
+          "spi_aggregate": 0.002,
+          "alert_level": "NORMAL"
+        },
+        "-2066": {
+          "spi_m": -0.029,
+          "spi_a": -0.034,
+          "spi_f": -0.644,
+          "spi_d": -0.248,
+          "spi_aggregate": -0.179,
+          "alert_level": "NORMAL"
+        },
+        "-2065": {
+          "spi_m": 0.04,
+          "spi_a": 0.04,
+          "spi_f": 0.729,
+          "spi_d": -0.241,
+          "spi_aggregate": 0.17,
+          "alert_level": "NORMAL"
+        },
+        "-2064": {
+          "spi_m": -0.006,
+          "spi_a": -0.027,
+          "spi_f": -0.087,
+          "spi_d": -0.243,
+          "spi_aggregate": -0.049,
+          "alert_level": "NORMAL"
+        },
+        "-2063": {
+          "spi_m": 0.017,
+          "spi_a": 0.013,
+          "spi_f": -0.529,
+          "spi_d": -0.254,
+          "spi_aggregate": -0.161,
+          "alert_level": "NORMAL"
+        },
+        "-2062": {
+          "spi_m": 0.054,
+          "spi_a": 0.021,
+          "spi_f": 0.046,
+          "spi_d": -0.247,
+          "spi_aggregate": -0.002,
+          "alert_level": "NORMAL"
+        },
+        "-2061": {
+          "spi_m": 0.019,
+          "spi_a": -0.02,
+          "spi_f": -0.304,
+          "spi_d": -0.256,
+          "spi_aggregate": -0.103,
+          "alert_level": "NORMAL"
+        },
+        "-2060": {
+          "spi_m": -0.0,
+          "spi_a": -0.011,
+          "spi_f": -0.281,
+          "spi_d": -0.25,
+          "spi_aggregate": -0.105,
+          "alert_level": "NORMAL"
+        },
+        "-2059": {
+          "spi_m": -0.04,
+          "spi_a": -0.023,
+          "spi_f": -0.141,
+          "spi_d": -0.248,
+          "spi_aggregate": -0.053,
+          "alert_level": "NORMAL"
+        },
+        "-2058": {
+          "spi_m": 6.49,
+          "spi_a": 3.768,
+          "spi_f": 4.322,
+          "spi_d": 3.101,
+          "spi_aggregate": 4.759,
+          "alert_level": "CRITICAL"
+        },
+        "-2057": {
+          "spi_m": -6.487,
+          "spi_a": -7.488,
+          "spi_f": 4.821,
+          "spi_d": 5.552,
+          "spi_aggregate": 6.181,
+          "alert_level": "CRITICAL"
+        },
+        "-2056": {
+          "spi_m": 0.018,
+          "spi_a": 3.754,
+          "spi_f": 0.163,
+          "spi_d": 5.552,
+          "spi_aggregate": 1.818,
+          "alert_level": "ELEVATED"
+        },
+        "-2055": {
+          "spi_m": 0.012,
+          "spi_a": -0.004,
+          "spi_f": 0.69,
+          "spi_d": 3.097,
+          "spi_aggregate": 0.642,
+          "alert_level": "NORMAL"
+        },
+        "-2054": {
+          "spi_m": 0.006,
+          "spi_a": -0.003,
+          "spi_f": 0.04,
+          "spi_d": -0.269,
+          "spi_aggregate": -0.027,
+          "alert_level": "NORMAL"
+        },
+        "-2053": {
+          "spi_m": 0.082,
+          "spi_a": 0.044,
+          "spi_f": -0.596,
+          "spi_d": -0.237,
+          "spi_aggregate": -0.145,
+          "alert_level": "NORMAL"
+        },
+        "-2052": {
+          "spi_m": 0.006,
+          "spi_a": -0.044,
+          "spi_f": -0.348,
+          "spi_d": -0.235,
+          "spi_aggregate": -0.109,
+          "alert_level": "NORMAL"
+        },
+        "-2051": {
+          "spi_m": 0.178,
+          "spi_a": 0.099,
+          "spi_f": -0.366,
+          "spi_d": -0.197,
+          "spi_aggregate": -0.034,
+          "alert_level": "NORMAL"
+        },
+        "-2050": {
+          "spi_m": -0.03,
+          "spi_a": -0.12,
+          "spi_f": -0.442,
+          "spi_d": -0.175,
+          "spi_aggregate": -0.096,
+          "alert_level": "NORMAL"
+        },
+        "-2049": {
+          "spi_m": 0.37,
+          "spi_a": 0.231,
+          "spi_f": -0.02,
+          "spi_d": -0.095,
+          "spi_aggregate": 0.168,
+          "alert_level": "NORMAL"
+        },
+        "-2048": {
+          "spi_m": -0.146,
+          "spi_a": -0.298,
+          "spi_f": 0.088,
+          "spi_d": -0.031,
+          "spi_aggregate": 0.143,
+          "alert_level": "NORMAL"
+        },
+        "-2047": {
+          "spi_m": -0.096,
+          "spi_a": 0.029,
+          "spi_f": -0.17,
+          "spi_d": -0.019,
+          "spi_aggregate": -0.005,
+          "alert_level": "NORMAL"
+        },
+        "-2046": {
+          "spi_m": 0.08,
+          "spi_a": 0.102,
+          "spi_f": -0.557,
+          "spi_d": -0.168,
+          "spi_aggregate": -0.111,
+          "alert_level": "NORMAL"
+        },
+        "-2045": {
+          "spi_m": -0.079,
+          "spi_a": -0.092,
+          "spi_f": -0.366,
+          "spi_d": -0.187,
+          "spi_aggregate": -0.069,
+          "alert_level": "NORMAL"
+        },
+        "-2044": {
+          "spi_m": -0.057,
+          "spi_a": 0.013,
+          "spi_f": -0.575,
+          "spi_d": -0.197,
+          "spi_aggregate": -0.15,
+          "alert_level": "NORMAL"
+        },
+        "-2043": {
+          "spi_m": 0.115,
+          "spi_a": 0.099,
+          "spi_f": -0.164,
+          "spi_d": -0.179,
+          "spi_aggregate": -0.003,
+          "alert_level": "NORMAL"
+        },
+        "-2042": {
+          "spi_m": 0.21,
+          "spi_a": 0.055,
+          "spi_f": -0.326,
+          "spi_d": -0.153,
+          "spi_aggregate": -0.017,
+          "alert_level": "NORMAL"
+        },
+        "-2041": {
+          "spi_m": -0.174,
+          "spi_a": -0.221,
+          "spi_f": -0.22,
+          "spi_d": -0.095,
+          "spi_aggregate": 0.047,
+          "alert_level": "NORMAL"
+        },
+        "-2040": {
+          "spi_m": 0.287,
+          "spi_a": 0.266,
+          "spi_f": 0.093,
+          "spi_d": -0.053,
+          "spi_aggregate": 0.183,
+          "alert_level": "NORMAL"
+        },
+        "-2039": {
+          "spi_m": 0.016,
+          "spi_a": -0.156,
+          "spi_f": 0.715,
+          "spi_d": -0.066,
+          "spi_aggregate": 0.214,
+          "alert_level": "NORMAL"
+        },
+        "-2038": {
+          "spi_m": -0.328,
+          "spi_a": -0.199,
+          "spi_f": 0.478,
+          "spi_d": 0.003,
+          "spi_aggregate": 0.285,
+          "alert_level": "NORMAL"
+        },
+        "-2037": {
+          "spi_m": 0.21,
+          "spi_a": 0.31,
+          "spi_f": 0.52,
+          "spi_d": -0.03,
+          "spi_aggregate": 0.276,
+          "alert_level": "NORMAL"
+        },
+        "-2036": {
+          "spi_m": -0.023,
+          "spi_a": -0.134,
+          "spi_f": -0.045,
+          "spi_d": -0.032,
+          "spi_aggregate": 0.025,
+          "alert_level": "NORMAL"
+        },
+        "-2035": {
+          "spi_m": -0.017,
+          "spi_a": 0.003,
+          "spi_f": -0.654,
+          "spi_d": -0.156,
+          "spi_aggregate": -0.18,
+          "alert_level": "NORMAL"
+        },
+        "-2034": {
+          "spi_m": -0.112,
+          "spi_a": -0.055,
+          "spi_f": -0.579,
+          "spi_d": -0.227,
+          "spi_aggregate": -0.126,
+          "alert_level": "NORMAL"
+        },
+        "-2033": {
+          "spi_m": -0.081,
+          "spi_a": 0.018,
+          "spi_f": 0.528,
+          "spi_d": -0.231,
+          "spi_aggregate": 0.13,
+          "alert_level": "NORMAL"
+        },
+        "-2032": {
+          "spi_m": 0.03,
+          "spi_a": 0.064,
+          "spi_f": 0.111,
+          "spi_d": -0.208,
+          "spi_aggregate": 0.023,
+          "alert_level": "NORMAL"
+        },
+        "-2031": {
+          "spi_m": -0.084,
+          "spi_a": -0.066,
+          "spi_f": 0.711,
+          "spi_d": -0.216,
+          "spi_aggregate": 0.191,
+          "alert_level": "NORMAL"
+        },
+        "-2030": {
+          "spi_m": -0.091,
+          "spi_a": -0.004,
+          "spi_f": -0.513,
+          "spi_d": -0.214,
+          "spi_aggregate": -0.127,
+          "alert_level": "NORMAL"
+        },
+        "-2029": {
+          "spi_m": 0.099,
+          "spi_a": 0.11,
+          "spi_f": -0.697,
+          "spi_d": -0.178,
+          "spi_aggregate": -0.139,
+          "alert_level": "NORMAL"
+        },
+        "-2028": {
+          "spi_m": 0.025,
+          "spi_a": -0.042,
+          "spi_f": -0.43,
+          "spi_d": -0.188,
+          "spi_aggregate": -0.116,
+          "alert_level": "NORMAL"
+        },
+        "-2027": {
+          "spi_m": 0.055,
+          "spi_a": 0.017,
+          "spi_f": 0.127,
+          "spi_d": -0.241,
+          "spi_aggregate": 0.019,
+          "alert_level": "NORMAL"
+        },
+        "-2026": {
+          "spi_m": -0.34,
+          "spi_a": -0.228,
+          "spi_f": -0.213,
+          "spi_d": -0.077,
+          "spi_aggregate": 0.111,
+          "alert_level": "NORMAL"
+        },
+        "-2025": {
+          "spi_m": -0.171,
+          "spi_a": 0.098,
+          "spi_f": 0.211,
+          "spi_d": -0.096,
+          "spi_aggregate": 0.122,
+          "alert_level": "NORMAL"
+        },
+        "-2024": {
+          "spi_m": -0.001,
+          "spi_a": 0.098,
+          "spi_f": 0.498,
+          "spi_d": -0.122,
+          "spi_aggregate": 0.131,
+          "alert_level": "NORMAL"
+        },
+        "-2023": {
+          "spi_m": 0.014,
+          "spi_a": 0.009,
+          "spi_f": 0.461,
+          "spi_d": -0.182,
+          "spi_aggregate": 0.095,
+          "alert_level": "NORMAL"
+        },
+        "-2022": {
+          "spi_m": -0.001,
+          "spi_a": -0.009,
+          "spi_f": -0.243,
+          "spi_d": -0.267,
+          "spi_aggregate": -0.098,
+          "alert_level": "NORMAL"
+        },
+        "-2021": {
+          "spi_m": -0.04,
+          "spi_a": -0.023,
+          "spi_f": 0.215,
+          "spi_d": -0.25,
+          "spi_aggregate": 0.036,
+          "alert_level": "NORMAL"
+        },
+        "-2020": {
+          "spi_m": -0.053,
+          "spi_a": -0.008,
+          "spi_f": 2.197,
+          "spi_d": -0.25,
+          "spi_aggregate": 0.532,
+          "alert_level": "NORMAL"
+        },
+        "-2018": {
+          "spi_m": 0.001,
+          "spi_a": 0.031,
+          "spi_f": 1.273,
+          "spi_d": -0.249,
+          "spi_aggregate": 0.289,
+          "alert_level": "NORMAL"
+        },
+        "-2017": {
+          "spi_m": 0.001,
+          "spi_a": -0.0,
+          "spi_f": 1.273,
+          "spi_d": -0.247,
+          "spi_aggregate": 0.282,
+          "alert_level": "NORMAL"
+        },
+        "-2016": {
+          "spi_m": -0.001,
+          "spi_a": -0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2015": {
+          "spi_m": 0.001,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.274,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2014": {
+          "spi_m": 0.134,
+          "spi_a": 0.077,
+          "spi_f": -0.713,
+          "spi_d": -0.205,
+          "spi_aggregate": -0.143,
+          "alert_level": "NORMAL"
+        },
+        "-2013": {
+          "spi_m": -0.114,
+          "spi_a": -0.143,
+          "spi_f": 2.186,
+          "spi_d": -0.163,
+          "spi_aggregate": 0.598,
+          "alert_level": "NORMAL"
+        },
+        "-2012": {
+          "spi_m": -0.013,
+          "spi_a": 0.058,
+          "spi_f": 2.186,
+          "spi_d": -0.163,
+          "spi_aggregate": 0.541,
+          "alert_level": "NORMAL"
+        },
+        "-2011": {
+          "spi_m": -0.008,
+          "spi_a": 0.003,
+          "spi_f": -0.713,
+          "spi_d": -0.221,
+          "spi_aggregate": -0.208,
+          "alert_level": "NORMAL"
+        },
+        "-2010": {
+          "spi_m": -0.0,
+          "spi_a": 0.004,
+          "spi_f": -0.713,
+          "spi_d": -0.269,
+          "spi_aggregate": -0.218,
+          "alert_level": "NORMAL"
+        },
+        "-2009": {
+          "spi_m": -0.001,
+          "spi_a": -0.0,
+          "spi_f": -0.713,
+          "spi_d": -0.271,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        },
+        "-2008": {
+          "spi_m": 0.002,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.218,
+          "alert_level": "NORMAL"
+        },
+        "-2007": {
+          "spi_m": -0.002,
+          "spi_a": -0.002,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.218,
+          "alert_level": "NORMAL"
+        },
+        "-2006": {
+          "spi_m": 0.001,
+          "spi_a": 0.001,
+          "spi_f": -0.713,
+          "spi_d": -0.273,
+          "spi_aggregate": -0.219,
+          "alert_level": "NORMAL"
+        }
+      },
+      "velocity": {
+        "-2094": 0.0,
+        "-2093": -1.2,
+        "-2092": 1.8,
+        "-2091": -0.6,
+        "-2090": 1.8,
+        "-2089": 6.0,
+        "-2088": -3.6,
+        "-2087": 3.0,
+        "-2086": -1.2,
+        "-2085": -2.4,
+        "-2084": -3.6,
+        "-2081": 0.6,
+        "-2080": 1.8,
+        "-2079": -1.2,
+        "-2078": -1.8,
+        "-2077": 0.0,
+        "-2075": 4.8,
+        "-2074": 0.6,
+        "-2073": 11.4,
+        "-2072": 1.8,
+        "-2071": 9.0,
+        "-2070": 125.2,
+        "-2069": -129.8,
+        "-2068": 13.6,
+        "-2067": 59.0,
+        "-2066": -57.0,
+        "-2065": 77.8,
+        "-2064": -12.0,
+        "-2063": 33.6,
+        "-2062": 105.0,
+        "-2061": 37.2,
+        "-2060": 0.0,
+        "-2059": -77.2,
+        "-2058": 12677.4,
+        "-2057": -12671.8,
+        "-2056": 35.2,
+        "-2055": 23.0,
+        "-2054": 11.4,
+        "-2053": 160.0,
+        "-2052": 12.6,
+        "-2051": 348.6,
+        "-2050": -58.0,
+        "-2049": 723.4,
+        "-2048": -284.4,
+        "-2047": -187.8,
+        "-2046": 156.4,
+        "-2045": -154.6,
+        "-2044": -111.2,
+        "-2043": 225.2,
+        "-2042": 410.4,
+        "-2041": -339.2,
+        "-2040": 561.6,
+        "-2039": 32.2,
+        "-2038": -641.2,
+        "-2037": 409.4,
+        "-2036": -44.0,
+        "-2035": -33.8,
+        "-2034": -218.8,
+        "-2033": -158.6,
+        "-2032": 58.2,
+        "-2031": -164.0,
+        "-2030": -178.6,
+        "-2029": 193.2,
+        "-2028": 49.6,
+        "-2027": 108.2,
+        "-2026": -664.0,
+        "-2025": -333.6,
+        "-2024": -1.0,
+        "-2023": 27.8,
+        "-2022": -1.0,
+        "-2021": -77.6,
+        "-2020": -103.4,
+        "-2018": 2.8,
+        "-2017": 1.2,
+        "-2016": -1.8,
+        "-2015": 1.8,
+        "-2014": 261.6,
+        "-2013": -222.6,
+        "-2012": -25.6,
+        "-2011": -15.0,
+        "-2010": 0.0,
+        "-2009": -1.4,
+        "-2008": 3.6,
+        "-2007": -3.4,
+        "-2006": 1.0
+      },
+      "acceleration": {
+        "-2094": 0.0,
+        "-2093": -1.2,
+        "-2092": 3.0,
+        "-2091": -2.4,
+        "-2090": 2.4,
+        "-2089": 4.2,
+        "-2088": -9.6,
+        "-2087": 6.6,
+        "-2086": -4.2,
+        "-2085": -1.2,
+        "-2084": -1.2,
+        "-2081": 4.2,
+        "-2080": 1.2,
+        "-2079": -3.0,
+        "-2078": -0.6,
+        "-2077": 1.8,
+        "-2075": 4.8,
+        "-2074": -4.2,
+        "-2073": 10.8,
+        "-2072": -9.6,
+        "-2071": 7.2,
+        "-2070": 116.2,
+        "-2069": -255.0,
+        "-2068": 143.4,
+        "-2067": 45.4,
+        "-2066": -116.0,
+        "-2065": 134.8,
+        "-2064": -89.8,
+        "-2063": 45.6,
+        "-2062": 71.4,
+        "-2061": -67.8,
+        "-2060": -37.2,
+        "-2059": -77.2,
+        "-2058": 12754.6,
+        "-2057": -25349.2,
+        "-2056": 12707.0,
+        "-2055": -12.2,
+        "-2054": -11.6,
+        "-2053": 148.6,
+        "-2052": -147.4,
+        "-2051": 336.0,
+        "-2050": -406.6,
+        "-2049": 781.4,
+        "-2048": -1007.8,
+        "-2047": 96.6,
+        "-2046": 344.2,
+        "-2045": -311.0,
+        "-2044": 43.4,
+        "-2043": 336.4,
+        "-2042": 185.2,
+        "-2041": -749.6,
+        "-2040": 900.8,
+        "-2039": -529.4,
+        "-2038": -673.4,
+        "-2037": 1050.6,
+        "-2036": -453.4,
+        "-2035": 10.2,
+        "-2034": -185.0,
+        "-2033": 60.2,
+        "-2032": 216.8,
+        "-2031": -222.2,
+        "-2030": -14.6,
+        "-2029": 371.8,
+        "-2028": -143.6,
+        "-2027": 58.6,
+        "-2026": -772.2,
+        "-2025": 330.4,
+        "-2024": 332.6,
+        "-2023": 28.8,
+        "-2022": -28.8,
+        "-2021": -76.6,
+        "-2020": -25.8,
+        "-2018": 106.2,
+        "-2017": -1.6,
+        "-2016": -3.0,
+        "-2015": 3.6,
+        "-2014": 259.8,
+        "-2013": -484.2,
+        "-2012": 197.0,
+        "-2011": 10.6,
+        "-2010": 15.0,
+        "-2009": -1.4,
+        "-2008": 5.0,
+        "-2007": -7.0,
+        "-2006": 4.4
+      },
+      "cv": {
+        "-2094": 0.333,
+        "-2093": 0.0,
+        "-2092": 0.0,
+        "-2091": 0.0,
+        "-2090": 0.0,
+        "-2089": 0.0,
+        "-2088": 0.0,
+        "-2087": 0.0,
+        "-2086": 0.0,
+        "-2085": 0.0,
+        "-2084": 0.0,
+        "-2081": 0.0,
+        "-2080": 0.0,
+        "-2079": 0.0,
+        "-2078": 0.0,
+        "-2077": 0.0,
+        "-2075": 0.943,
+        "-2074": 0.843,
+        "-2073": 0.735,
+        "-2072": 1.031,
+        "-2071": 1.195,
+        "-2070": 1.089,
+        "-2069": 0.738,
+        "-2068": 1.116,
+        "-2067": 0.847,
+        "-2066": 0.87,
+        "-2065": 1.354,
+        "-2064": 1.144,
+        "-2063": 1.082,
+        "-2062": 1.337,
+        "-2061": 1.2,
+        "-2060": 1.345,
+        "-2059": 1.537,
+        "-2058": 3.227,
+        "-2057": 1.37,
+        "-2056": 1.664,
+        "-2055": 1.193,
+        "-2054": 1.446,
+        "-2053": 1.406,
+        "-2052": 1.529,
+        "-2051": 1.412,
+        "-2050": 1.503,
+        "-2049": 1.271,
+        "-2048": 1.539,
+        "-2047": 1.722,
+        "-2046": 1.669,
+        "-2045": 1.553,
+        "-2044": 1.599,
+        "-2043": 1.784,
+        "-2042": 1.914,
+        "-2041": 1.748,
+        "-2040": 2.019,
+        "-2039": 1.539,
+        "-2038": 1.939,
+        "-2037": 2.353,
+        "-2036": 2.577,
+        "-2035": 2.597,
+        "-2034": 2.642,
+        "-2033": 2.225,
+        "-2032": 1.949,
+        "-2031": 1.471,
+        "-2030": 1.404,
+        "-2029": 1.409,
+        "-2028": 1.314,
+        "-2027": 1.596,
+        "-2026": 1.429,
+        "-2025": 1.118,
+        "-2024": 1.525,
+        "-2023": 1.131,
+        "-2022": 1.289,
+        "-2021": 0.977,
+        "-2020": 0.0,
+        "-2018": 0.667,
+        "-2017": 0.0,
+        "-2016": 0.0,
+        "-2015": 0.0,
+        "-2014": 0.0,
+        "-2013": 0.973,
+        "-2012": 0.0,
+        "-2011": 0.0,
+        "-2010": 0.0,
+        "-2009": 0.0,
+        "-2008": 0.0,
+        "-2007": 0.0,
+        "-2006": 0.0
+      },
+      "fragmentation_velocity": {
+        "-2094": 0.0,
+        "-2093": -0.333,
+        "-2092": 0.0,
+        "-2091": 0.0,
+        "-2090": 0.0,
+        "-2089": 0.0,
+        "-2088": 0.0,
+        "-2087": 0.0,
+        "-2086": 0.0,
+        "-2085": 0.0,
+        "-2084": 0.0,
+        "-2081": 0.0,
+        "-2080": 0.0,
+        "-2079": 0.0,
+        "-2078": 0.0,
+        "-2077": 0.0,
+        "-2075": 0.943,
+        "-2074": -0.1,
+        "-2073": -0.108,
+        "-2072": 0.296,
+        "-2071": 0.164,
+        "-2070": -0.106,
+        "-2069": -0.351,
+        "-2068": 0.378,
+        "-2067": -0.269,
+        "-2066": 0.023,
+        "-2065": 0.484,
+        "-2064": -0.21,
+        "-2063": -0.062,
+        "-2062": 0.255,
+        "-2061": -0.137,
+        "-2060": 0.145,
+        "-2059": 0.192,
+        "-2058": 1.69,
+        "-2057": -1.857,
+        "-2056": 0.294,
+        "-2055": -0.471,
+        "-2054": 0.253,
+        "-2053": -0.039,
+        "-2052": 0.123,
+        "-2051": -0.116,
+        "-2050": 0.091,
+        "-2049": -0.233,
+        "-2048": 0.269,
+        "-2047": 0.182,
+        "-2046": -0.052,
+        "-2045": -0.117,
+        "-2044": 0.046,
+        "-2043": 0.184,
+        "-2042": 0.13,
+        "-2041": -0.166,
+        "-2040": 0.271,
+        "-2039": -0.479,
+        "-2038": 0.4,
+        "-2037": 0.414,
+        "-2036": 0.224,
+        "-2035": 0.02,
+        "-2034": 0.045,
+        "-2033": -0.417,
+        "-2032": -0.276,
+        "-2031": -0.478,
+        "-2030": -0.067,
+        "-2029": 0.005,
+        "-2028": -0.095,
+        "-2027": 0.282,
+        "-2026": -0.168,
+        "-2025": -0.31,
+        "-2024": 0.406,
+        "-2023": -0.394,
+        "-2022": 0.158,
+        "-2021": -0.312,
+        "-2020": -0.977,
+        "-2018": 0.667,
+        "-2017": -0.667,
+        "-2016": 0.0,
+        "-2015": 0.0,
+        "-2014": 0.0,
+        "-2013": 0.973,
+        "-2012": -0.973,
+        "-2011": 0.0,
+        "-2010": 0.0,
+        "-2009": 0.0,
+        "-2008": 0.0,
+        "-2007": 0.0,
+        "-2006": 0.0
+      },
+      "volatility": {
+        "-2094": 0.0,
+        "-2093": 0.0,
+        "-2092": 1.233,
+        "-2091": 1.296,
+        "-2090": 1.131,
+        "-2089": 2.728,
+        "-2088": 3.929,
+        "-2087": 4.01,
+        "-2086": 2.728,
+        "-2085": 2.315,
+        "-2084": 0.98,
+        "-2081": 1.766,
+        "-2080": 2.315,
+        "-2079": 1.233,
+        "-2078": 1.575,
+        "-2077": 0.748,
+        "-2075": 2.786,
+        "-2074": 2.135,
+        "-2073": 4.445,
+        "-2072": 4.833,
+        "-2071": 4.079,
+        "-2070": 56.551,
+        "-2069": 104.24,
+        "-2068": 104.373,
+        "-2067": 80.464,
+        "-2066": 47.728,
+        "-2065": 59.61,
+        "-2064": 56.036,
+        "-2063": 36.662,
+        "-2062": 48.151,
+        "-2061": 32.843,
+        "-2060": 43.469,
+        "-2059": 47.646,
+        "-2058": 5994.463,
+        "-2057": 10348.836,
+        "-2056": 10348.779,
+        "-2055": 5987.264,
+        "-2054": 9.717,
+        "-2053": 67.483,
+        "-2052": 69.77,
+        "-2051": 137.515,
+        "-2050": 177.39,
+        "-2049": 319.093,
+        "-2048": 431.728,
+        "-2047": 454.029,
+        "-2046": 189.182,
+        "-2045": 155.026,
+        "-2044": 137.523,
+        "-2043": 169.737,
+        "-2042": 215.904,
+        "-2041": 318.808,
+        "-2040": 393.87,
+        "-2039": 369.631,
+        "-2038": 492.213,
+        "-2037": 434.551,
+        "-2036": 430.243,
+        "-2035": 211.372,
+        "-2034": 84.908,
+        "-2033": 77.045,
+        "-2032": 118.956,
+        "-2031": 103.497,
+        "-2030": 108.351,
+        "-2029": 171.93,
+        "-2028": 153.091,
+        "-2027": 58.954,
+        "-2026": 351.023,
+        "-2025": 316.341,
+        "-2024": 270.669,
+        "-2023": 163.999,
+        "-2022": 13.576,
+        "-2021": 44.48,
+        "-2020": 43.486,
+        "-2018": 45.226,
+        "-2017": 49.69,
+        "-2016": 1.907,
+        "-2015": 1.575,
+        "-2014": 123.328,
+        "-2013": 197.85,
+        "-2012": 198.814,
+        "-2011": 95.463,
+        "-2010": 10.502,
+        "-2009": 6.765,
+        "-2008": 2.106,
+        "-2007": 2.944,
+        "-2006": 2.889
+      },
+      "sudden_drops": [
+        {
+          "window_start": -2069,
+          "previous_count": 154.0,
+          "current_count": 24.2,
+          "drop_ratio": 0.157,
+          "velocity": -129.8,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2066,
+          "previous_count": 96.8,
+          "current_count": 39.8,
+          "drop_ratio": 0.411,
+          "velocity": -57.0,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2057,
+          "previous_count": 12881.6,
+          "current_count": 209.8,
+          "drop_ratio": 0.016,
+          "velocity": -12671.8,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2026,
+          "previous_count": 1154.2,
+          "current_count": 490.2,
+          "drop_ratio": 0.425,
+          "velocity": -664.0,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2025,
+          "previous_count": 490.2,
+          "current_count": 156.6,
+          "drop_ratio": 0.319,
+          "velocity": -333.6,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2020,
+          "previous_count": 104.8,
+          "current_count": 1.4,
+          "drop_ratio": 0.013,
+          "velocity": -103.4,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2013,
+          "previous_count": 267.0,
+          "current_count": 44.4,
+          "drop_ratio": 0.166,
+          "velocity": -222.6,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2012,
+          "previous_count": 44.4,
+          "current_count": 18.8,
+          "drop_ratio": 0.423,
+          "velocity": -25.6,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2011,
+          "previous_count": 18.8,
+          "current_count": 3.8,
+          "drop_ratio": 0.202,
+          "velocity": -15.0,
+          "type": "sudden_drop"
+        }
+      ],
+      "volatility_spikes": [
+        {
+          "window_start": -2058,
+          "volatility": 5994.463,
+          "z_score": 3.101,
+          "type": "volatility_spike"
+        },
+        {
+          "window_start": -2057,
+          "volatility": 10348.836,
+          "z_score": 5.552,
+          "type": "volatility_spike"
+        },
+        {
+          "window_start": -2056,
+          "volatility": 10348.779,
+          "z_score": 5.552,
+          "type": "volatility_spike"
+        },
+        {
+          "window_start": -2055,
+          "volatility": 5987.264,
+          "z_score": 3.097,
+          "type": "volatility_spike"
+        }
+      ],
+      "correlation_breakdown": {
+        "correlation_first_half": 0.586,
+        "correlation_second_half": 0.849,
+        "breakdown_detected": false,
+        "type": "correlation_breakdown"
+      },
+      "max_spi_window": -2057,
+      "max_spi_value": 6.181
+    },
+    "spi_umma": {
+      "period": "Ur III_Umma",
+      "tau": 1,
+      "confidence": "EXACT",
+      "period_start": -2112,
+      "period_end": -2004,
+      "n_records": 29084,
+      "n_exact_records": 24335,
+      "n_windows": 52,
+      "windows": {
+        "-2075": {
+          "weighted_count": 4.2,
+          "raw_count": 7,
+          "proveniences": {
+            "Umma": 7
+          }
+        },
+        "-2074": {
+          "weighted_count": 4.8,
+          "raw_count": 8,
+          "proveniences": {
+            "Umma": 8
+          }
+        },
+        "-2073": {
+          "weighted_count": 11.4,
+          "raw_count": 19,
+          "proveniences": {
+            "Umma": 19
+          }
+        },
+        "-2072": {
+          "weighted_count": 16.2,
+          "raw_count": 27,
+          "proveniences": {
+            "Umma": 27
+          }
+        },
+        "-2071": {
+          "weighted_count": 21.6,
+          "raw_count": 36,
+          "proveniences": {
+            "Umma": 36
+          }
+        },
+        "-2070": {
+          "weighted_count": 67.8,
+          "raw_count": 113,
+          "proveniences": {
+            "Umma": 110,
+            "Umma region": 3
+          }
+        },
+        "-2069": {
+          "weighted_count": 9.8,
+          "raw_count": 16,
+          "proveniences": {
+            "Umma": 14,
+            "Umma region": 2
+          }
+        },
+        "-2068": {
+          "weighted_count": 9.6,
+          "raw_count": 16,
+          "proveniences": {
+            "Umma": 15,
+            "Umma region": 1
+          }
+        },
+        "-2067": {
+          "weighted_count": 35.0,
+          "raw_count": 56,
+          "proveniences": {
+            "Umma": 52,
+            "Umma region": 4
+          }
+        },
+        "-2066": {
+          "weighted_count": 16.8,
+          "raw_count": 28,
+          "proveniences": {
+            "Umma": 27,
+            "Umma region": 1
+          }
+        },
+        "-2065": {
+          "weighted_count": 69.6,
+          "raw_count": 115,
+          "proveniences": {
+            "Umma": 114,
+            "Umma region": 1
+          }
+        },
+        "-2064": {
+          "weighted_count": 55.8,
+          "raw_count": 92,
+          "proveniences": {
+            "Umma": 92
+          }
+        },
+        "-2063": {
+          "weighted_count": 63.4,
+          "raw_count": 104,
+          "proveniences": {
+            "Umma": 104
+          }
+        },
+        "-2062": {
+          "weighted_count": 149.2,
+          "raw_count": 247,
+          "proveniences": {
+            "Umma": 247
+          }
+        },
+        "-2061": {
+          "weighted_count": 174.0,
+          "raw_count": 287,
+          "proveniences": {
+            "Umma": 287
+          }
+        },
+        "-2060": {
+          "weighted_count": 172.2,
+          "raw_count": 287,
+          "proveniences": {
+            "Umma": 287
+          }
+        },
+        "-2059": {
+          "weighted_count": 132.0,
+          "raw_count": 219,
+          "proveniences": {
+            "Umma": 217,
+            "Umma region": 2
+          }
+        },
+        "-2058": {
+          "weighted_count": 3082.4,
+          "raw_count": 4972,
+          "proveniences": {
+            "Umma": 4914,
+            "Umma (mod. Tell Jokha)": 7,
+            "Umma region": 51
+          }
+        },
+        "-2057": {
+          "weighted_count": 108.2,
+          "raw_count": 178,
+          "proveniences": {
+            "Umma": 178
+          }
+        },
+        "-2056": {
+          "weighted_count": 132.2,
+          "raw_count": 218,
+          "proveniences": {
+            "Umma": 217,
+            "Umma region": 1
+          }
+        },
+        "-2055": {
+          "weighted_count": 105.8,
+          "raw_count": 175,
+          "proveniences": {
+            "Umma": 175
+          }
+        },
+        "-2054": {
+          "weighted_count": 152.6,
+          "raw_count": 254,
+          "proveniences": {
+            "Umma": 254
+          }
+        },
+        "-2053": {
+          "weighted_count": 154.0,
+          "raw_count": 255,
+          "proveniences": {
+            "Umma": 253,
+            "Umma region": 2
+          }
+        },
+        "-2052": {
+          "weighted_count": 178.0,
+          "raw_count": 294,
+          "proveniences": {
+            "Umma": 293,
+            "Umma region": 1
+          }
+        },
+        "-2051": {
+          "weighted_count": 287.4,
+          "raw_count": 478,
+          "proveniences": {
+            "Umma": 476,
+            "Umma region": 2
+          }
+        },
+        "-2050": {
+          "weighted_count": 305.2,
+          "raw_count": 505,
+          "proveniences": {
+            "Umma": 503,
+            "Umma region": 2
+          }
+        },
+        "-2049": {
+          "weighted_count": 423.2,
+          "raw_count": 704,
+          "proveniences": {
+            "Umma": 702,
+            "Umma region": 2
+          }
+        },
+        "-2048": {
+          "weighted_count": 295.2,
+          "raw_count": 489,
+          "proveniences": {
+            "Umma": 489
+          }
+        },
+        "-2047": {
+          "weighted_count": 409.2,
+          "raw_count": 680,
+          "proveniences": {
+            "Umma": 679,
+            "Umma region": 1
+          }
+        },
+        "-2046": {
+          "weighted_count": 365.6,
+          "raw_count": 608,
+          "proveniences": {
+            "Umma": 605,
+            "Umma region": 3
+          }
+        },
+        "-2045": {
+          "weighted_count": 336.2,
+          "raw_count": 543,
+          "proveniences": {
+            "Umma": 541,
+            "Umma region": 2
+          }
+        },
+        "-2044": {
+          "weighted_count": 309.4,
+          "raw_count": 512,
+          "proveniences": {
+            "Umma": 511,
+            "Umma region": 1
+          }
+        },
+        "-2043": {
+          "weighted_count": 294.2,
+          "raw_count": 486,
+          "proveniences": {
+            "Umma": 483,
+            "Umma region": 3
+          }
+        },
+        "-2042": {
+          "weighted_count": 556.6,
+          "raw_count": 919,
+          "proveniences": {
+            "Umma": 913,
+            "Umma region": 6
+          }
+        },
+        "-2041": {
+          "weighted_count": 564.6,
+          "raw_count": 934,
+          "proveniences": {
+            "Umma": 931,
+            "Umma region": 3
+          }
+        },
+        "-2040": {
+          "weighted_count": 915.2,
+          "raw_count": 1520,
+          "proveniences": {
+            "Umma": 1513,
+            "Umma region": 7
+          }
+        },
+        "-2039": {
+          "weighted_count": 777.0,
+          "raw_count": 1283,
+          "proveniences": {
+            "Umma": 1280,
+            "Umma region": 3
+          }
+        },
+        "-2038": {
+          "weighted_count": 562.0,
+          "raw_count": 932,
+          "proveniences": {
+            "Umma": 927,
+            "Umma region": 5
+          }
+        },
+        "-2037": {
+          "weighted_count": 939.4,
+          "raw_count": 1557,
+          "proveniences": {
+            "Umma": 1553,
+            "Umma region": 4
+          }
+        },
+        "-2036": {
+          "weighted_count": 1021.6,
+          "raw_count": 1696,
+          "proveniences": {
+            "Umma": 1690,
+            "Umma region": 6
+          }
+        },
+        "-2035": {
+          "weighted_count": 930.6,
+          "raw_count": 1546,
+          "proveniences": {
+            "Umma": 1541,
+            "Umma region": 5
+          }
+        },
+        "-2034": {
+          "weighted_count": 846.0,
+          "raw_count": 1404,
+          "proveniences": {
+            "Umma": 1401,
+            "Umma region": 3
+          }
+        },
+        "-2033": {
+          "weighted_count": 624.0,
+          "raw_count": 1035,
+          "proveniences": {
+            "Umma": 1029,
+            "Umma region": 6
+          }
+        },
+        "-2032": {
+          "weighted_count": 566.8,
+          "raw_count": 937,
+          "proveniences": {
+            "Umma": 924,
+            "Umma region": 13
+          }
+        },
+        "-2031": {
+          "weighted_count": 265.8,
+          "raw_count": 438,
+          "proveniences": {
+            "Umma": 412,
+            "Umma region": 26
+          }
+        },
+        "-2030": {
+          "weighted_count": 149.2,
+          "raw_count": 244,
+          "proveniences": {
+            "Umma": 238,
+            "Umma region": 6
+          }
+        },
+        "-2029": {
+          "weighted_count": 276.2,
+          "raw_count": 453,
+          "proveniences": {
+            "Umma": 444,
+            "Umma region": 9
+          }
+        },
+        "-2028": {
+          "weighted_count": 248.2,
+          "raw_count": 403,
+          "proveniences": {
+            "Umma": 389,
+            "Umma region": 14
+          }
+        },
+        "-2027": {
+          "weighted_count": 294.2,
+          "raw_count": 484,
+          "proveniences": {
+            "Umma": 468,
+            "Umma region": 16
+          }
+        },
+        "-2026": {
+          "weighted_count": 136.8,
+          "raw_count": 222,
+          "proveniences": {
+            "Umma": 218,
+            "Umma region": 4
+          }
+        },
+        "-2025": {
+          "weighted_count": 27.0,
+          "raw_count": 44,
+          "proveniences": {
+            "Umma": 43,
+            "Umma region": 1
+          }
+        },
+        "-2024": {
+          "weighted_count": 3.0,
+          "raw_count": 5,
+          "proveniences": {
+            "Umma": 5
+          }
+        }
+      },
+      "spi_series": {
+        "-2075": {
+          "spi_m": 0.0,
+          "spi_a": 0.0,
+          "spi_f": -0.549,
+          "spi_d": -0.419,
+          "spi_aggregate": -0.2,
+          "alert_level": "NORMAL"
+        },
+        "-2074": {
+          "spi_m": 0.001,
+          "spi_a": 0.001,
+          "spi_f": -0.549,
+          "spi_d": -0.419,
+          "spi_aggregate": -0.199,
+          "alert_level": "NORMAL"
+        },
+        "-2073": {
+          "spi_m": 0.011,
+          "spi_a": 0.006,
+          "spi_f": -0.549,
+          "spi_d": -0.413,
+          "spi_aggregate": -0.194,
+          "alert_level": "NORMAL"
+        },
+        "-2072": {
+          "spi_m": 0.008,
+          "spi_a": -0.001,
+          "spi_f": -0.549,
+          "spi_d": -0.414,
+          "spi_aggregate": -0.196,
+          "alert_level": "NORMAL"
+        },
+        "-2071": {
+          "spi_m": 0.009,
+          "spi_a": 0.001,
+          "spi_f": -0.549,
+          "spi_d": -0.418,
+          "spi_aggregate": -0.196,
+          "alert_level": "NORMAL"
+        },
+        "-2070": {
+          "spi_m": 0.078,
+          "spi_a": 0.04,
+          "spi_f": 1.818,
+          "spi_d": -0.382,
+          "spi_aggregate": 0.435,
+          "alert_level": "NORMAL"
+        },
+        "-2069": {
+          "spi_m": -0.098,
+          "spi_a": -0.101,
+          "spi_f": -0.057,
+          "spi_d": -0.336,
+          "spi_aggregate": -0.005,
+          "alert_level": "NORMAL"
+        },
+        "-2068": {
+          "spi_m": -0.0,
+          "spi_a": 0.057,
+          "spi_f": -0.236,
+          "spi_d": -0.336,
+          "spi_aggregate": -0.095,
+          "alert_level": "NORMAL"
+        },
+        "-2067": {
+          "spi_m": 0.043,
+          "spi_a": 0.025,
+          "spi_f": -0.504,
+          "spi_d": -0.351,
+          "spi_aggregate": -0.157,
+          "alert_level": "NORMAL"
+        },
+        "-2066": {
+          "spi_m": -0.031,
+          "spi_a": -0.042,
+          "spi_f": -0.37,
+          "spi_d": -0.384,
+          "spi_aggregate": -0.129,
+          "alert_level": "NORMAL"
+        },
+        "-2065": {
+          "spi_m": 0.089,
+          "spi_a": 0.07,
+          "spi_f": -0.414,
+          "spi_d": -0.362,
+          "spi_aggregate": -0.109,
+          "alert_level": "NORMAL"
+        },
+        "-2064": {
+          "spi_m": -0.023,
+          "spi_a": -0.065,
+          "spi_f": 1.908,
+          "spi_d": -0.356,
+          "spi_aggregate": 0.448,
+          "alert_level": "NORMAL"
+        },
+        "-2063": {
+          "spi_m": 0.013,
+          "spi_a": 0.021,
+          "spi_f": -0.549,
+          "spi_d": -0.365,
+          "spi_aggregate": -0.182,
+          "alert_level": "NORMAL"
+        },
+        "-2062": {
+          "spi_m": 0.145,
+          "spi_a": 0.077,
+          "spi_f": -0.549,
+          "spi_d": -0.336,
+          "spi_aggregate": -0.118,
+          "alert_level": "NORMAL"
+        },
+        "-2061": {
+          "spi_m": 0.042,
+          "spi_a": -0.059,
+          "spi_f": -0.549,
+          "spi_d": -0.354,
+          "spi_aggregate": -0.161,
+          "alert_level": "NORMAL"
+        },
+        "-2060": {
+          "spi_m": -0.003,
+          "spi_a": -0.026,
+          "spi_f": -0.549,
+          "spi_d": -0.348,
+          "spi_aggregate": -0.182,
+          "alert_level": "NORMAL"
+        },
+        "-2059": {
+          "spi_m": -0.068,
+          "spi_a": -0.037,
+          "spi_f": 1.905,
+          "spi_d": -0.367,
+          "spi_aggregate": 0.454,
+          "alert_level": "NORMAL"
+        },
+        "-2058": {
+          "spi_m": 4.978,
+          "spi_a": 2.921,
+          "spi_f": 0.471,
+          "spi_d": 2.31,
+          "spi_aggregate": 2.937,
+          "alert_level": "CRITICAL"
+        },
+        "-2057": {
+          "spi_m": -5.018,
+          "spi_a": -5.786,
+          "spi_f": 2.925,
+          "spi_d": 4.293,
+          "spi_aggregate": 4.578,
+          "alert_level": "CRITICAL"
+        },
+        "-2056": {
+          "spi_m": 0.041,
+          "spi_a": 2.929,
+          "spi_f": 1.928,
+          "spi_d": 4.293,
+          "spi_aggregate": 1.872,
+          "alert_level": "ELEVATED"
+        },
+        "-2055": {
+          "spi_m": -0.045,
+          "spi_a": -0.049,
+          "spi_f": 1.928,
+          "spi_d": 2.311,
+          "spi_aggregate": 0.856,
+          "alert_level": "NORMAL"
+        },
+        "-2054": {
+          "spi_m": 0.079,
+          "spi_a": 0.072,
+          "spi_f": -0.549,
+          "spi_d": -0.36,
+          "spi_aggregate": -0.146,
+          "alert_level": "NORMAL"
+        },
+        "-2053": {
+          "spi_m": 0.002,
+          "spi_a": -0.044,
+          "spi_f": 1.912,
+          "spi_d": -0.36,
+          "spi_aggregate": 0.436,
+          "alert_level": "NORMAL"
+        },
+        "-2052": {
+          "spi_m": 0.041,
+          "spi_a": 0.023,
+          "spi_f": -0.527,
+          "spi_d": -0.383,
+          "spi_aggregate": -0.169,
+          "alert_level": "NORMAL"
+        },
+        "-2051": {
+          "spi_m": 0.185,
+          "spi_a": 0.084,
+          "spi_f": -0.545,
+          "spi_d": -0.329,
+          "spi_aggregate": -0.1,
+          "alert_level": "NORMAL"
+        },
+        "-2050": {
+          "spi_m": 0.03,
+          "spi_a": -0.089,
+          "spi_f": -0.548,
+          "spi_d": -0.338,
+          "spi_aggregate": -0.155,
+          "alert_level": "NORMAL"
+        },
+        "-2049": {
+          "spi_m": 0.199,
+          "spi_a": 0.098,
+          "spi_f": -0.543,
+          "spi_d": -0.331,
+          "spi_aggregate": -0.091,
+          "alert_level": "NORMAL"
+        },
+        "-2048": {
+          "spi_m": -0.216,
+          "spi_a": -0.24,
+          "spi_f": 1.937,
+          "spi_d": -0.223,
+          "spi_aggregate": 0.586,
+          "alert_level": "NORMAL"
+        },
+        "-2047": {
+          "spi_m": 0.192,
+          "spi_a": 0.237,
+          "spi_f": 1.944,
+          "spi_d": -0.195,
+          "spi_aggregate": 0.583,
+          "alert_level": "NORMAL"
+        },
+        "-2046": {
+          "spi_m": -0.074,
+          "spi_a": -0.153,
+          "spi_f": -0.532,
+          "spi_d": -0.224,
+          "spi_aggregate": -0.102,
+          "alert_level": "NORMAL"
+        },
+        "-2045": {
+          "spi_m": -0.05,
+          "spi_a": 0.014,
+          "spi_f": -0.543,
+          "spi_d": -0.281,
+          "spi_aggregate": -0.157,
+          "alert_level": "NORMAL"
+        },
+        "-2044": {
+          "spi_m": -0.045,
+          "spi_a": 0.003,
+          "spi_f": -0.54,
+          "spi_d": -0.405,
+          "spi_aggregate": -0.179,
+          "alert_level": "NORMAL"
+        },
+        "-2043": {
+          "spi_m": -0.026,
+          "spi_a": 0.012,
+          "spi_f": -0.528,
+          "spi_d": -0.407,
+          "spi_aggregate": -0.181,
+          "alert_level": "NORMAL"
+        },
+        "-2042": {
+          "spi_m": 0.443,
+          "spi_a": 0.272,
+          "spi_f": -0.547,
+          "spi_d": -0.159,
+          "spi_aggregate": 0.062,
+          "alert_level": "NORMAL"
+        },
+        "-2041": {
+          "spi_m": 0.014,
+          "spi_a": -0.248,
+          "spi_f": -0.532,
+          "spi_d": -0.174,
+          "spi_aggregate": -0.092,
+          "alert_level": "NORMAL"
+        },
+        "-2040": {
+          "spi_m": 0.592,
+          "spi_a": 0.335,
+          "spi_f": -0.542,
+          "spi_d": -0.136,
+          "spi_aggregate": 0.135,
+          "alert_level": "NORMAL"
+        },
+        "-2039": {
+          "spi_m": -0.233,
+          "spi_a": -0.477,
+          "spi_f": -0.538,
+          "spi_d": -0.02,
+          "spi_aggregate": 0.063,
+          "alert_level": "NORMAL"
+        },
+        "-2038": {
+          "spi_m": -0.363,
+          "spi_a": -0.075,
+          "spi_f": -0.534,
+          "spi_d": 0.069,
+          "spi_aggregate": 0.022,
+          "alert_level": "NORMAL"
+        },
+        "-2037": {
+          "spi_m": 0.637,
+          "spi_a": 0.579,
+          "spi_f": -0.535,
+          "spi_d": 0.093,
+          "spi_aggregate": 0.248,
+          "alert_level": "NORMAL"
+        },
+        "-2036": {
+          "spi_m": 0.139,
+          "spi_a": -0.288,
+          "spi_f": -0.544,
+          "spi_d": 0.052,
+          "spi_aggregate": -0.008,
+          "alert_level": "NORMAL"
+        },
+        "-2035": {
+          "spi_m": -0.153,
+          "spi_a": -0.169,
+          "spi_f": -0.547,
+          "spi_d": -0.043,
+          "spi_aggregate": -0.047,
+          "alert_level": "NORMAL"
+        },
+        "-2034": {
+          "spi_m": -0.143,
+          "spi_a": 0.007,
+          "spi_f": -0.543,
+          "spi_d": -0.263,
+          "spi_aggregate": -0.124,
+          "alert_level": "NORMAL"
+        },
+        "-2033": {
+          "spi_m": -0.375,
+          "spi_a": -0.134,
+          "spi_f": -0.531,
+          "spi_d": -0.296,
+          "spi_aggregate": -0.013,
+          "alert_level": "NORMAL"
+        },
+        "-2032": {
+          "spi_m": -0.096,
+          "spi_a": 0.161,
+          "spi_f": -0.508,
+          "spi_d": -0.279,
+          "spi_aggregate": -0.095,
+          "alert_level": "NORMAL"
+        },
+        "-2031": {
+          "spi_m": -0.508,
+          "spi_a": -0.238,
+          "spi_f": -0.321,
+          "spi_d": -0.221,
+          "spi_aggregate": 0.124,
+          "alert_level": "NORMAL"
+        },
+        "-2030": {
+          "spi_m": -0.197,
+          "spi_a": 0.181,
+          "spi_f": -0.375,
+          "spi_d": -0.217,
+          "spi_aggregate": -0.012,
+          "alert_level": "NORMAL"
+        },
+        "-2029": {
+          "spi_m": 0.214,
+          "spi_a": 0.238,
+          "spi_f": -0.525,
+          "spi_d": -0.078,
+          "spi_aggregate": -0.008,
+          "alert_level": "NORMAL"
+        },
+        "-2028": {
+          "spi_m": -0.047,
+          "spi_a": -0.151,
+          "spi_f": -0.475,
+          "spi_d": -0.223,
+          "spi_aggregate": -0.098,
+          "alert_level": "NORMAL"
+        },
+        "-2027": {
+          "spi_m": 0.078,
+          "spi_a": 0.073,
+          "spi_f": -0.54,
+          "spi_d": -0.296,
+          "spi_aggregate": -0.134,
+          "alert_level": "NORMAL"
+        },
+        "-2026": {
+          "spi_m": -0.266,
+          "spi_a": -0.198,
+          "spi_f": -0.474,
+          "spi_d": -0.256,
+          "spi_aggregate": -0.014,
+          "alert_level": "NORMAL"
+        },
+        "-2025": {
+          "spi_m": -0.185,
+          "spi_a": 0.047,
+          "spi_f": -0.525,
+          "spi_d": -0.25,
+          "spi_aggregate": -0.092,
+          "alert_level": "NORMAL"
+        },
+        "-2024": {
+          "spi_m": -0.04,
+          "spi_a": 0.084,
+          "spi_f": 1.837,
+          "spi_d": -0.312,
+          "spi_aggregate": 0.448,
+          "alert_level": "NORMAL"
+        }
+      },
+      "velocity": {
+        "-2075": 0.0,
+        "-2074": 0.6,
+        "-2073": 6.6,
+        "-2072": 4.8,
+        "-2071": 5.4,
+        "-2070": 46.2,
+        "-2069": -58.0,
+        "-2068": -0.2,
+        "-2067": 25.4,
+        "-2066": -18.2,
+        "-2065": 52.8,
+        "-2064": -13.8,
+        "-2063": 7.6,
+        "-2062": 85.8,
+        "-2061": 24.8,
+        "-2060": -1.8,
+        "-2059": -40.2,
+        "-2058": 2950.4,
+        "-2057": -2974.2,
+        "-2056": 24.0,
+        "-2055": -26.4,
+        "-2054": 46.8,
+        "-2053": 1.4,
+        "-2052": 24.0,
+        "-2051": 109.4,
+        "-2050": 17.8,
+        "-2049": 118.0,
+        "-2048": -128.0,
+        "-2047": 114.0,
+        "-2046": -43.6,
+        "-2045": -29.4,
+        "-2044": -26.8,
+        "-2043": -15.2,
+        "-2042": 262.4,
+        "-2041": 8.0,
+        "-2040": 350.6,
+        "-2039": -138.2,
+        "-2038": -215.0,
+        "-2037": 377.4,
+        "-2036": 82.2,
+        "-2035": -91.0,
+        "-2034": -84.6,
+        "-2033": -222.0,
+        "-2032": -57.2,
+        "-2031": -301.0,
+        "-2030": -116.6,
+        "-2029": 127.0,
+        "-2028": -28.0,
+        "-2027": 46.0,
+        "-2026": -157.4,
+        "-2025": -109.8,
+        "-2024": -24.0
+      },
+      "acceleration": {
+        "-2075": 0.0,
+        "-2074": 0.6,
+        "-2073": 6.0,
+        "-2072": -1.8,
+        "-2071": 0.6,
+        "-2070": 40.8,
+        "-2069": -104.2,
+        "-2068": 57.8,
+        "-2067": 25.6,
+        "-2066": -43.6,
+        "-2065": 71.0,
+        "-2064": -66.6,
+        "-2063": 21.4,
+        "-2062": 78.2,
+        "-2061": -61.0,
+        "-2060": -26.6,
+        "-2059": -38.4,
+        "-2058": 2990.6,
+        "-2057": -5924.6,
+        "-2056": 2998.2,
+        "-2055": -50.4,
+        "-2054": 73.2,
+        "-2053": -45.4,
+        "-2052": 22.6,
+        "-2051": 85.4,
+        "-2050": -91.6,
+        "-2049": 100.2,
+        "-2048": -246.0,
+        "-2047": 242.0,
+        "-2046": -157.6,
+        "-2045": 14.2,
+        "-2044": 2.6,
+        "-2043": 11.6,
+        "-2042": 277.6,
+        "-2041": -254.4,
+        "-2040": 342.6,
+        "-2039": -488.8,
+        "-2038": -76.8,
+        "-2037": 592.4,
+        "-2036": -295.2,
+        "-2035": -173.2,
+        "-2034": 6.4,
+        "-2033": -137.4,
+        "-2032": 164.8,
+        "-2031": -243.8,
+        "-2030": 184.4,
+        "-2029": 243.6,
+        "-2028": -155.0,
+        "-2027": 74.0,
+        "-2026": -203.4,
+        "-2025": 47.6,
+        "-2024": 85.8
+      },
+      "cv": {
+        "-2075": 0.0,
+        "-2074": 0.0,
+        "-2073": 0.0,
+        "-2072": 0.0,
+        "-2071": 0.0,
+        "-2070": 0.947,
+        "-2069": 0.75,
+        "-2068": 0.875,
+        "-2067": 0.857,
+        "-2066": 0.929,
+        "-2065": 0.983,
+        "-2064": 0.0,
+        "-2063": 0.0,
+        "-2062": 0.0,
+        "-2061": 0.0,
+        "-2060": 0.0,
+        "-2059": 0.982,
+        "-2058": 1.39,
+        "-2057": 0.0,
+        "-2056": 0.991,
+        "-2055": 0.0,
+        "-2054": 0.0,
+        "-2053": 0.984,
+        "-2052": 0.993,
+        "-2051": 0.992,
+        "-2050": 0.992,
+        "-2049": 0.994,
+        "-2048": 0.0,
+        "-2047": 0.997,
+        "-2046": 0.99,
+        "-2045": 0.993,
+        "-2044": 0.996,
+        "-2043": 0.988,
+        "-2042": 0.987,
+        "-2041": 0.994,
+        "-2040": 0.991,
+        "-2039": 0.995,
+        "-2038": 0.989,
+        "-2037": 0.995,
+        "-2036": 0.993,
+        "-2035": 0.994,
+        "-2034": 0.996,
+        "-2033": 0.988,
+        "-2032": 0.972,
+        "-2031": 0.881,
+        "-2030": 0.951,
+        "-2029": 0.96,
+        "-2028": 0.931,
+        "-2027": 0.934,
+        "-2026": 0.964,
+        "-2025": 0.955,
+        "-2024": 0.0
+      },
+      "fragmentation_velocity": {
+        "-2075": 0.0,
+        "-2074": 0.0,
+        "-2073": 0.0,
+        "-2072": 0.0,
+        "-2071": 0.0,
+        "-2070": 0.947,
+        "-2069": -0.197,
+        "-2068": 0.125,
+        "-2067": -0.018,
+        "-2066": 0.071,
+        "-2065": 0.054,
+        "-2064": -0.983,
+        "-2063": 0.0,
+        "-2062": 0.0,
+        "-2061": 0.0,
+        "-2060": 0.0,
+        "-2059": 0.982,
+        "-2058": 0.408,
+        "-2057": -1.39,
+        "-2056": 0.991,
+        "-2055": -0.991,
+        "-2054": 0.0,
+        "-2053": 0.984,
+        "-2052": 0.009,
+        "-2051": -0.002,
+        "-2050": 0.0,
+        "-2049": 0.002,
+        "-2048": -0.994,
+        "-2047": 0.997,
+        "-2046": -0.007,
+        "-2045": 0.003,
+        "-2044": 0.003,
+        "-2043": -0.008,
+        "-2042": -0.001,
+        "-2041": 0.007,
+        "-2040": -0.003,
+        "-2039": 0.005,
+        "-2038": -0.006,
+        "-2037": 0.006,
+        "-2036": -0.002,
+        "-2035": 0.001,
+        "-2034": 0.002,
+        "-2033": -0.007,
+        "-2032": -0.016,
+        "-2031": -0.091,
+        "-2030": 0.07,
+        "-2029": 0.009,
+        "-2028": -0.03,
+        "-2027": 0.003,
+        "-2026": 0.03,
+        "-2025": -0.009,
+        "-2024": -0.955
+      },
+      "volatility": {
+        "-2075": 0.0,
+        "-2074": 0.0,
+        "-2073": 2.98,
+        "-2072": 2.514,
+        "-2071": 0.748,
+        "-2070": 19.376,
+        "-2069": 42.872,
+        "-2068": 42.624,
+        "-2067": 34.884,
+        "-2066": 17.89,
+        "-2065": 29.236,
+        "-2064": 32.482,
+        "-2063": 27.762,
+        "-2062": 42.809,
+        "-2061": 33.553,
+        "-2060": 36.67,
+        "-2059": 26.681,
+        "-2058": 1400.819,
+        "-2057": 2418.745,
+        "-2056": 2418.767,
+        "-2055": 1401.637,
+        "-2054": 30.584,
+        "-2053": 30.17,
+        "-2052": 18.535,
+        "-2051": 46.509,
+        "-2050": 41.796,
+        "-2049": 45.344,
+        "-2048": 101.003,
+        "-2047": 115.034,
+        "-2046": 100.291,
+        "-2045": 71.183,
+        "-2044": 7.383,
+        "-2043": 6.173,
+        "-2042": 133.68,
+        "-2041": 125.751,
+        "-2040": 145.248,
+        "-2039": 204.851,
+        "-2038": 250.494,
+        "-2037": 263.033,
+        "-2036": 241.847,
+        "-2035": 193.374,
+        "-2034": 80.181,
+        "-2033": 63.316,
+        "-2032": 72.102,
+        "-2031": 101.565,
+        "-2030": 103.8,
+        "-2029": 175.287,
+        "-2028": 100.673,
+        "-2027": 63.3,
+        "-2026": 84.058,
+        "-2025": 86.866,
+        "-2024": 55.2
+      },
+      "sudden_drops": [
+        {
+          "window_start": -2069,
+          "previous_count": 67.8,
+          "current_count": 9.8,
+          "drop_ratio": 0.145,
+          "velocity": -58.0,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2066,
+          "previous_count": 35.0,
+          "current_count": 16.8,
+          "drop_ratio": 0.48,
+          "velocity": -18.2,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2057,
+          "previous_count": 3082.4,
+          "current_count": 108.2,
+          "drop_ratio": 0.035,
+          "velocity": -2974.2,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2031,
+          "previous_count": 566.8,
+          "current_count": 265.8,
+          "drop_ratio": 0.469,
+          "velocity": -301.0,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2026,
+          "previous_count": 294.2,
+          "current_count": 136.8,
+          "drop_ratio": 0.465,
+          "velocity": -157.4,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2025,
+          "previous_count": 136.8,
+          "current_count": 27.0,
+          "drop_ratio": 0.197,
+          "velocity": -109.8,
+          "type": "sudden_drop"
+        },
+        {
+          "window_start": -2024,
+          "previous_count": 27.0,
+          "current_count": 3.0,
+          "drop_ratio": 0.111,
+          "velocity": -24.0,
+          "type": "sudden_drop"
+        }
+      ],
+      "volatility_spikes": [
+        {
+          "window_start": -2058,
+          "volatility": 1400.819,
+          "z_score": 2.31,
+          "type": "volatility_spike"
+        },
+        {
+          "window_start": -2057,
+          "volatility": 2418.745,
+          "z_score": 4.293,
+          "type": "volatility_spike"
+        },
+        {
+          "window_start": -2056,
+          "volatility": 2418.767,
+          "z_score": 4.293,
+          "type": "volatility_spike"
+        },
+        {
+          "window_start": -2055,
+          "volatility": 1401.637,
+          "z_score": 2.311,
+          "type": "volatility_spike"
+        }
+      ],
+      "correlation_breakdown": {
+        "correlation_first_half": 0.396,
+        "correlation_second_half": 0.37,
+        "breakdown_detected": false,
+        "type": "correlation_breakdown"
+      },
+      "max_spi_window": -2057,
+      "max_spi_value": 4.578
+    }
+  }
+}

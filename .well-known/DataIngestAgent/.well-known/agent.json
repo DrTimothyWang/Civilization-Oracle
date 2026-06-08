@@ -1,0 +1,53 @@
+{
+  "name": "DataIngestAgent",
+  "description": "多源异构数据统一入口。负责从 CBDB/CHGIS/CTEXT 采集数据，清洗并输出标准 JSON。",
+  "version": "3.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateDiff": false
+  },
+  "skills": [
+    {
+      "id": "cbdb_ingest",
+      "name": "CBDB数据导入",
+      "description": "从 CBDB SQLite 导出指定朝代人物数据，关联地理坐标",
+      "tags": [
+        "cbdb",
+        "sqlite",
+        "historical_data"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json"
+      ]
+    },
+    {
+      "id": "ctext_fetch",
+      "name": "CTEXT语料获取",
+      "description": "从 CTEXT API 获取指定朝代的古典文献文本",
+      "tags": [
+        "ctext",
+        "corpus",
+        "classical_chinese"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "text/plain"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "endpoint": "http://localhost:8001/a2a",
+  "metadata": {
+    "generated_at": "2026-05-30T15:55:07.165921Z",
+    "four_diagnosis": "闻",
+    "role": "data"
+  }
+}

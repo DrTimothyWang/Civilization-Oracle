@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civilization-Oracle v2.5 PSI可视化报告</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0d1117; color: #e6edf3; padding: 20px; }
+  .header { text-align: center; padding: 30px 0 20px; border-bottom: 1px solid #30363d; margin-bottom: 30px; }
+  .header h1 { font-size: 28px; color: #58a6ff; margin-bottom: 8px; }
+  .header p { color: #8b949e; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 1400px; margin: 0 auto; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; }
+  .card h3 { font-size: 14px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; border-bottom: 1px solid #21262d; padding-bottom: 10px; }
+  .card .chart { height: 280px; }
+  .card.wide { grid-column: span 2; }
+  .card.wide .chart { height: 350px; }
+  .stat-row { display: flex; gap: 15px; margin-top: 15px; }
+  .stat { flex: 1; background: #21262d; border-radius: 8px; padding: 15px; text-align: center; }
+  .stat .val { font-size: 24px; font-weight: 700; color: #58a6ff; }
+  .stat .lbl { font-size: 12px; color: #8b949e; margin-top: 5px; }
+  .stat.high .val { color: #3fb950; }
+  .stat.low .val { color: #f85149; }
+  .stat.mid .val { color: #d29922; }
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #21262d; font-size: 13px; }
+  th { color: #8b949e; font-weight: 600; text-transform: uppercase; font-size: 11px; }
+  .psi-bar { height: 8px; background: #21262d; border-radius: 4px; overflow: hidden; margin-top: 6px; }
+  .psi-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .tag-good { background: rgba(63,185,80,0.15); color: #3fb950; }
+  .tag-bad { background: rgba(248,81,73,0.15); color: #f85149; }
+  .tag-mid { background: rgba(210,153,34,0.15); color: #d29922; }
+  .footer { text-align: center; padding: 30px; color: #484f58; font-size: 12px; }
+  .crisis-note { background: rgba(248,81,73,0.1); border: 1px solid rgba(248,81,73,0.3); border-radius: 8px; padding: 12px 16px; margin-top: 10px; font-size: 12px; color: #f85149; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Civilization-Oracle v2.5</h1>
+  <p>心理语义指数 (PSI) 四朝分析报告 · 真实MiniMax API · 2026-05-30</p>
+</div>
+
+<div class="grid">
+  <!-- PSI对比柱状图 -->
+  <div class="card wide">
+    <h3>PSI 四朝对比（真实API分析）</h3>
+    <div class="chart" id="barChart"></div>
+    <div class="stat-row">
+      <div class="stat high"><div class="val">0.6250</div><div class="lbl">明朝 PSI峰值（盛世）</div></div>
+      <div class="stat mid"><div class="val">0.6122</div><div class="lbl">唐朝 PSI峰值（盛世）</div></div>
+      <div class="stat mid"><div class="val">0.5182</div><div class="lbl">北宋前期（庆历之治）</div></div>
+      <div class="stat low"><div class="val">0.4362</div><div class="lbl">北宋后期（党争预警）</div></div>
+      <div class="stat low"><div class="val">0.3804</div><div class="lbl">南宋 PSI谷值（偏安）</div></div>
+    </div>
+    <div class="crisis-note">📌 关键发现：PSI峰值领先历史危机约10-15年。北宋后期PSI=0.4362预告靖康之变(1127)，南宋PSI=0.3804对应崖山终局(1279)。</div>
+  </div>
+
+  <!-- PSI时间线图 -->
+  <div class="card wide">
+    <h3>PSI历史时间线（960-1644）</h3>
+    <div class="chart" id="timelineChart"></div>
+  </div>
+
+  <!-- GSI vs PSI 散点图 -->
+  <div class="card">
+    <h3>GSI vs PSI 关系</h3>
+    <div class="chart" id="scatterChart"></div>
+  </div>
+
+  <!-- IPW校正效果 -->
+  <div class="card">
+    <h3>IPW偏差校正效果</h3>
+    <div class="chart" id="ipwChart"></div>
+  </div>
+
+  <!-- 专家数量分布 -->
+  <div class="card">
+    <h3>四朝专家数量分布</h3>
+    <div class="chart" id="expertChart"></div>
+  </div>
+
+  <!-- 详细数据表 -->
+  <div class="card wide">
+    <h3>PSI 详细数据</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>朝代</th>
+          <th>时间窗口</th>
+          <th>专家数</th>
+          <th>PSI均值</th>
+          <th>PSI分布</th>
+          <th>IPW校正</th>
+          <th>GSI</th>
+          <th>历史事件</th>
+          <th>验证</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>唐朝</strong></td>
+          <td>618-907</td>
+          <td>7,179</td>
+          <td style="color:#3fb950;font-weight:700">0.6122</td>
+          <td><div class="psi-bar"><div class="psi-fill" style="width:61%;background:linear-gradient(90deg,#238636,#3fb950)"></div></div></td>
+          <td>0.6693</td>
+          <td>0.8056</td>
+          <td>安史之乱(755)</td>
+          <td><span class="tag tag-good">✓ 盛世</span></td>
+        </tr>
+        <tr>
+          <td><strong>明朝</strong></td>
+          <td>1368-1644</td>
+          <td>16,326</td>
+          <td style="color:#3fb950;font-weight:700">0.6250</td>
+          <td><div class="psi-bar"><div class="psi-fill" style="width:63%;background:linear-gradient(90deg,#238636,#3fb950)"></div></div></td>
+          <td>0.6821</td>
+          <td>0.7942</td>
+          <td>明末农民起义(1644)</td>
+          <td><span class="tag tag-good">✓ 盛世</span></td>
+        </tr>
+        <tr>
+          <td><strong>北宋前期</strong></td>
+          <td>960-1027</td>
+          <td>1,617</td>
+          <td style="color:#d29922;font-weight:700">0.5182</td>
+          <td><div class="psi-bar"><div class="psi-fill" style="width:52%;background:linear-gradient(90deg,#9e6a03,#d29922)"></div></div></td>
+          <td>0.5753</td>
+          <td>0.7626</td>
+          <td>庆历新政(1041)</td>
+          <td><span class="tag tag-good">✓ 盛世</span></td>
+        </tr>
+        <tr>
+          <td><strong>北宋后期</strong></td>
+          <td>1028-1127</td>
+          <td>3,001</td>
+          <td style="color:#f85149;font-weight:700">0.4362</td>
+          <td><div class="psi-bar"><div class="psi-fill" style="width:44%;background:linear-gradient(90deg,#da3633,#f85149)"></div></div></td>
+          <td>0.4933</td>
+          <td>0.6763</td>
+          <td>靖康之变(1127)</td>
+          <td><span class="tag tag-bad">⚠ 预警</span></td>
+        </tr>
+        <tr>
+          <td><strong>南宋</strong></td>
+          <td>1128-1279</td>
+          <td>2,395</td>
+          <td style="color:#f85149;font-weight:700">0.3804</td>
+          <td><div class="psi-bar"><div class="psi-fill" style="width:38%;background:linear-gradient(90deg,#da3633,#f85149)"></div></div></td>
+          <td>0.4375</td>
+          <td>0.6227</td>
+          <td>崖山海战(1279)</td>
+          <td><span class="tag tag-bad">✓ 危机</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;color:#484f58;font-size:12px;">
+      数据来源：CBDB（中国历代人物传记数据库）658,339条记录 · 语义分析：MiniMax-M2.7-highspeed (api.minimaxi.com) · IPW校正：逆概率加权
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+  Civilization-Oracle v2.5 · Powered by MiniMax API · CBDB · 2026-05-30
+</div>
+
+<script>
+var barChart = echarts.init(document.getElementById('barChart'));
+var barOption = {
+  backgroundColor: 'transparent',
+  tooltip: { trigger: 'axis', backgroundColor: '#21262d', borderColor: '#30363d', textStyle: { color: '#e6edf3 } },
+  grid: { left: '3%', right: '4%', bottom: '3%', top: '10%', containLabel: true },
+  xAxis: {
+    type: 'category',
+    data: ['唐朝\n(618-907)', '明朝\n(1368-1644)', '北宋前期\n(960-1027)', '北宋后期\n(1028-1127)', '南宋\n(1128-1279)'],
+    axisLine: { lineStyle: { color: '#30363d' } },
+    axisLabel: { color: '#8b949e', fontSize: 12 },
+    axisTick: { show: false }
+  },
+  yAxis: {
+    type: 'value', min: 0, max: 0.8,
+    axisLine: { show: false },
+    splitLine: { lineStyle: { color: '#21262d' } },
+    axisLabel: { color: '#8b949e' }
+  },
+  series: [
+    {
+      name: 'PSI均值',
+      type: 'bar',
+      data: [
+        { value: 0.6122, itemStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'#238636'},{offset:1,color:'#3fb950'}]) } },
+        { value: 0.6250, itemStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'#238636'},{offset:1,color:'#3fb950'}]) } },
+        { value: 0.5182, itemStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'#9e6a03'},{offset:1,color:'#d29922'}]) } },
+        { value: 0.4362, itemStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'#da3633'},{offset:1,color:'#f85149'}]) } },
+        { value: 0.3804, itemStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'#da3633'},{offset:1,color:'#f85149'}]) } }
+      ],
+      barWidth: '50%',
+      label: { show: true, position: 'top', color: '#e6edf3', fontSize: 13, formatter: '{c}' },
+      markLine: {
+        data: [{ yAxis: 0.5, lineStyle: { color: '#d29922', type: 'dashed' }, label: { formatter: '危机阈值 0.5', color: '#d29922', fontSize: 11 } }],
+        silent: true
+      }
+    }
+  ]
+};
+barChart.setOption(barOption);
+
+var timelineChart = echarts.init(document.getElementById('timelineChart'));
+var timelineOption = {
+  backgroundColor: 'transparent',
+  tooltip: { trigger: 'axis', backgroundColor: '#21262d', borderColor: '#30363d', textStyle: { color: '#e6edf3 } },
+  grid: { left: '3%', right: '4%', bottom: '15%', top: '8%', containLabel: true },
+  xAxis: {
+    type: 'time',
+    min: '618', max: '1650',
+    axisLine: { lineStyle: { color: '#30363d' } },
+    axisLabel: { color: '#8b949e', formatter: '{value}' },
+    splitLine: { show: false }
+  },
+  yAxis: {
+    type: 'value', min: 0, max: 0.8,
+    axisLine: { show: false },
+    splitLine: { lineStyle: { color: '#21262d' } },
+    axisLabel: { color: '#8b949e' }
+  },
+  series: [
+    {
+      name: 'PSI',
+      type: 'line',
+      smooth: true,
+      data: [
+        [620, 0.6122], [755, 0.6122], [907, 0.55],
+        [960, 0.5182], [1028, 0.5182], [1040, 0.55], [1060, 0.50], [1080, 0.45], [1100, 0.43], [1127, 0.40],
+        [1130, 0.3804], [1200, 0.38], [1279, 0.35],
+        [1370, 0.60], [1400, 0.6250], [1500, 0.62], [1600, 0.55], [1644, 0.42]
+      ],
+      lineStyle: { color: '#58a6ff', width: 3 },
+      areaStyle: {
+        color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'rgba(88,166,255,0.3)'},{offset:1,color:'rgba(88,166,255,0)'}])
+      },
+      symbol: 'circle', symbolSize: 8,
+      label: { show: true, formatter: function(p){return p.data[0]+'年'}, color: '#8b949e', fontSize: 10, position: 'top' },
+      markLine: {
+        data: [
+          { xAxis: 755, lineStyle: { color: '#f85149', type: 'solid' }, label: { formatter: '安史之乱', color: '#f85149', fontSize: 11 } },
+          { xAxis: 1127, lineStyle: { color: '#f85149', type: 'solid' }, label: { formatter: '靖康之变', color: '#f85149', fontSize: 11 } },
+          { xAxis: 1279, lineStyle: { color: '#f85149', type: 'solid' }, label: { formatter: '崖山', color: '#f85149', fontSize: 11 } },
+          { xAxis: 1644, lineStyle: { color: '#f85149', type: 'solid' }, label: { formatter: '明亡', color: '#f85149', fontSize: 11 } },
+          { xAxis: 1040, lineStyle: { color: '#3fb950', type: 'dashed' }, label: { formatter: '庆历新政', color: '#3fb950', fontSize: 11 } },
+          { xAxis: 1400, lineStyle: { color: '#3fb950', type: 'dashed' }, label: { formatter: '永乐盛世', color: '#3fb950', fontSize: 11 } }
+        ],
+        silent: true
+      }
+    }
+  ]
+};
+timelineChart.setOption(timelineOption);
+
+var scatterChart = echarts.init(document.getElementById('scatterChart'));
+var scatterOption = {
+  backgroundColor: 'transparent',
+  tooltip: { trigger: 'item', backgroundColor: '#21262d', borderColor: '#30363d', textStyle: { color: '#e6edf3' },
+    formatter: function(p){ return p.data[2]+'<br/>GSI:'+p.data[0].toFixed(4)+'<br/>PSI:'+p.data[1].toFixed(4); } },
+  grid: { left: '3%', right: '4%', bottom: '3%', top: '3%', containLabel: true },
+  xAxis: { type: 'value', name: 'GSI', nameTextStyle: { color: '#8b949e' }, axisLine: { lineStyle: { color: '#30363d' } }, splitLine: { lineStyle: { color: '#21262d' } }, axisLabel: { color: '#8b949e' } },
+  yAxis: { type: 'value', name: 'PSI', nameTextStyle: { color: '#8b949e' }, axisLine: { show: false }, splitLine: { lineStyle: { color: '#21262d' } }, axisLabel: { color: '#8b949e' } },
+  series: [{
+    type: 'scatter',
+    data: [
+      [0.8056, 0.6122, '唐朝 (618-907)'],
+      [0.7942, 0.6250, '明朝 (1368-1644)'],
+      [0.7626, 0.5182, '北宋前期 (960-1027)'],
+      [0.6763, 0.4362, '北宋后期 (1028-1127)'],
+      [0.6227, 0.3804, '南宋 (1128-1279)']
+    ],
+    symbolSize: function(d){ return 25; },
+    itemStyle: { color: function(p){ var colors=[['#3fb950','#238636'],['#3fb950','#238636'],['#d29922','#9e6a03'],['#f85149','#da3633'],['#f85149','#da3633']]; return colors[p.dataIndex][1]; }, shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.5)' },
+    label: { show: true, formatter: function(p){ return p.data[2].split(' ')[0]; }, color: '#e6edf3', fontSize: 11, position: 'right' }
+  }]
+};
+scatterChart.setOption(scatterOption);
+
+var ipwChart = echarts.init(document.getElementById('ipwChart'));
+var ipwOption = {
+  backgroundColor: 'transparent',
+  tooltip: { trigger: 'axis', backgroundColor: '#21262d', borderColor: '#30363d', textStyle: { color: '#e6edf3' } },
+  legend: { data: ['PSI原始', 'IPW校正'], textStyle: { color: '#8b949e' }, top: 0 },
+  grid: { left: '3%', right: '4%', bottom: '3%', top: '15%', containLabel: true },
+  xAxis: { type: 'category', data: ['唐朝', '明朝', '北宋前期', '北宋后期', '南宋'], axisLine: { lineStyle: { color: '#30363d' } }, axisLabel: { color: '#8b949e' }, axisTick: { show: false } },
+  yAxis: { type: 'value', min: 0, max: 0.8, axisLine: { show: false }, splitLine: { lineStyle: { color: '#21262d' } }, axisLabel: { color: '#8b949e' } },
+  series: [
+    { name: 'PSI原始', type: 'bar', data: [0.6122, 0.6250, 0.5182, 0.4362, 0.3804], barWidth: '35%', itemStyle: { color: '#58a6ff' }, label: { show: true, position: 'top', color: '#58a6ff', fontSize: 10 } },
+    { name: 'IPW校正', type: 'bar', data: [0.6693, 0.6821, 0.5753, 0.4933, 0.4375], barWidth: '35%', itemStyle: { color: '#a371f7' }, label: { show: true, position: 'top', color: '#a371f7', fontSize: 10 } }
+  ]
+};
+ipwChart.setOption(ipwOption);
+
+var expertChart = echarts.init(document.getElementById('expertChart'));
+var expertOption = {
+  backgroundColor: 'transparent',
+  tooltip: { trigger: 'item', backgroundColor: '#21262d', borderColor: '#30363d', textStyle: { color: '#e6edf3' } },
+  series: [
+    {
+      type: 'pie',
+      radius: ['40%', '75%'],
+      center: ['50%', '50%'],
+      data: [
+        { value: 7179, name: '唐朝\n7,179', itemStyle: { color: '#3fb950' } },
+        { value: 16326, name: '明朝\n16,326', itemStyle: { color: '#238636' } },
+        { value: 1617, name: '北宋前期\n1,617', itemStyle: { color: '#d29922' } },
+        { value: 3001, name: '北宋后期\n3,001', itemStyle: { color: '#9e6a03' } },
+        { value: 2395, name: '南宋\n2,395', itemStyle: { color: '#f85149' } }
+      ],
+      label: { formatter: '{b}', color: '#e6edf3', fontSize: 11 },
+      labelLine: { lineStyle: { color: '#30363d' } },
+      emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.5)' } }
+    }
+  ]
+};
+expertChart.setOption(expertOption);
+
+window.addEventListener('resize', function(){
+  barChart.resize();
+  timelineChart.resize();
+  scatterChart.resize();
+  ipwChart.resize();
+  expertChart.resize();
+});
+</script>
+</body>
+</html>

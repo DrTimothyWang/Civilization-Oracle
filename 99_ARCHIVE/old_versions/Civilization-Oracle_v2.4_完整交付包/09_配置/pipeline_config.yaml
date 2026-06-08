@@ -1,0 +1,78 @@
+# Civilization-Oracle — Pipeline Configuration v2.4
+# 替代硬编码参数，支持 YAML 配置化管理
+
+# ============================================================
+# 数据源配置
+# ============================================================
+data:
+  cbdb_path: "data/cbdb_export_2024.csv"
+  ctext_api_base: "https://ctext.org/api"
+  cpm_kb_path: "data/cpm_kb_v0.2.json"
+
+# ============================================================
+# 地理配置
+# ============================================================
+geo:
+  north_south_threshold_lat: 34.0  # 秦岭-淮河分界线
+  chgis_data_path: "data/chgis_v6"
+  geo_inference_confidence_threshold: 0.6
+
+# ============================================================
+# PSI (Political Stress Index) 配置
+# ============================================================
+psi:
+  # PSI 公式参数（v2.3）
+  weights:
+    sfd: 0.5
+    mmp: 0.25
+    emp: 0.25
+
+  # 历史冲击参数
+  historical_shock:
+    northern_threshold: 0.2  # 北方专家占比阈值
+    crisis_multiplier: 1.4   # 危机时期乘数
+
+  # CR 矛盾检测阈值
+  cr_thresholds:
+    cr001: 0.55
+    cr002_north_ratio: 0.20
+
+  # Adjusted R² 阈值（需报告）
+  r2_adjusted_threshold: 0.30
+
+  # 最小显著效应量（Cohen's d）
+  effect_size_minimum: 0.5
+
+# ============================================================
+# NLP 配置
+# ============================================================
+nlp:
+  sikubert_model: "sikubert/sikuroberta-base"
+  sentiment_model: "fccpsl"  # vs "pen"
+  dynamic_attention: true
+  top_k_keywords: 20
+
+# ============================================================
+# TKG (Temporal Knowledge Graph) 配置
+# ============================================================
+tkg:
+  model: "cegrl_tkgr"  # vs "re_gcn", "re_gcn_anel"
+  mrr_target: 0.35
+  cbdb_benchmark: true
+
+# ============================================================
+# Pipeline 配置
+# ============================================================
+pipeline:
+  stages: 5  # v2.4 从7阶段合并至5阶段
+  failure_mode: "skip"  # skip | abort | fallback
+  timeout_seconds: 300
+
+# ============================================================
+# 质量控制配置
+# ============================================================
+quality:
+  unit_test_coverage_minimum: 0.80
+  pen_alpha_minimum: 0.65  # 内部一致性阈值
+  geo_coverage_target: 0.60  # 地理覆盖率目标
+  cpm_kb_target: 100  # v0.2 目标条目数

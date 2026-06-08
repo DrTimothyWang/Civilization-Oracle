@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.upsi.daily-dashboard</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/wangzr/Desktop/历史事件预测建模/v10_迭代研究/01_dashboard/v10_dashboard.py</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/wangzr/Desktop/历史事件预测建模/v10_迭代研究/01_dashboard</string>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Users/wangzr/Desktop/历史事件预测建模/v10_迭代研究/01_dashboard/cron.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/wangzr/Desktop/历史事件预测建模/v10_迭代研究/01_dashboard/cron_error.log</string>
+</dict>
+</plist>

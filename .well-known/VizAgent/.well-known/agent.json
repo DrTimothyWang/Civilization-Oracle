@@ -1,0 +1,37 @@
+{
+  "name": "VizAgent",
+  "description": "时空热力图与场景还原。将 PSI 时序和预测结果渲染为 ECharts/Deck.gl 可视化。",
+  "version": "3.0.0",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateDiff": false
+  },
+  "skills": [
+    {
+      "id": "timeline_viz",
+      "name": "时序可视化",
+      "description": "生成 PSI 时间线折线图和危机散点图",
+      "tags": [
+        "echarts",
+        "visualization",
+        "timeline",
+        "psi"
+      ],
+      "inputModes": [
+        "application/json"
+      ],
+      "outputModes": [
+        "text/html"
+      ]
+    }
+  ],
+  "authentication": {
+    "type": "none"
+  },
+  "endpoint": "http://localhost:8006/a2a",
+  "metadata": {
+    "generated_at": "2026-05-30T15:55:07.170370Z",
+    "role": "visualization"
+  }
+}

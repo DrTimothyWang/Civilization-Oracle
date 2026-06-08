@@ -1,0 +1,106 @@
+version: 1
+plan:
+  name: "Civilization-Oracle v2.4 P3 全周期扩展与模型升级"
+  max_concurrency: 3
+  max_consecutive_failures: 2
+  max_cycles: 5
+tasks:
+  - id: full-period-expansion
+    title: "全周期扩展（唐宋明 + 北宋）"
+    prompt: |
+      修改 phase_pipeline_v2.py 支持唐宋明三个扩展周期。
+      
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模/
+      
+      具体要求：
+      1. 在 phase_pipeline_v2.py 中新增 dynasty_periods 字典，包含：
+         - 北宋（960-1127）：n_experts=50，psi基准=0.63
+         - 南宋（1127-1279）：n_experts=40，psi基准=0.58
+         - 明朝（1368-1644）：n_experts=60，psi基准=0.55
+         - 唐朝（618-907）：n_experts=55，psi基准=0.60
+      2. 新增 run_multi_dynasty_analysis() 函数，遍历四个周期调用现有pipeline
+      3. 每个周期输出：dynasty, n_experts, psi_mean, psi_corrected, gsi, stability
+      4. 保存结果到 multi_dynasty_results.json
+      
+      已有模块可复用：bayesian_framework, chgis_geo, sikubert_nlp, cpm_kb
+      直接 import 使用，不需要重写。
+      
+      交付：修改后的 phase_pipeline_v2.py（向后兼容，不破坏现有的单周期运行）。
+      运行验证：python3 phase_pipeline_v2.py 确认四个周期都能跑通。
+    assigned_to: general
+    verified_by: verifier
+    verify_prompt: |
+      在 /Users/tianjangwang/Documents/历史事件预测建模/ 验证：
+      1. 运行 python3 phase_pipeline_v2.py 确认无报错
+      2. 检查 multi_dynasty_results.json 是否存在且包含四个朝代数据
+      3. 每个朝代的 psi_corrected 必须在 [0, 1] 范围内
+      4. 北宋 psi_corrected 应接近 0.63（允许±0.1误差）
+    timeout_ms: 1800000
+
+  - id: sikubert-real-model
+    title: "SikuBERT真实模型接入"
+    prompt: |
+      在 utils/sikubert_nlp.py 基础上，接入真实 SikuBERT 模型。
+      
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模/
+      
+      具体要求：
+      1. 修改 SikuBERTNLP.load_model()：优先尝试加载 HuggingFace 的 SikuBERT 模型
+         - 模型名：nghuyong/ernie-3.0-mini-zh（轻量中文预训练模型，作为SikuBERT降级替代）
+         - 如果 transformers 未安装或加载失败，fallback 到现有规则方法
+      2. 在 analyze_sentiment() 中支持真实模型推理
+      3. 验证：分别测试降级模式和真实模型模式，确保结果一致性
+      4. 测试文本：
+         - "嘉祐之治，天下太平" → 正向（预期 +0.5 到 +0.8）
+         - "百年积弊，民不聊生" → 负向（预期 -0.5 到 -0.8）
+      
+      关键：真实模型加载必须用 try/except 包裹，失败时优雅降级。
+      交付：修改后的 utils/sikubert_nlp.py。
+    assigned_to: general
+    verified_by: verifier
+    verify_prompt: |
+      在 /Users/tianjangwang/Documents/历史事件预测建模/ 验证：
+      1. 检查 sikubert_nlp.py 中是否包含 transformers 相关导入（可选）
+      2. 运行 python3 -c "from utils.sikubert_nlp import SikuBERTNLP; nlp=SikuBERTNLP(); print(nlp.analyze_sentiment('嘉祐之治，天下太平'))" 确认有输出
+      3. 检查 load_model() 是否包含 try/except 降级逻辑
+      4. 检查 fallback 到规则方法的逻辑是否完整
+    timeout_ms: 1800000
+
+  - id: cbdb-ipw-correction
+    title: "CBDB IPW偏差校正模块"
+    prompt: |
+      创建 utils/cbdb_ipw_correction.py，实现 CBDB 选择偏差的逆概率加权（IPW）校正。
+      
+      工作目录：/Users/tianjangwang/Documents/历史事件预测建模/
+      
+      背景：CBDB 中北宋专家存在明显的选择偏差——文献记载更偏向高层官员、北方人、主流学派。
+      不校正会导致 PSI 系统性偏高。
+
+      具体要求：
+      1. 实现 CBDBIPWCorrector 类：
+         - propensity_score(person): 根据职称（品级）、籍贯（南北）、学派计算选择倾向
+         - weight(person): 返回 IPW 权重 = 1 / propensity_score
+         - correct_sample(experts): 返回加权后的专家列表
+      2. propensity_score 公式（简化版）：
+         - 高品级（三品以上）：propensity += 0.3
+         - 北方籍贯：propensity += 0.25
+         - 主流学派（儒家）：propensity += 0.2
+         - 基准 propensity = 0.5（样本外专家概率）
+         - 最终 propensity = sigmoid(基准 + 各项加成)
+      3. 在 weighted_mean_psi(experts) 中应用 IPW 权重
+      4. 测试：使用 utils/chgis_geo.py 的专家数据（5人）验证校正前后 PSI 差异
+         - 校正前 PSI 约 0.63
+         - 校正后 PSI 应降低（因为高选择偏差的北方/高品级专家被降权）
+      
+      交付：utils/cbdb_ipw_correction.py（~150行）+ 单元测试。
+      验证：python3 utils/cbdb_ipw_correction.py 确认输出校正前后 PSI 对比。
+    assigned_to: general
+    verified_by: verifier
+    verify_prompt: |
+      在 /Users/tianjangwang/Documents/历史事件预测建模/ 验证：
+      1. 检查 utils/cbdb_ipw_correction.py 是否存在
+      2. 运行 python3 utils/cbdb_ipw_correction.py 确认有输出
+      3. 检查 propensity_score 公式是否合理（sigmoid变换，值在[0,1]）
+      4. 检查 weighted_mean_psi 是否应用了 IPW 权重
+      5. 确认校正后 PSI < 校正前 PSI（因为降权了高选择偏差的样本）
+    timeout_ms: 1800000
