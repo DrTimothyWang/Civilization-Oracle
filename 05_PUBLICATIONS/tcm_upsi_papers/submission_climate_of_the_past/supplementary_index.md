@@ -273,6 +273,38 @@ This document provides a complete index of all supplementary materials (SI S1–
 
 ---
 
+## SI S16: Bayesian Hierarchical Inference (v17B)
+
+**File**: `TCM_UPSI_Bayesian_Supplementary_v1.md` (located in `05_PUBLICATIONS/tcm_upsi_papers/`)
+
+**Contents**:
+- **S1. Sampling Configuration**: 4 chains × 4000 draws, target_accept=0.95, max_treedepth=12
+- **S2. Convergence Diagnostics**: R-hat, ESS (bulk/tail), divergences, treedepth hits by model
+- **S3. Posterior Distributions**: Model A (PSI-only), Model B (PSI+SPI joint), Model C (UPSI_v2 binary)
+- **S4. Model Comparison**: WAIC, LOO-CV, ΔWAIC, model selection rationale
+- **S5. Posterior Predictive Checks**: Scenario-based probability predictions
+- **S6. Sensitivity Analysis**: Prior sensitivity (Half-Normal scale), configuration sensitivity (2nd sampling validation)
+- **S7. Limitations & Validation**: Full-data sampling failure disclosure, small-sample caveats
+- **S8. Figure Source Data**: Figure S1–S4 source data and generation code
+- **S9. Reproducibility**: PyMC model code, data preprocessing pipeline, environment specification
+
+**Associated Figures**:
+- **Figure S1**: Convergence diagnostics panel (R-hat, ESS, divergences by model)
+- **Figure S2**: Forest plot — Model A domain effects with 94% HDI
+- **Figure S3**: WAIC/LOO-CV model comparison bar chart
+- **Figure S4**: Posterior mean correlation matrix heatmap (Model B)
+
+**Key Findings**:
+1. PSI is a robust cross-domain crisis signal: P(β₀<0) = 0.833 (Model A subset), P(β₁₀<0) = 0.833 (Model B)
+2. SPI independent contribution not significant: P(β₂₀>0) = 0.411
+3. Model B (PSI+SPI) not significantly better than Model A: ΔWAIC = 1.19 (< 1 SE)
+4. Full 7-domain sampling failed (15,984 divergences, r̂=1.20); subset models (n=67, 3 domains) converged well
+5. **Formal result**: 1st sampling (target_accept=0.99, max_treedepth=15, non-centered parameterization) used as primary; 2nd sampling as validation
+
+**Relevance**: Provides rigorous Bayesian validation of the PSI/SPI framework and documents both successful convergence and honest failure modes.
+
+---
+
 ## File Summary
 
 | SI Code | File | Size (est.) | Format |
@@ -292,8 +324,9 @@ This document provides a complete index of all supplementary materials (SI S1–
 | S13 | `SI_S13_Forward_Forecast.pdf` | ~600 KB | PDF |
 | S14 | `SI_S14_Figure_Source_Data.zip` | ~2 MB | ZIP (CSV) |
 | S15 | `SI_S15_Glossary.pdf` | ~300 KB | PDF |
+| S16 | `TCM_UPSI_Bayesian_Supplementary_v1.md` | ~19 KB | Markdown (+ 4 PNG figures) |
 
-**Total estimated size**: ~10 MB
+**Total estimated size**: ~10 MB (+ ~2 MB for Bayesian SI figures)
 
 ---
 

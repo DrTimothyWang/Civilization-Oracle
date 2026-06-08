@@ -246,6 +246,90 @@ Each figure is described with its purpose, key content, approximate dimensions, 
 
 ---
 
+## Figure S1: Bayesian Convergence Diagnostics Panel
+
+**Type**: Multi-panel bar chart (2×2)
+**Dimensions**: 180 mm × 130 mm (2-column width)
+**Color**: Yes (green=pass, orange=warning, red=fail)
+
+**Content**:
+- Panel 1: Max R-hat by model (4 models) with 1.01 threshold line
+- Panel 2: Min ESS (bulk) by model with 400/1000 threshold lines (log scale)
+- Panel 3: Min ESS (tail) by model with 400/1000 threshold lines (log scale)
+- Panel 4: Divergences by model with 100/1000 threshold lines (log scale)
+- Models: A (Full 7-domain), A (Subset 3-domain), B (PSI+SPI), C (UPSI_v2 Binary)
+
+**Purpose**: Comprehensive convergence assessment for all Bayesian models; highlights full-data sampling failure vs. subset model success.
+
+**Source data**: `01_TCM_UPSI_CORE/v17b_full_sampling_results.json`
+
+**File**: `01_TCM_UPSI_CORE/figures_bayesian/Figure_S1_convergence_diagnostics.png`
+
+---
+
+## Figure S2: Forest Plot — Model A Domain Effects
+
+**Type**: Forest plot / interval plot
+**Dimensions**: 120 mm × 80 mm (1.5-column width)
+**Color**: Yes (blue=significant, gray=non-significant, red=posterior mean)
+
+**Content**:
+- Y-axis: 3 domains (中华历史, 美索不达米亚, 现代金融)
+- X-axis: Domain effect β (posterior mean ± 94% HDI)
+- Horizontal lines: 94% HDI intervals
+- Dots: posterior means
+- Text: P(β<0) values
+- Reference line: β = 0 (no effect)
+
+**Purpose**: Visualizes domain-specific PSI effects with uncertainty quantification; shows 中华历史 and 现代金融 are significant, 美索不达米亚 crosses zero.
+
+**Source data**: `01_TCM_UPSI_CORE/v17b_full_sampling_results.json` (model_a_subset)
+
+**File**: `01_TCM_UPSI_CORE/figures_bayesian/Figure_S2_forest_plot.png`
+
+---
+
+## Figure S3: WAIC/LOO-CV Model Comparison
+
+**Type**: Grouped bar chart with error bars
+**Dimensions**: 150 mm × 100 mm (2-column width)
+**Color**: Yes (blue=WAIC, red=LOO-CV, green=winner annotation)
+
+**Content**:
+- X-axis: 3 models (Model A PSI-only, Model B PSI+SPI, Model C UPSI_v2 Binary)
+- Y-axis: Information criterion value (lower = better)
+- Bars: WAIC and LOO-CV with ±1 SE error bars
+- Annotation: "Winner (Model A)" arrow
+- Note: 3-domain subset, n=67
+
+**Purpose**: Compares model fit; Model A wins (lowest WAIC/LOO), PSI+SPI joint model not significantly better.
+
+**Source data**: `01_TCM_UPSI_CORE/v17b_full_sampling_results.json` (model_comparison)
+
+**File**: `01_TCM_UPSI_CORE/figures_bayesian/Figure_S3_waic_comparison.png`
+
+---
+
+## Figure S4: Posterior Correlation Matrix Heatmap
+
+**Type**: Heatmap with annotated values
+**Dimensions**: 120 mm × 120 mm (1.5-column width, square)
+**Color**: Yes (RdBu_r diverging: red=negative, blue=positive, white=zero)
+
+**Content**:
+- 3×3 matrix: α (Intercept), β₁ (PSI), β₂ (SPI)
+- Cell values: posterior mean correlations (3 decimals)
+- Color bar: −1 to +1
+- Key values: corr(α,β₁) = −0.146, corr(α,β₂) = −0.071, corr(β₁,β₂) = −0.009
+
+**Purpose**: Shows near-zero correlations between PSI and SPI effects, supporting their conditional independence in the joint model.
+
+**Source data**: `01_TCM_UPSI_CORE/v17b_full_sampling_results.json` (model_b correlation_matrix_mean)
+
+**File**: `01_TCM_UPSI_CORE/figures_bayesian/Figure_S4_correlation_heatmap.png`
+
+---
+
 ## Summary Table
 
 | Figure | Title | Type | Width | Color | Key Message |
@@ -262,6 +346,10 @@ Each figure is described with its purpose, key content, approximate dimensions, 
 | 10 | Epidemic Distribution | Bar chart | 1-col | Yes | Exploratory association |
 | 11 | Forward Forecast | Timeline | 2-col | Yes | 2026–2031 HIGH risk |
 | 12 | Blinded Comparison | Side-by-side | 2-col | Yes | Selection bias confirmed |
+| **S1** | **Bayesian Convergence Panel** | **Multi-panel bar** | **2-col** | **Yes** | **Full-data fail, subset pass** |
+| **S2** | **Forest Plot (Model A)** | **Interval plot** | **1.5-col** | **Yes** | **PSI effect by domain** |
+| **S3** | **WAIC/LOO Comparison** | **Grouped bar** | **2-col** | **Yes** | **Model A wins** |
+| **S4** | **Correlation Heatmap** | **Heatmap** | **1.5-col** | **Yes** | **PSI⊥SPI (near-zero corr)** |
 
 ---
 

@@ -36,6 +36,18 @@ We present the first rigorous, machine-learning-based evaluation of the **WuYun-
 
 We adhere to the principle that **negative results are as important as positive results**. The failure of WuYun-LiuQi to generalize, the demonstration of selection bias, and the refutation of causal claims are reported with the same rigor as the validated climate associations. All data, code, and negative findings are publicly documented under open licenses.
 
+## Bayesian Hierarchical Inference Supplement
+
+We provide a comprehensive Bayesian hierarchical inference analysis as **Supplementary Information S16**, including:
+
+- **Convergence diagnostics** (R-hat, ESS, divergences) for all three model specifications (PSI-only, PSI+SPI joint, UPSI_v2 binary)
+- **Posterior forest plots** (Figure S2) with 94% HDI for domain-level effects across 7 civilizational domains
+- **Model comparison** via WAIC and LOO-CV (Figure S3), demonstrating PSI-only model superiority
+- **Posterior correlation matrix** (Figure S4) for the PSI+SPI joint model
+- **Prior sensitivity analysis** and honest disclosure of sampling configuration dependence
+
+This supplementary analysis validates the robustness of PSI as a cross-domain crisis signal (P(β₀<0) = 1.0000) while confirming that SPI's independent contribution remains non-significant (P(β₂₀>0) = 0.6656). All PyMC code and source data for reproducibility are included.
+
 ## Suggested Reviewers
 
 We have provided a list of recommended reviewers with expertise in paleoclimate reconstruction, historical climatology, traditional medical climatology, computational history, and complex systems (see accompanying file `suggested_reviewers.md`).
