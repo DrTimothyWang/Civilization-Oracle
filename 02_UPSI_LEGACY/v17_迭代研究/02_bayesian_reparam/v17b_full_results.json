@@ -1,0 +1,887 @@
+{
+  "config": {
+    "n_chains": 4,
+    "n_tune": 2000,
+    "n_draws": 4000,
+    "target_accept": 0.95,
+    "max_treedepth": 12
+  },
+  "data_summary": {
+    "total_observations": 6832,
+    "spi_available": 79,
+    "domains": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "model_a_full": {
+    "convergence": {
+      "max_rhat": 1.2,
+      "min_ess_bulk": 15.0,
+      "min_ess_tail": 19.0,
+      "divergences": 15984,
+      "max_treedepth_hits": 44,
+      "status_rhat": "⚠ 警告",
+      "status_ess": "⚠ 警告",
+      "status_divergences": "✗ 严重",
+      "summary": {
+        "mean": {
+          "alpha_0": 0.181,
+          "beta_0": 0.004,
+          "sigma_alpha": 47.558,
+          "sigma_beta": 188.792,
+          "alpha_tilde[0]": 0.16,
+          "alpha_tilde[1]": -0.033,
+          "alpha_tilde[2]": -0.226,
+          "alpha_tilde[3]": -2.711,
+          "alpha_tilde[4]": -0.069,
+          "alpha_tilde[5]": -0.033,
+          "alpha_tilde[6]": 0.146,
+          "beta_tilde[0]": -0.058,
+          "beta_tilde[1]": 0.002,
+          "beta_tilde[2]": -0.115,
+          "beta_tilde[3]": -3.05,
+          "beta_tilde[4]": -0.006,
+          "beta_tilde[5]": -0.117,
+          "beta_tilde[6]": -0.062
+        },
+        "sd": {
+          "alpha_0": 0.966,
+          "beta_0": 1.138,
+          "sigma_alpha": 9.636,
+          "sigma_beta": 45.319,
+          "alpha_tilde[0]": 0.056,
+          "alpha_tilde[1]": 0.025,
+          "alpha_tilde[2]": 0.15,
+          "alpha_tilde[3]": 0.529,
+          "alpha_tilde[4]": 0.023,
+          "alpha_tilde[5]": 0.09,
+          "alpha_tilde[6]": 0.148,
+          "beta_tilde[0]": 0.022,
+          "beta_tilde[1]": 0.009,
+          "beta_tilde[2]": 0.057,
+          "beta_tilde[3]": 0.699,
+          "beta_tilde[4]": 0.007,
+          "beta_tilde[5]": 0.052,
+          "beta_tilde[6]": 0.039
+        },
+        "hdi_3%": {
+          "alpha_0": -1.777,
+          "beta_0": -2.504,
+          "sigma_alpha": 30.642,
+          "sigma_beta": 104.509,
+          "alpha_tilde[0]": 0.067,
+          "alpha_tilde[1]": -0.083,
+          "alpha_tilde[2]": -0.485,
+          "alpha_tilde[3]": -3.603,
+          "alpha_tilde[4]": -0.113,
+          "alpha_tilde[5]": -0.212,
+          "alpha_tilde[6]": -0.117,
+          "beta_tilde[0]": -0.098,
+          "beta_tilde[1]": -0.015,
+          "beta_tilde[2]": -0.202,
+          "beta_tilde[3]": -4.392,
+          "beta_tilde[4]": -0.019,
+          "beta_tilde[5]": -0.218,
+          "beta_tilde[6]": -0.142
+        },
+        "hdi_97%": {
+          "alpha_0": 1.896,
+          "beta_0": 1.991,
+          "sigma_alpha": 66.637,
+          "sigma_beta": 270.32,
+          "alpha_tilde[0]": 0.265,
+          "alpha_tilde[1]": 0.016,
+          "alpha_tilde[2]": 0.028,
+          "alpha_tilde[3]": -1.771,
+          "alpha_tilde[4]": -0.026,
+          "alpha_tilde[5]": 0.131,
+          "alpha_tilde[6]": 0.405,
+          "beta_tilde[0]": -0.023,
+          "beta_tilde[1]": 0.02,
+          "beta_tilde[2]": -0.016,
+          "beta_tilde[3]": -1.733,
+          "beta_tilde[4]": 0.008,
+          "beta_tilde[5]": -0.021,
+          "beta_tilde[6]": -0.007
+        },
+        "mcse_mean": {
+          "alpha_0": 0.131,
+          "beta_0": 0.128,
+          "sigma_alpha": 1.816,
+          "sigma_beta": 11.865,
+          "alpha_tilde[0]": 0.008,
+          "alpha_tilde[1]": 0.003,
+          "alpha_tilde[2]": 0.019,
+          "alpha_tilde[3]": 0.092,
+          "alpha_tilde[4]": 0.004,
+          "alpha_tilde[5]": 0.008,
+          "alpha_tilde[6]": 0.012,
+          "beta_tilde[0]": 0.006,
+          "beta_tilde[1]": 0.001,
+          "beta_tilde[2]": 0.009,
+          "beta_tilde[3]": 0.174,
+          "beta_tilde[4]": 0.001,
+          "beta_tilde[5]": 0.008,
+          "beta_tilde[6]": 0.007
+        },
+        "mcse_sd": {
+          "alpha_0": 0.093,
+          "beta_0": 0.091,
+          "sigma_alpha": 1.302,
+          "sigma_beta": 8.622,
+          "alpha_tilde[0]": 0.006,
+          "alpha_tilde[1]": 0.002,
+          "alpha_tilde[2]": 0.014,
+          "alpha_tilde[3]": 0.065,
+          "alpha_tilde[4]": 0.003,
+          "alpha_tilde[5]": 0.005,
+          "alpha_tilde[6]": 0.009,
+          "beta_tilde[0]": 0.004,
+          "beta_tilde[1]": 0.001,
+          "beta_tilde[2]": 0.006,
+          "beta_tilde[3]": 0.125,
+          "beta_tilde[4]": 0.001,
+          "beta_tilde[5]": 0.006,
+          "beta_tilde[6]": 0.005
+        },
+        "ess_bulk": {
+          "alpha_0": 55.0,
+          "beta_0": 77.0,
+          "sigma_alpha": 30.0,
+          "sigma_beta": 15.0,
+          "alpha_tilde[0]": 50.0,
+          "alpha_tilde[1]": 71.0,
+          "alpha_tilde[2]": 67.0,
+          "alpha_tilde[3]": 30.0,
+          "alpha_tilde[4]": 42.0,
+          "alpha_tilde[5]": 145.0,
+          "alpha_tilde[6]": 156.0,
+          "beta_tilde[0]": 16.0,
+          "beta_tilde[1]": 61.0,
+          "beta_tilde[2]": 48.0,
+          "beta_tilde[3]": 17.0,
+          "beta_tilde[4]": 44.0,
+          "beta_tilde[5]": 65.0,
+          "beta_tilde[6]": 40.0
+        },
+        "ess_tail": {
+          "alpha_0": 115.0,
+          "beta_0": 149.0,
+          "sigma_alpha": 97.0,
+          "sigma_beta": 19.0,
+          "alpha_tilde[0]": 164.0,
+          "alpha_tilde[1]": 223.0,
+          "alpha_tilde[2]": 80.0,
+          "alpha_tilde[3]": 194.0,
+          "alpha_tilde[4]": 107.0,
+          "alpha_tilde[5]": 207.0,
+          "alpha_tilde[6]": 283.0,
+          "beta_tilde[0]": 87.0,
+          "beta_tilde[1]": 193.0,
+          "beta_tilde[2]": 56.0,
+          "beta_tilde[3]": 22.0,
+          "beta_tilde[4]": 114.0,
+          "beta_tilde[5]": 95.0,
+          "beta_tilde[6]": 59.0
+        },
+        "r_hat": {
+          "alpha_0": 1.06,
+          "beta_0": 1.07,
+          "sigma_alpha": 1.11,
+          "sigma_beta": 1.2,
+          "alpha_tilde[0]": 1.05,
+          "alpha_tilde[1]": 1.05,
+          "alpha_tilde[2]": 1.02,
+          "alpha_tilde[3]": 1.11,
+          "alpha_tilde[4]": 1.11,
+          "alpha_tilde[5]": 1.03,
+          "alpha_tilde[6]": 1.02,
+          "beta_tilde[0]": 1.18,
+          "beta_tilde[1]": 1.07,
+          "beta_tilde[2]": 1.06,
+          "beta_tilde[3]": 1.18,
+          "beta_tilde[4]": 1.1,
+          "beta_tilde[5]": 1.08,
+          "beta_tilde[6]": 1.08
+        }
+      }
+    },
+    "p_beta_negative": 0.503125,
+    "beta_0_mean": 0.005088857080023303,
+    "beta_0_hdi": [
+      -3.0588932772260375,
+      2.587909218933826
+    ],
+    "domain_effects": [
+      {
+        "domain": "中华历史",
+        "mean": -12.450712334639036,
+        "hdi_low": -18.497635618211806,
+        "hdi_high": -6.304805089228781,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "美索不达米亚",
+        "mean": 0.4063616048423045,
+        "hdi_low": -2.371826690439169,
+        "hdi_high": 3.067605377513801,
+        "p_negative": 0.354375
+      },
+      {
+        "domain": "现代金融",
+        "mean": -24.44940697133951,
+        "hdi_low": -39.613646929010926,
+        "hdi_high": -7.9655053390386605,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "全球政治",
+        "mean": -664.2792388664668,
+        "hdi_low": -724.4060562415168,
+        "hdi_high": -565.5043557096766,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "中国金融",
+        "mean": -1.2917602816197995,
+        "hdi_low": -1.5342595421111698,
+        "hdi_high": -1.0414619730837986,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "古罗马",
+        "mean": -25.695511042721385,
+        "hdi_low": -43.88787127577978,
+        "hdi_high": -7.408123369150967,
+        "p_negative": 1.0
+      },
+      {
+        "domain": "COVID",
+        "mean": -13.201308349925133,
+        "hdi_low": -26.489305668482107,
+        "hdi_high": -2.138028857830802,
+        "p_negative": 1.0
+      }
+    ],
+    "sigma_beta_mean": 229.10254509586036,
+    "sigma_beta_hdi": [
+      122.38164189817824,
+      331.61171291122344
+    ],
+    "p_low_heterogeneity": 0.0,
+    "model": "A_psi_only_full",
+    "elapsed_seconds": 1382.8586869239807,
+    "waic_loo": {
+      "waic": -1266.3502534599415,
+      "waic_se": 48.954644412825026,
+      "p_waic": 9.378039812462411,
+      "loo": NaN,
+      "loo_se": NaN,
+      "p_loo": NaN,
+      "status": "✓"
+    }
+  },
+  "model_a_subset": {
+    "convergence": {
+      "max_rhat": 1.0,
+      "min_ess_bulk": 4866.0,
+      "min_ess_tail": 6281.0,
+      "divergences": 446,
+      "max_treedepth_hits": 0,
+      "status_rhat": "✓",
+      "status_ess": "✓",
+      "status_divergences": "✗ 严重",
+      "summary": {
+        "mean": {
+          "alpha_0": -0.082,
+          "beta_0": -1.085,
+          "sigma_alpha": 3.199,
+          "sigma_beta": 3.073,
+          "alpha_tilde[0]": 1.252,
+          "alpha_tilde[1]": -0.405,
+          "alpha_tilde[2]": -1.047,
+          "beta_tilde[0]": -1.244,
+          "beta_tilde[1]": 0.617,
+          "beta_tilde[2]": -0.793
+        },
+        "sd": {
+          "alpha_0": 0.989,
+          "beta_0": 1.201,
+          "sigma_alpha": 1.908,
+          "sigma_beta": 2.155,
+          "alpha_tilde[0]": 0.625,
+          "alpha_tilde[1]": 0.498,
+          "alpha_tilde[2]": 0.627,
+          "beta_tilde[0]": 0.664,
+          "beta_tilde[1]": 0.648,
+          "beta_tilde[2]": 0.652
+        },
+        "hdi_3%": {
+          "alpha_0": -2.025,
+          "beta_0": -3.408,
+          "sigma_alpha": 0.676,
+          "sigma_beta": 0.197,
+          "alpha_tilde[0]": 0.216,
+          "alpha_tilde[1]": -1.381,
+          "alpha_tilde[2]": -2.255,
+          "beta_tilde[0]": -2.605,
+          "beta_tilde[1]": -0.383,
+          "beta_tilde[2]": -2.091
+        },
+        "hdi_97%": {
+          "alpha_0": 1.731,
+          "beta_0": 1.074,
+          "sigma_alpha": 6.456,
+          "sigma_beta": 6.823,
+          "alpha_tilde[0]": 2.467,
+          "alpha_tilde[1]": 0.517,
+          "alpha_tilde[2]": 0.041,
+          "beta_tilde[0]": -0.124,
+          "beta_tilde[1]": 1.92,
+          "beta_tilde[2]": 0.4
+        },
+        "mcse_mean": {
+          "alpha_0": 0.011,
+          "beta_0": 0.014,
+          "sigma_alpha": 0.026,
+          "sigma_beta": 0.032,
+          "alpha_tilde[0]": 0.007,
+          "alpha_tilde[1]": 0.006,
+          "alpha_tilde[2]": 0.006,
+          "beta_tilde[0]": 0.007,
+          "beta_tilde[1]": 0.008,
+          "beta_tilde[2]": 0.007
+        },
+        "mcse_sd": {
+          "alpha_0": 0.01,
+          "beta_0": 0.011,
+          "sigma_alpha": 0.02,
+          "sigma_beta": 0.023,
+          "alpha_tilde[0]": 0.005,
+          "alpha_tilde[1]": 0.005,
+          "alpha_tilde[2]": 0.005,
+          "beta_tilde[0]": 0.005,
+          "beta_tilde[1]": 0.006,
+          "beta_tilde[2]": 0.005
+        },
+        "ess_bulk": {
+          "alpha_0": 8614.0,
+          "beta_0": 7193.0,
+          "sigma_alpha": 5809.0,
+          "sigma_beta": 4866.0,
+          "alpha_tilde[0]": 7507.0,
+          "alpha_tilde[1]": 7572.0,
+          "alpha_tilde[2]": 9927.0,
+          "beta_tilde[0]": 8830.0,
+          "beta_tilde[1]": 6859.0,
+          "beta_tilde[2]": 8848.0
+        },
+        "ess_tail": {
+          "alpha_0": 8176.0,
+          "beta_0": 7166.0,
+          "sigma_alpha": 6563.0,
+          "sigma_beta": 6281.0,
+          "alpha_tilde[0]": 8469.0,
+          "alpha_tilde[1]": 7449.0,
+          "alpha_tilde[2]": 9401.0,
+          "beta_tilde[0]": 8915.0,
+          "beta_tilde[1]": 7966.0,
+          "beta_tilde[2]": 8868.0
+        },
+        "r_hat": {
+          "alpha_0": 1.0,
+          "beta_0": 1.0,
+          "sigma_alpha": 1.0,
+          "sigma_beta": 1.0,
+          "alpha_tilde[0]": 1.0,
+          "alpha_tilde[1]": 1.0,
+          "alpha_tilde[2]": 1.0,
+          "beta_tilde[0]": 1.0,
+          "beta_tilde[1]": 1.0,
+          "beta_tilde[2]": 1.0
+        }
+      }
+    },
+    "p_beta_negative": 0.8331875,
+    "beta_0_mean": -2.114430022756234,
+    "beta_0_hdi": [
+      -6.863550783554765,
+      2.3070020607790322
+    ],
+    "domain_effects": [
+      {
+        "domain": "中华历史",
+        "mean": -8.615388771122834,
+        "hdi_low": -14.51078330082185,
+        "hdi_high": -3.0341294755541597,
+        "p_negative": 0.999875
+      },
+      {
+        "domain": "美索不达米亚",
+        "mean": 0.33495869463655953,
+        "hdi_low": -2.3506835186112225,
+        "hdi_high": 2.993855585404098,
+        "p_negative": 0.376625
+      },
+      {
+        "domain": "现代金融",
+        "mean": -6.749052306314039,
+        "hdi_low": -14.434941431968776,
+        "hdi_high": -1.3236749381975912,
+        "p_negative": 0.99975
+      }
+    ],
+    "sigma_beta_mean": 5.9872381492124624,
+    "sigma_beta_hdi": [
+      0.37235950881752705,
+      14.21432074700219
+    ],
+    "p_low_heterogeneity": 0.0039375,
+    "model": "A_psi_only_subset",
+    "elapsed_seconds": 76.91057896614075
+  },
+  "model_b": {
+    "convergence": {
+      "max_rhat": 1.0,
+      "min_ess_bulk": 1843.0,
+      "min_ess_tail": 1876.0,
+      "divergences": 1201,
+      "max_treedepth_hits": 0,
+      "status_rhat": "✓",
+      "status_ess": "✓",
+      "status_divergences": "✗ 严重",
+      "summary": {
+        "mean": {
+          "alpha_0": -0.065,
+          "beta1_0": -1.042,
+          "beta2_0": -0.094,
+          "sigma_alpha": 18.826,
+          "sigma_beta1": 5.121,
+          "sigma_beta2": 2.65,
+          "chol[0]": 3.13,
+          "chol[1]": -0.303,
+          "chol[2]": 2.776,
+          "chol[3]": -0.061,
+          "chol[4]": -0.033,
+          "chol[5]": 0.571
+        },
+        "sd": {
+          "alpha_0": 1.017,
+          "beta1_0": 1.17,
+          "beta2_0": 0.641,
+          "sigma_alpha": 1281.948,
+          "sigma_beta1": 227.217,
+          "sigma_beta2": 35.369,
+          "chol[0]": 1.996,
+          "chol[1]": 1.334,
+          "chol[2]": 2.02,
+          "chol[3]": 0.407,
+          "chol[4]": 0.425,
+          "chol[5]": 0.775
+        },
+        "hdi_3%": {
+          "alpha_0": -1.927,
+          "beta1_0": -3.307,
+          "beta2_0": -1.251,
+          "sigma_alpha": 0.0,
+          "sigma_beta1": 0.0,
+          "sigma_beta2": 0.0,
+          "chol[0]": 0.652,
+          "chol[1]": -3.037,
+          "chol[2]": 0.072,
+          "chol[3]": -0.791,
+          "chol[4]": -0.809,
+          "chol[5]": 0.002
+        },
+        "hdi_97%": {
+          "alpha_0": 1.82,
+          "beta1_0": 1.056,
+          "beta2_0": 1.093,
+          "sigma_alpha": 5.323,
+          "sigma_beta1": 5.089,
+          "sigma_beta2": 5.148,
+          "chol[0]": 6.541,
+          "chol[1]": 2.097,
+          "chol[2]": 6.221,
+          "chol[3]": 0.6,
+          "chol[4]": 0.742,
+          "chol[5]": 1.824
+        },
+        "mcse_mean": {
+          "alpha_0": 0.014,
+          "beta1_0": 0.014,
+          "beta2_0": 0.008,
+          "sigma_alpha": 14.546,
+          "sigma_beta1": 1.92,
+          "sigma_beta2": 0.356,
+          "chol[0]": 0.029,
+          "chol[1]": 0.02,
+          "chol[2]": 0.028,
+          "chol[3]": 0.008,
+          "chol[4]": 0.009,
+          "chol[5]": 0.017
+        },
+        "mcse_sd": {
+          "alpha_0": 0.016,
+          "beta1_0": 0.011,
+          "beta2_0": 0.013,
+          "sigma_alpha": 10.286,
+          "sigma_beta1": 1.358,
+          "sigma_beta2": 0.252,
+          "chol[0]": 0.02,
+          "chol[1]": 0.016,
+          "chol[2]": 0.02,
+          "chol[3]": 0.007,
+          "chol[4]": 0.009,
+          "chol[5]": 0.012
+        },
+        "ess_bulk": {
+          "alpha_0": 6948.0,
+          "beta1_0": 7617.0,
+          "beta2_0": 8068.0,
+          "sigma_alpha": 12961.0,
+          "sigma_beta1": 10864.0,
+          "sigma_beta2": 14559.0,
+          "chol[0]": 4512.0,
+          "chol[1]": 5317.0,
+          "chol[2]": 4930.0,
+          "chol[3]": 5318.0,
+          "chol[4]": 4474.0,
+          "chol[5]": 1843.0
+        },
+        "ess_tail": {
+          "alpha_0": 4956.0,
+          "beta1_0": 8550.0,
+          "beta2_0": 4943.0,
+          "sigma_alpha": 7074.0,
+          "sigma_beta1": 7800.0,
+          "sigma_beta2": 7525.0,
+          "chol[0]": 5864.0,
+          "chol[1]": 4951.0,
+          "chol[2]": 6750.0,
+          "chol[3]": 3061.0,
+          "chol[4]": 2701.0,
+          "chol[5]": 1876.0
+        },
+        "r_hat": {
+          "alpha_0": 1.0,
+          "beta1_0": 1.0,
+          "beta2_0": 1.0,
+          "sigma_alpha": 1.0,
+          "sigma_beta1": 1.0,
+          "sigma_beta2": 1.0,
+          "chol[0]": 1.0,
+          "chol[1]": 1.0,
+          "chol[2]": 1.0,
+          "chol[3]": 1.0,
+          "chol[4]": 1.0,
+          "chol[5]": 1.0
+        }
+      }
+    },
+    "beta1_0_mean": -2.029773465854236,
+    "beta1_0_hdi": [
+      -6.639984732848369,
+      2.3284411607462214
+    ],
+    "p_beta1_negative": 0.833375,
+    "beta2_0_mean": -0.14485343979062287,
+    "beta2_0_hdi": [
+      -1.97555695276595,
+      1.8616133134229857
+    ],
+    "p_beta2_positive": 0.411375,
+    "psi_importance": 2.4205758102471155,
+    "spi_importance": 0.7372769845491555,
+    "domain_effects": [
+      {
+        "domain": "中华历史",
+        "beta1_mean": -8.47306392932621,
+        "beta1_hdi": [
+          -14.719345425836668,
+          -2.6629656889209987
+        ],
+        "beta2_mean": -0.40427798737883675,
+        "beta2_hdi": [
+          -1.6058941085397884,
+          0.8292061218831364
+        ]
+      },
+      {
+        "domain": "美索不达米亚",
+        "beta1_mean": 0.27568193409411523,
+        "beta1_hdi": [
+          -2.494841636111259,
+          2.9657115568279186
+        ],
+        "beta2_mean": -0.41736853082980635,
+        "beta2_hdi": [
+          -3.7471757603806166,
+          2.539591355031789
+        ]
+      },
+      {
+        "domain": "现代金融",
+        "beta1_mean": -6.296186341333281,
+        "beta1_hdi": [
+          -14.511468151635697,
+          -0.1410879179862287
+        ],
+        "beta2_mean": 0.5730545219915874,
+        "beta2_hdi": [
+          -2.3914751236561114,
+          5.438641213875782
+        ]
+      }
+    ],
+    "sigma_beta1_mean": 9.975730130643122,
+    "sigma_beta2_mean": 4.099968866955303,
+    "correlation_matrix_mean": [
+      [
+        1.0,
+        -0.1457284095751613,
+        -0.07070114811533124
+      ],
+      [
+        -0.1457284095751613,
+        1.0,
+        -0.008847289547536344
+      ],
+      [
+        -0.07070114811533124,
+        -0.008847289547536344,
+        1.0
+      ]
+    ],
+    "corr_alpha_beta1": -0.1457284095751613,
+    "corr_alpha_beta2": -0.07070114811533124,
+    "corr_beta1_beta2": -0.008847289547536344,
+    "model": "B_psi_spi_joint",
+    "elapsed_seconds": 305.87749195098877,
+    "waic_loo": {
+      "waic": -35.00912309455559,
+      "waic_se": 5.352795303280873,
+      "p_waic": 7.206380210309527,
+      "loo": -36.74370679383087,
+      "loo_se": 6.271553677931734,
+      "p_loo": 8.940963909584791,
+      "status": "✓"
+    }
+  },
+  "model_c": {
+    "convergence": {
+      "max_rhat": 1.0,
+      "min_ess_bulk": 2900.0,
+      "min_ess_tail": 3244.0,
+      "divergences": 229,
+      "max_treedepth_hits": 0,
+      "status_rhat": "✓",
+      "status_ess": "✓",
+      "status_divergences": "✗ 严重",
+      "summary": {
+        "mean": {
+          "gamma_0": -0.671,
+          "delta_0": 0.212,
+          "sigma_gamma": 0.955,
+          "sigma_delta": 4.37
+        },
+        "sd": {
+          "gamma_0": 0.621,
+          "delta_0": 1.084,
+          "sigma_gamma": 0.904,
+          "sigma_delta": 4.486
+        },
+        "hdi_3%": {
+          "gamma_0": -1.829,
+          "delta_0": -1.815,
+          "sigma_gamma": 0.0,
+          "sigma_delta": 0.001
+        },
+        "hdi_97%": {
+          "gamma_0": 0.509,
+          "delta_0": 2.282,
+          "sigma_gamma": 2.445,
+          "sigma_delta": 12.545
+        },
+        "mcse_mean": {
+          "gamma_0": 0.008,
+          "delta_0": 0.015,
+          "sigma_gamma": 0.013,
+          "sigma_delta": 0.095
+        },
+        "mcse_sd": {
+          "gamma_0": 0.006,
+          "delta_0": 0.013,
+          "sigma_gamma": 0.009,
+          "sigma_delta": 0.084
+        },
+        "ess_bulk": {
+          "gamma_0": 6348.0,
+          "delta_0": 6346.0,
+          "sigma_gamma": 4115.0,
+          "sigma_delta": 2900.0
+        },
+        "ess_tail": {
+          "gamma_0": 6208.0,
+          "delta_0": 5491.0,
+          "sigma_gamma": 5187.0,
+          "sigma_delta": 3244.0
+        },
+        "r_hat": {
+          "gamma_0": 1.0,
+          "delta_0": 1.0,
+          "sigma_gamma": 1.0,
+          "sigma_delta": 1.0
+        }
+      }
+    },
+    "p_sudden_stable_mean": 0.34951562854032486,
+    "p_sudden_stable_hdi": [
+      0.10915127031578796,
+      0.6077706891830343
+    ],
+    "p_sudden_crisis_mean": 0.4086852362808361,
+    "p_sudden_crisis_hdi": [
+      0.015596222753569602,
+      0.8263956085813394
+    ],
+    "delta_0_mean": 0.2115225437408664,
+    "delta_0_hdi": [
+      -1.9346858807797496,
+      2.4390913009220485
+    ],
+    "p_delta_positive": 0.598375,
+    "domain_effects": [
+      {
+        "domain": "中华历史",
+        "p_sudden_stable": 0.23173341428345434,
+        "p_sudden_crisis": 0.28183944736864236,
+        "delta_mean": 0.34562281694901786
+      },
+      {
+        "domain": "美索不达米亚",
+        "p_sudden_stable": 0.47385469537162456,
+        "p_sudden_crisis": 0.15755190466557772,
+        "delta_mean": -3.9727864287349868
+      },
+      {
+        "domain": "现代金融",
+        "p_sudden_stable": 0.26198217052702044,
+        "p_sudden_crisis": 0.8568834040373459,
+        "delta_mean": 5.236729602851268
+      }
+    ],
+    "model": "C_upsi_v2_binary",
+    "elapsed_seconds": 78.54935789108276,
+    "waic_loo": {
+      "waic": -44.54863809935251,
+      "waic_se": 3.7531252208210786,
+      "p_waic": 3.7877484596882045,
+      "loo": -44.60930312316655,
+      "loo_se": 3.759353642258069,
+      "p_loo": 3.8484134835022417,
+      "status": "✓"
+    }
+  },
+  "model_comparison": {
+    "model_a_full": {
+      "waic": -1266.3502534599415,
+      "waic_se": 48.954644412825026,
+      "p_waic": 9.378039812462411,
+      "loo": NaN,
+      "loo_se": NaN,
+      "p_loo": NaN,
+      "status": "✓"
+    },
+    "model_a_subset": {
+      "waic": -33.819257857908504,
+      "waic_se": 5.110212367613901,
+      "loo": -35.61161560806033,
+      "loo_se": 6.088577512937424
+    },
+    "model_b": {
+      "waic": -35.00912309455559,
+      "waic_se": 5.352795303280873,
+      "loo": -36.74370679383087,
+      "loo_se": 6.271553677931734
+    },
+    "delta_waic": -1.189865236647087,
+    "delta_waic_se": 7.400451878158512,
+    "delta_loo": -1.132091185770534,
+    "delta_loo_se": 8.740890210168889,
+    "winner": "A",
+    "note": "Positive delta favors Model B (PSI+SPI)."
+  },
+  "posterior_predictive_b": [
+    {
+      "scenario": "Moderate PSI decline + High SPI burst",
+      "psi": -0.5,
+      "spi": 1.5,
+      "predicted_quadrant": "Sudden Crisis",
+      "p_crisis_mean": 0.6847466965276904,
+      "p_crisis_hdi": [
+        0.09634957455927311,
+        0.9999995560085437
+      ]
+    },
+    {
+      "scenario": "Strong PSI decline + Moderate SPI",
+      "psi": -1.0,
+      "spi": 0.5,
+      "predicted_quadrant": "Sudden Crisis",
+      "p_crisis_mean": 0.7689488198055953,
+      "p_crisis_hdi": [
+        0.10199151191202008,
+        0.9999999997348128
+      ]
+    },
+    {
+      "scenario": "High PSI + Critical SPI burst",
+      "psi": 0.8,
+      "spi": 2.0,
+      "predicted_quadrant": "Accelerating Collapse",
+      "p_crisis_mean": 0.3116610640454233,
+      "p_crisis_hdi": [
+        1.2892309068097135e-06,
+        0.905561340065805
+      ]
+    },
+    {
+      "scenario": "Moderate PSI + Low SPI (baseline)",
+      "psi": 0.5,
+      "spi": -0.2,
+      "predicted_quadrant": "Gradual Decline",
+      "p_crisis_mean": 0.4232177899158311,
+      "p_crisis_hdi": [
+        0.017759088876232045,
+        0.8429747807379504
+      ]
+    }
+  ],
+  "posterior_predictive_c": [
+    {
+      "scenario": "Stable period",
+      "p_sudden_mean": 0.34951562854032486,
+      "p_sudden_hdi": [
+        0.10915127031578796,
+        0.6077706891830343
+      ]
+    },
+    {
+      "scenario": "Crisis period",
+      "p_sudden_mean": 0.4086852362808361,
+      "p_sudden_hdi": [
+        0.015596222753569602,
+        0.8263956085813394
+      ]
+    }
+  ],
+  "total_elapsed_seconds": 1884.4916369915009,
+  "timestamp": "2026-06-08 23:48:21"
+}

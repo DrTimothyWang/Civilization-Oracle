@@ -40,10 +40,10 @@ OUTPUT_DIR = "/Users/wangzr/Desktop/历史事件预测建模/02_UPSI_LEGACY/v17_
 
 # MCMC 全局配置
 N_CHAINS = 4
-N_TUNE = 1000
-N_DRAWS = 2000
-TARGET_ACCEPT = 0.95
-MAX_TREEDEPTH = 12
+N_TUNE = 2000
+N_DRAWS = 4000
+TARGET_ACCEPT = 0.99
+MAX_TREEDEPTH = 15
 RANDOM_SEED = 42
 
 # ============================================================
@@ -214,13 +214,37 @@ def load_v11_psi_only_domains():
 
 
 def prepare_all_data():
-    """整合所有域数据"""
+    """整合所有域数据，并进行预处理（去重 + Domain 4 下采样）"""
     all_data = []
     all_data.extend(load_chinese_history_aligned())
     all_data.extend(load_mesopotamia_summary())
     all_data.extend(load_finance_summary())
     all_data.extend(load_v11_psi_only_domains())
-    return all_data
+    
+    # 去重
+    seen = set()
+    unique_data = []
+    for d in all_data:
+        key = (round(d['psi'], 6), d['is_crisis'], d['domain'])
+        if key not in seen:
+            seen.add(key)
+            unique_data.append(d)
+    
+    # Domain 4 下采样：保持危机样本，稳定样本最多为危机样本的 2 倍
+    import random
+    random.seed(42)
+    dom4 = [d for d in unique_data if d['domain'] == 4]
+    other_data = [d for d in unique_data if d['domain'] != 4]
+    dom4_crisis = [d for d in dom4 if d['is_crisis'] == 1]
+    dom4_stable = [d for d in dom4 if d['is_crisis'] == 0]
+    n_stable_keep = min(len(dom4_stable), len(dom4_crisis) * 2)
+    if n_stable_keep < len(dom4_stable):
+        dom4_stable_sub = random.sample(dom4_stable, n_stable_keep)
+    else:
+        dom4_stable_sub = dom4_stable
+    final_data = other_data + dom4_crisis + dom4_stable_sub
+    
+    return final_data
 
 
 def classify_quadrant(psi, spi, psi_thresh=0.584, spi_thresh=0.445):
@@ -252,21 +276,21 @@ def get_prior_config(config_name):
         "weak": {
             "mu_alpha": 0, "sd_alpha": 2,
             "mu_beta": 0, "sd_beta": 2,
-            "sd_sigma": 1.0,
+            "sd_sigma": 0.5,
             "lkj_eta": 1.0,
             "student_nu": 3,
         },
         "medium": {
             "mu_alpha": 0, "sd_alpha": 1,
             "mu_beta": 0, "sd_beta": 1,
-            "sd_sigma": 0.5,
+            "sd_sigma": 0.3,
             "lkj_eta": 2.0,
             "student_nu": 3,
         },
         "strong": {
             "mu_alpha": 0, "sd_alpha": 0.5,
             "mu_beta": -0.5, "sd_beta": 0.5,  # 先验认为 PSI 负向预测危机
-            "sd_sigma": 0.3,
+            "sd_sigma": 0.2,
             "lkj_eta": 4.0,
             "student_nu": 3,
         },
@@ -309,9 +333,9 @@ def build_model_a_reparam(data, prior_config="medium"):
         alpha_0 = pm.StudentT("alpha_0", nu=nu, mu=pc["mu_alpha"], sigma=pc["sd_alpha"])
         beta_0 = pm.StudentT("beta_0", nu=nu, mu=pc["mu_beta"], sigma=pc["sd_beta"])
         
-        # 方差先验 —— Half-Cauchy 替代 HalfNormal (减少边界压力)
-        sigma_alpha = pm.HalfCauchy("sigma_alpha", beta=pc["sd_sigma"])
-        sigma_beta = pm.HalfCauchy("sigma_beta", beta=pc["sd_sigma"])
+        # 方差先验 —— Half-Normal 替代 Half-Cauchy (减少边界压力)
+        sigma_alpha = pm.HalfNormal("sigma_alpha", sigma=pc["sd_sigma"])
+        sigma_beta = pm.HalfNormal("sigma_beta", sigma=pc["sd_sigma"])
         
         # 非中心参数化: raw ~ N(0,1), 实际 = 全局 + σ * raw
         alpha_tilde = pm.Normal("alpha_tilde", mu=0, sigma=1, shape=n_domains)
@@ -329,7 +353,7 @@ def build_model_a_reparam(data, prior_config="medium"):
         # MCMC
         t0 = time.time()
         trace = pm.sample(
-            draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=1,
+            draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=4,
             target_accept=TARGET_ACCEPT,
             nuts=dict(max_treedepth=MAX_TREEDEPTH),
             random_seed=RANDOM_SEED,
@@ -380,16 +404,16 @@ def build_model_b_reparam(data, prior_config="medium"):
         beta1_0 = pm.StudentT("beta1_0", nu=nu, mu=pc["mu_beta"], sigma=pc["sd_beta"])
         beta2_0 = pm.StudentT("beta2_0", nu=nu, mu=0, sigma=pc["sd_beta"])
         
-        # 方差先验 —— Half-Cauchy
-        sigma_alpha = pm.HalfCauchy("sigma_alpha", beta=pc["sd_sigma"])
-        sigma_beta1 = pm.HalfCauchy("sigma_beta1", beta=pc["sd_sigma"])
-        sigma_beta2 = pm.HalfCauchy("sigma_beta2", beta=pc["sd_sigma"])
+        # 方差先验 —— Half-Normal 替代 Half-Cauchy
+        sigma_alpha = pm.HalfNormal("sigma_alpha", sigma=pc["sd_sigma"])
+        sigma_beta1 = pm.HalfNormal("sigma_beta1", sigma=pc["sd_sigma"])
+        sigma_beta2 = pm.HalfNormal("sigma_beta2", sigma=pc["sd_sigma"])
         
         # LKJ Cholesky 先验 for 相关结构
         # eta=2 偏好弱相关, eta=1 为均匀
         chol, corr, stds = pm.LKJCholeskyCov(
             "chol", n=3, eta=pc["lkj_eta"],
-            sd_dist=pm.HalfCauchy.dist(beta=pc["sd_sigma"], shape=3),
+            sd_dist=pm.HalfNormal.dist(sigma=pc["sd_sigma"], shape=3),
             compute_corr=True,
         )
         
@@ -415,7 +439,7 @@ def build_model_b_reparam(data, prior_config="medium"):
         # MCMC
         t0 = time.time()
         trace = pm.sample(
-            draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=1,
+            draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=4,
             target_accept=TARGET_ACCEPT,
             nuts=dict(max_treedepth=MAX_TREEDEPTH),
             random_seed=RANDOM_SEED,
@@ -473,8 +497,8 @@ def build_model_c_reparam(data, prior_config="medium", binary_fallback=True):
             gamma_0 = pm.StudentT("gamma_0", nu=nu, mu=0, sigma=pc["sd_alpha"])
             delta_0 = pm.StudentT("delta_0", nu=nu, mu=0, sigma=pc["sd_beta"])
             
-            sigma_gamma = pm.HalfCauchy("sigma_gamma", beta=pc["sd_sigma"])
-            sigma_delta = pm.HalfCauchy("sigma_delta", beta=pc["sd_sigma"])
+            sigma_gamma = pm.HalfNormal("sigma_gamma", sigma=pc["sd_sigma"])
+            sigma_delta = pm.HalfNormal("sigma_delta", sigma=pc["sd_sigma"])
             
             # 非中心
             gamma_tilde = pm.Normal("gamma_tilde", mu=0, sigma=1, shape=n_domains)
@@ -490,7 +514,7 @@ def build_model_c_reparam(data, prior_config="medium", binary_fallback=True):
             
             t0 = time.time()
             trace = pm.sample(
-                draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=1,
+                draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=4,
                 target_accept=TARGET_ACCEPT,
                 nuts=dict(max_treedepth=MAX_TREEDEPTH),
                 random_seed=RANDOM_SEED,
@@ -511,8 +535,8 @@ def build_model_c_reparam(data, prior_config="medium", binary_fallback=True):
             gamma_0 = pm.StudentT("gamma_0", nu=nu, mu=0, sigma=pc["sd_alpha"], shape=n_rel)
             delta_0 = pm.StudentT("delta_0", nu=nu, mu=0, sigma=pc["sd_beta"], shape=n_rel)
             
-            sigma_gamma = pm.HalfCauchy("sigma_gamma", beta=pc["sd_sigma"])
-            sigma_delta = pm.HalfCauchy("sigma_delta", beta=pc["sd_sigma"])
+            sigma_gamma = pm.HalfNormal("sigma_gamma", sigma=pc["sd_sigma"])
+            sigma_delta = pm.HalfNormal("sigma_delta", sigma=pc["sd_sigma"])
             
             # 非中心: shape=(n_domains, n_rel)
             gamma_tilde = pm.Normal("gamma_tilde", mu=0, sigma=1, shape=(n_domains, n_rel))
@@ -536,7 +560,7 @@ def build_model_c_reparam(data, prior_config="medium", binary_fallback=True):
             
             t0 = time.time()
             trace = pm.sample(
-                draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=1,
+                draws=N_DRAWS, tune=N_TUNE, chains=N_CHAINS, cores=4,
                 target_accept=TARGET_ACCEPT,
                 nuts=dict(max_treedepth=MAX_TREEDEPTH),
                 random_seed=RANDOM_SEED,

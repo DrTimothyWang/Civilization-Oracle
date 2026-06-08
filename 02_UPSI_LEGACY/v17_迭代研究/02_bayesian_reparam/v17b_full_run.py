@@ -29,7 +29,9 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # 将项目根加入路径
-sys.path.insert(0, "/Users/wangzr/Desktop/历史事件预测建模/v17_迭代研究/02_bayesian_reparam")
+sys.path.insert(0, "/Users/wangzr/Desktop/历史事件预测建模/02_UPSI_LEGACY/v17_迭代研究/02_bayesian_reparam")
+
+import numpy as np
 
 # 导入 v17b 核心模块
 from v17b_bayesian_reparam import (
@@ -48,17 +50,17 @@ from v17b_bayesian_reparam import (
     generate_report,
 )
 
-OUTPUT_DIR = "/Users/wangzr/Desktop/历史事件预测建模/v17_迭代研究/02_bayesian_reparam"
-RESULTS_FILE = os.path.join(OUTPUT_DIR, "v17b_full_results.json")
-REPORT_FILE = os.path.join(OUTPUT_DIR, "v17b_full_report.md")
+OUTPUT_DIR = "/Users/wangzr/Desktop/历史事件预测建模/01_TCM_UPSI_CORE"
+RESULTS_FILE = os.path.join(OUTPUT_DIR, "v17b_full_sampling_results.json")
+REPORT_FILE = os.path.join(OUTPUT_DIR, "v17b_full_sampling_report.md")
 
 # 覆盖为完整采样配置
 import v17b_bayesian_reparam as v17b
 v17b.N_CHAINS = 4
 v17b.N_TUNE = 2000
 v17b.N_DRAWS = 4000
-v17b.TARGET_ACCEPT = 0.95
-v17b.MAX_TREEDEPTH = 12
+v17b.TARGET_ACCEPT = 0.99
+v17b.MAX_TREEDEPTH = 15
 
 print("=" * 70)
 print("v17b 完整贝叶斯采样 — 独立运行脚本")
