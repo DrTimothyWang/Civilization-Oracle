@@ -101,7 +101,7 @@ Research Fellow, UPSI Project
 Guangzhou University of Chinese Medicine  
 📧 wangdianrang@gzhu.edu.cn  
 🆔 ORCID: 0000-0000-0000-0000  
-🔗 GitHub: github.com/Mavis-Foundation/UPSI (public after Nature submission)  
+🔗 GitHub: https://github.com/DrTimothyWang/Civilization-Oracle (public, 691 files, full reproducibility)  
 📊 Dashboard: [org].github.io/upsi-dashboard (deployment in progress)
 
 ---
@@ -164,7 +164,7 @@ Research Fellow, UPSI Project
 Guangzhou University of Chinese Medicine  
 📧 wangdianrang@gzhu.edu.cn  
 🆔 ORCID: 0000-0000-0000-0000  
-🔗 GitHub: github.com/Mavis-Foundation/UPSI  
+🔗 GitHub: https://github.com/DrTimothyWang/Civilization-Oracle  
 📊 Dashboard: [org].github.io/upsi-dashboard
 
 ---
@@ -224,7 +224,7 @@ Research Fellow, UPSI Project
 Guangzhou University of Chinese Medicine  
 📧 wangdianrang@gzhu.edu.cn  
 🆔 ORCID: 0000-0000-0000-0000  
-🔗 GitHub: github.com/Mavis-Foundation/UPSI  
+🔗 GitHub: https://github.com/DrTimothyWang/Civilization-Oracle  
 📊 Dashboard: [org].github.io/upsi-dashboard
 
 ---
@@ -283,7 +283,7 @@ Research Fellow, UPSI Project
 Guangzhou University of Chinese Medicine  
 📧 wangdianrang@gzhu.edu.cn  
 🆔 ORCID: 0000-0000-0000-0000  
-🔗 GitHub: github.com/Mavis-Foundation/UPSI  
+🔗 GitHub: https://github.com/DrTimothyWang/Civilization-Oracle  
 📊 Dashboard: [org].github.io/upsi-dashboard
 
 ---
@@ -342,7 +342,7 @@ Research Fellow, UPSI Project
 Guangzhou University of Chinese Medicine  
 📧 wangdianrang@gzhu.edu.cn  
 🆔 ORCID: 0000-0000-0000-0000  
-🔗 GitHub: github.com/Mavis-Foundation/UPSI  
+🔗 GitHub: https://github.com/DrTimothyWang/Civilization-Oracle  
 📊 Dashboard: [org].github.io/upsi-dashboard
 
 ---
